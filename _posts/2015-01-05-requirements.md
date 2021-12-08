@@ -1,28 +1,28 @@
 ---
-layout: post
-title: "Requirements"
-subtitle: "Before reading this tutorial"
-section: web
-published: false
+sxem: post
+başlıq: "Tələb olunanlar"
+altbaşlıq: "Bu dərsliyi oxumadan öncə"
+bölmə: web
+yayınlanma: false
 ---
 
-### Show file extensions
+### File uzantılarını gösdərmək
 
-Let's say you have a solar eclipse picture on your computer, it will show up as:
+Tutaq ki, sizin kompüterdə ay tutulması şəkli var və belə görsənir:
 
 ![Solar Eclipse](/images/solar-eclipse.jpg)
 
-* the **name** of the file is `solar-eclipse`
-* the **extension** of the file is `.jpg`
+* faylın **adı** `solar-eclipse`
+* **uzantısı** isə `.jpg`
 
-A file's extension defines the _type_ of file it is (in this case, an image). For HTML files, the extension is `.html`.
+Faylın uzantısı faylın _növünü_ təyin edir (indiki halda faylın növü şəkildi). HTML faylların üçün uzantı `.html` -dir.
 
-By default, **file extensions** are hidden. In this tutorial, we'll need to be able to edit these extensions. So follow these instructions to display file extensions:
+İlkin olaraq, **fayl uzantıları** gizlidir. Bu dərsdə, bu uzantıları redaktə etməliyik. Elə isə bu gösdərişləri izləyərək faylın uzantısını açın:
 
-* **Windows**: [Show or hide file name extensions](https://windows.microsoft.com/en-us/windows/show-hide-file-name-extensions)
-* **Mac**: [Show and hide filename extensions](https://support.apple.com/kb/PH10845?locale=en_US)
+* **Windows**: [Fayl uzantısını gösdərmək və gizləmək](https://windows.microsoft.com/en-us/windows/show-hide-file-name-extensions)
+* **Mac**: [Fayl uzantısını gösdərmək və gizləmək](https://support.apple.com/kb/PH10845?locale=en_US)
 
-### Download a good Web browser
+### Yaxşı bir Web brauzer yükləyini
 
 
 
