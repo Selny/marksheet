@@ -1,70 +1,69 @@
 ---
-layout: post
-title: "HTML <strong>Syntax</strong>"
-subtitle: "As any language, HTML has <strong>rules</strong>"
-section: html
+sxem: post
+başlıq: "HTML <strong>Sintaksisi</strong>"
+altbaşlıq: "Digər dillər kimi HTML-ində mühim <strong>qaydaları</strong>" var
+bölmə: html
 ---
 
-**HTML** stands for **H**yper**T**ext **M**arkup **L**anguage:
+**HTML**-in açılışı, **H**yper**T**ext **M**arkup **L**anguage (Azərbaycanca, Hiper Mətn İşarələmə Dili):
 
-* **HyperText** means that it uses the HTTP part of the Internet
-* **Markup** means the code you write is annotated with keywords
-* **Language** means it can be read by both a human and a computer
 
-Like any language, HTML comes with a set of **rules**. These rules are relatively simple. It comes down to defining **boundaries**, to know where something _starts_ and where something _ends_.
+* **HyperText** _(Hiper Mətn)_ İnternetin HTTP hissəsini işlətdiyini bildirir
+* **Markup** _(İşarələmə)_ yazdığınız kodun açar sözlər vaistəsi ilə izah olunduğunu bildirir
+* **Language** _(Dil)_ bu kodların həm insanlar həm də kompüterlər tərəfindən oxunula bildiyini gösdərir
 
-Here is a sample paragraph in HTML:
+Digər dillər kimi, HTML-də bir qism **qaydalar** ilə gəlir. Bu qaydalar yetərincə sadədir. İlkin olaraq bizim gərək **çərçivələrimiz** olsun, bir şeyin haradan _başlayıb_ harada _bitdiyini_ görə bilək.
+
+HTML-dən nümunə paraqraf:
 
 {% highlight html %}
-<p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p>
+<p>O mənə öyrətdiki, bəzi insanlar səhvləri yadda saxlayır, yaxşılığları görmür.</p>
 {% endhighlight %}
 
-<div class="result"><p>If Tetris has taught me anything it's that errors pile up and accomplishments disappear.</p></div>
+Gördüyünüz bu `<`{:.language-html} və `>`{:.language-html} **üçbucağ mötərizələr** arasında yazılanlar HTML **taqlarıdır**. Bu taqlar nəyin haradan _başlayıb_ harada _bitdiyini_ gösdərir.
 
-What you see in **angle brackets** `<`{:.language-html} and `>`{:.language-html} are HTML **tags**. They define where something _starts_ and where it _ends_.
+Bunların hər biri məxsusi bir **məna** daşıyır. Bu misalda, `p`{:.language-html} **paraqrafı** bildirirdi.
 
-Each of them carry a specific **meaning**. In this case, `p`{:.language-html} stands for **paragraph**.
+Bunlar adətən qrup halında olurlar:
 
-They usually go in pairs:
+* _açılış_ tagı olan `<p>`{:.language-html} paraqrafın **başlanğıcını** bildirir
+* _bağlanış_ tagı olan `</p>`{:.language-html} isə harada **bitdiyini** bildirir
 
-* the _opening_ tag `<p>`{:.language-html} defines the **start** of the paragraph
-* the _closing_ tag `</p>`{:.language-html} defines its **end**
+Açılış və bağlanış taqı arasında ki, tək fərq **əyri xəttdir** `/`{:.language-html} hansı ki, taqın adından öncə gəlir.
 
-The only difference between an opening and closing tag is the **slash** `/`{:.language-html} that precedes the name of the tag.
+Siz açılış taqı, bağlanış taqı və arasındakıları yazdığınızda bir **HTML elementi** əldə etmiş olursunuz. Bütün bu sətr bir HTML elementidir hansı ki, `<p>`{:.language-html} və `</p>`{:.language-html} HTML taqları ilə yazılıb.
 
-When you combine an opening tag, a closing tag, and everything in between, you obtain an **HTML element**. The whole line is an HTML element that uses the HTML tags `<p>`{:.language-html} and `</p>`{:.language-html}.
+Əgər [bu nümunəni brauzerinizdə açsanız](/html/sample-paragraph.html), **HTML taqlarının brauzer tərəfindən göstərilmədiyinə** fikir verə bilərsiniz. Taqlar brauzer tərəfindən yalnız hansı _növ_ **məlumat** yazdığınız təyin etmək üçün oxunulur.
 
-If you [view this sample in your browser](/html/sample-paragraph.html), you'll notice that **HTML tags are not displayed** by the browser. They are only _read_ by the browser to know what _type_ of **content** you've written.
+### HTML-i hara yazaq
 
-### Where to write HTML
+Ola bilsin ki, sadə mətn faylları ilə qarşılaşmısınız, bu faylların `.txt` uzantısı olur.
 
-You've probably come across simple text files, those that have a `.txt` extension.
+Bu mətn faylının **HTML faylı** olması üçün, siz `.html` uzantısı işlədməlisiniz.
 
-For such a text file to become an **HTML document** (instead of a text document), you need to use an `.html` extension.
-
-Open your **text editor**, and copy paste the following:
+**Mətn redaktorunuzu** açın, və aşağıdakıları ora köçürün.
 
 {% highlight html %}
-<p>This is my firstwebpage!</p>
+<p>Bu mənim ilk Websəhifəmdir!</p>
 {% endhighlight %}
 
-Save this file as `my-first-webpage.html` and just open it with your browser, and you'll see:
+Bu faylı `my-first-webpage.html` olaraq yadda saxlayın və brauzeriniz ilə açın, və bu görsənir:
 
-<div class="result"><p>This is my firstwebpage!</p></div>
+<div class="result"><p>Bu mənim ilk Websəhifəmdir!</p></div>
 
-Remember:
+Yadda saxlayın:
 
-* use a text editor like Notepad++ to **create** HTML documents
-* use a browser like Firefox to **open** HTML documents
+* Notepad++ kimi mətn redaktorlarını HTML fayllarını **qurmaq** üçün işlədin
+* Firefox kimi brauzerləri isə HTML fayllarını **açmaq** üçün işlədin.
 
-### Attributes
+### Atributlar
 
-Attributes act like **extra** information tied to an HTML element. They are written _within_ an HTML _tag_. As such, they are not displayed by the browser either.
+Atributlar HTML elementinə bağlı **əlavə** məlumatlardır. Bunlar HTML _taqı içində_ yazılır. Bunlarda, brauzer tərəfindən görsənmir.
 
-For example, the `href` attribute is used to define the target of a **link** (which uses an **a**nchor tag):
+Misal üçün, `href` atributu aid olduğu qismə **link** əlavə edir (hansı ki, **a**nchor taqı ilə işlənir):
 
 {% highlight html %}
-<a href="https://www.mozilla.com/firefox">Download Firefox</a>
+<a href="https://www.mozilla.com/firefox">Firefoxu Yüklə</a>
 {% endhighlight %}
 
 <div class="result"><a href="https://www.mozilla.com/firefox">Download Firefox</a></div>
