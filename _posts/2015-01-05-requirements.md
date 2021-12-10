@@ -15,14 +15,14 @@ Tutaq ki, sizin kompüterdə ay tutulması şəkli var və belə görsənir:
 * faylın **adı** `solar-eclipse`
 * **uzantısı** isə `.jpg`
 
-Faylın uzantısı faylın _növünü_ təyin edir (indiki halda faylın növü şəkildi). HTML faylların üçün uzantı `.html` -dir.
+Faylın uzantısı faylın _növünü_ təyin edir (indiki faylın növü şəkildir). HTML faylların uzantısı `.html` -dir.
 
 İlkin olaraq, **fayl uzantıları** gizlidir. Bu dərsdə, bu uzantıları redaktə etməliyik. Elə isə bu gösdərişləri izləyərək faylın uzantısını açın:
 
 * **Windows**: [Fayl uzantısını gösdərmək və gizləmək](https://windows.microsoft.com/en-us/windows/show-hide-file-name-extensions)
 * **Mac**: [Fayl uzantısını gösdərmək və gizləmək](https://support.apple.com/kb/PH10845?locale=en_US)
 
-### Yaxşı bir Web brauzer yükləyini
+### Yaxşı bir Web brauzer yükləyin
 
 
 
