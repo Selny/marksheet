@@ -1,12 +1,14 @@
 ---
-layout: chapter
-title: "HTML <strong>Basics</strong>"
-subtitle: "HTML is like <strong>Word</strong> but for the <strong>Web</strong>"
-section: html
+sxem: fəsil
+başlıq: "HTML <strong>Təməlləri</strong>"
+altbaşlıq: "HTML <strong>Word</strong> kimidi amma <strong>Web</strong> üçün"
+bölmə: html
 ---
 
-You're certainly already acquainted with document editors, like **Microsoft <strong>Word</strong>**, with which you can **structure** your document with titles, paragraph, lists, tables, images, **bold** and _italic_ text.
+Siz **Microsoft <strong>Word</strong>** kimi yazı editorları ilə tanışsınız, hansı ki, bununla sənədlərin başlığını, paraqrafı, listləri, cədvəlləri, şəkilləri, **bold** və _italik_ yazıları **əlavə** edə bilirsiniz.
 
-**HTML** provides roughly the same elements of formatting. The key difference is that formatting text in Microsoft Word is _visual_, whereas HTML code is purely **semantic**: you provide _meaning_ to your text.
+**HTML**-də hardasa bunun kimidir. Əsas fərq ondadır ki, Microsoft Word-də yazını işləmək _vizualdır_ amma HTML-də **semantika** üzərədir: siz yazılarınıza _məna_ əlavə edirsiniz.
+
+Sanki, ♫ **notlarla** ♬ musiqi yazdığınız kimi, **HTML** ilədə **websəhifələr** yazırsınız.
 
 The same way you use ♫ **notes** ♬ to write **music**, you use **HTML** to write **webpages**.
