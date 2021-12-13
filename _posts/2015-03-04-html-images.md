@@ -1,17 +1,17 @@
 ---
-layout: post
-title: "HTML <strong>Images</strong>"
-subtitle: "The major <strong>media</strong> on the Web"
-section: html
+sxem: post
+başlıq: "HTML <strong>Images</strong>"
+altbaşlıq: "Webdəki başlıca olan <strong>media</strong>"
+bölmə: html
 ---
 
-**Images** are the first non-textual content to have appeared on the Web. Most image formats you can find on your computer can also be displayed in your browser: `.jpg`, `.gif` (animated or not), `.png` (transparent or not), `.bmp`...
+**Şəkillər** Web üzərində olan ilk qeyri-mətn elementidir. Kompüterinizdə olan əksər şəkil formatları brauzerinizdə açıla bilir: `.jpg`, `.gif` (animasiyalı və ya animasıyasız), `.png` (şəffaf və ya qeyri-şəffaf), `.bmp`...
 
-### Syntax
+### Sintaksis
 
-**Images** use the `<img>` element, which is a **self-closing** element (it only has an opening tag).
+**Şəkillər** `<img>` elementin işlədirlər, hansı ki, **özü-bağlanan** elementdir (ancaq açılış taqı var).
 
-The `src` attribute defines the **location** of the image. As with links, you can either use _relative_ or _absolute_ URLs.
+`src` atributu şəklin **yerini** bəlirliyir. Linklər vaistəsi ilə, _daxili_ vəya _tam_ URL-lər işlədə bilərsiniz.
 
 <ul class="files">
   <li>
@@ -30,53 +30,36 @@ The `src` attribute defines the **location** of the image. As with links, you ca
   </li>
 </ul>
 
-{% highlight html %}
 <p>
-  Look at this spacecraft landing!
+  Bu paraşutun enişinə baxın!
   <br>
   <img src="soyuz-spacecraft.jpg">
 </p>
-{% endhighlight %}
 
-<div class="result">
-  <p>
-    Look at this spacecraft landing!
-    <br>
-    <img src="/images/soyuz-spacecraft.jpg">
-  </p>
-</div>
+### Ölçülər
 
-### Dimensions
+Hər şəklin **2 ölçüsü** olur: **eni** və **uzunluğu**. Bundan öncə gösdərilən paraşut şəklinin ölçüsü 394 piksel en və 284 piksel uzunluğunda idi.
 
-Every image has **2 dimensions**: a **width** and a **height**. The previously shown spacecraft image is 394 pixels wide and 284 high.
+HTML-ə şəkil əlavə edərkən, siz **şəklin ölçüsün bildirməli deyilsiniz**: brauzer özü avtomatik **tam ölçünü** gösdərir.
 
-When inserting an image in HTML, you **don't need to specify its dimensions**: the browser will automatically display it in **full size**.
-
-If you want to alter the dimensions of an image, although it is possible in HTML, it's recommended to use CSS, as we'll see in later chapters.
+Baxmayaraq ki, HTML ilə şəklin ölçüsün dəyişə bilərsiniz bunu əsasən CSS ilə edilməyi tövsiyyə olunur, hansı ki, növbəti mövzülarda dəyinmişik.
 {: .info}
 
-### Block or inline?
+### Block ya inline? (Blok ya sətr-daxili?)
 
-Although an image has a width and a height, and is visually a big rectangle, an image is **not an HTML block element** but actually an **inline element**.
+Baxmayaraq ki, şəklin eni və uzunluğu var, və görünən iri bir dörbucağlıdır, şəkil **HTML block elementi deyildir** əksinə **inline elementdir**.
 
-This is due to the `<img>` element being a **self-closing** element: it can't technically contain any other HTML element, and is thus considered an inline element, like `<a>`, `<strong>` or `<em>`.
+Bu `<img>` elementinin **özü-bağanan** element olmasına görədir: texniki olaraq daxilində heç bir HTML elementi daşıya bilmədiyindən sətr-daxili element sayılır, 
+`<a>`, `<strong>` vəya `<em>` kimi.
 
-This inline behavior can have unexpected results:
-
-{% highlight html %}
-<p>
-  There is a frog
-  <img src="frog.jpg">
-  in the middle of the paragraph!
-</p>
-{% endhighlight %}
+Bu sətr-daxili yönü gözlənməyən nəticələr verə bilər:
 
 <div class="result">
   <p>
-    There is a frog
+    Burda bir qurbağa var
     <img src="/images/frog.jpg">
-    in the middle of the paragraph!
+    paraqrafın düz ortasında!
   </p>
 </div>
 
-Because in HTML the **content is king**, images will be displayed regardless of the quirky layout it might induce, and thoughtfully so.
+HTML-də **kontent daha əsas** olduğundan şəkillər olduğu yerdən aslı olmayaraq gösdərilir.
