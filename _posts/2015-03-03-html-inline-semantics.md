@@ -1,91 +1,59 @@
 ---
-layout: post
-title: "<strong>Inline</strong> semantics"
-subtitle: "The small parts <em>within</em> a block of text"
-section: html
+sxem: post
+başlıq: "<strong>Inline</strong> semantics"
+altbaşlıq: "Mətn bloku <em>daxilində</em> kiçik başlıqlar"
+bölmə: html
 ---
 
-While paragraphs and lists are meant to identify whole **blocks** of text, we sometimes want to provide meaning to a word (or a few words) _within_ a text.
+Paraqraf və listlər mətnin bütün **blokunu** əhatə etməli olsada, bəzən yazı _daxilində_ bir sözə (vəya sözlərə) məna yükləmək isdəyə bilirik.
 
-### Strong
+### Güclü
 
-For **important** words, use the `<strong>` tag:
+**Mühim** sözlər üçün `<strong>` taqın işlədin:
 
-{% highlight html %}
 <p>
-  This is <strong>important</strong> but this is not.
+  Bu <strong>mühim gösdrilir</strong> bu yox.
 </p>
-{% endhighlight %}
 
-<div class="result">
-  <p>
-    This is <strong>important</strong> but this is not.
-  </p>
-</div>
+Təməl olaraq `<strong>` elementi mətni **bold** gösdərir amma yadda saxlayın ki, bu brauzerin özündən aslıdır. `<strong>` elementini _yalnız_ mətnə qalınlıq vermək üçün işlətməyin, **əhəmiyyət** qatmaq üçün işlədin.
 
-By default, `<strong>` elements are displayed in **bold**, but keep in mind that it is only the browser's default behavior. Don't use `<strong>` _only_ to put some text in bold, but rather to give it more **importance**.
+### Vurğu
 
-### Emphasis
+Sözləri _vurğulamaq_ üçün `<em>` taqını işlədin:
 
-For _emphasized_ words, use the `<em>` tag:
-
-{% highlight html %}
 <p>
-  This is <em>emphasized</em> but this is not.
+  Bu <em>vurğulanıb</em> bamma bu yox.
 </p>
-{% endhighlight %}
 
-<div class="result">
-  <p>
-    This is <em>emphasized</em> but this is not.
-  </p>
-</div>
+Təməl olaraq `<em>` elementi mətni _italic_ gösdərir amma yadda saxlayın ki, bu brauzerin özündən aslıdır. `<em>` elementini _yalnız_ mətnə italiklik vermək üçün işlətməyin, _vurğlamaq_ üçün işlədin.
 
 By default, `<em>` elements are displayed in _italic_, but keep in mind that it is only the browser's default behavior. Don't use `<em>` _only_ to put some text in italic, but rather to give it _stress emphasis_.
 
-### Abbreviations
+### Qısaltmalar
 
-Abbreviations like W3C or CD can use the `<abbr>` element:
+W3C və CD kimi qısaltmalar `<abbr>` elementin işlədə bilərlər:
 
-{% highlight html %}
 <p>
-  I just bought a <abbr>CD</abbr>.
+  Özümə <abbr>CD</abbr> aldım.
 </p>
-{% endhighlight %}
 
-You can add a `title` **attribute** to specify the abbreviation's description, which will appear by hovering the element:
+Siz qısaltmaya `title` **atributu** ilə açığlama verə bilərsiniz, bunlar kurosrla elementin üzərinə gəldikdə gösdərilir:
 
-{% highlight html %}
 <p>
-  I just bought a <abbr title="Compact Disc">CD</abbr>.
+  Özümə <abbr title="Compact Disc">CD</abbr> aldım.
 </p>
-{% endhighlight %}
 
-<div class="result">
-  <p>
-    I just bought a <abbr title="Compact Disc">CD</abbr>.
-  </p>
-</div>
+### Sətr daxili statlar
 
-### Inline quotes
+`<blockquote>` **block-səviyyəsi** elementdir. **Iline** versiası belədir: `<q>`:
 
-The `<blockquote>` element is a **block-level** element. It has an **inline** version: `<q>`:
-
-{% highlight html %}
 <p>
-  He said <q>“Hello World”</q> and just left.
+  O, <q>“Hello World”</q> dedi və getdi.
 </p>
-{% endhighlight %}
 
-<div class="result">
-  <p>
-    He said <q>“Hello World”</q> and just left.
-  </p>
-</div>
+### Digər sətr daxili elementlər
 
-### Other inline elements
-
-There are plenty of other [inline semantic elements](https://developer.mozilla.org/en/docs/Web/HTML/Element#Inline_text_semantics) to choose from, but we've covered the most common ones.
+Daha nə qədər gösdərilə biləsi sətr daxili elementlər var [inline semantik elementlər](https://developer.mozilla.org/en/docs/Web/HTML/Element#Inline_text_semantics)  amma biz ən əsaslərını gösdərdik.
 
 *[CD]: Compact Disc
 *[W3C]: World Wide Web Consortium
