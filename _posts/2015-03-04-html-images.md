@@ -30,11 +30,13 @@ bölmə: html
   </li>
 </ul>
 
-<p>
-  Bu paraşutun enişinə baxın!
-  <br>
-  <img src="soyuz-spacecraft.jpg">
-</p>
+<div class="result">
+  <p>
+    Paraşutun enişinə baxın!
+    <br>
+    <img src="/images/soyuz-spacecraft.jpg">
+  </p>
+</div>
 
 ### Ölçülər
 
