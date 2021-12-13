@@ -66,41 +66,37 @@ Misal üçün, `href` atributu aid olduğu qismə **link** əlavə edir (hansı 
 <a href="https://www.mozilla.com/firefox">Firefoxu Yüklə</a>
 {% endhighlight %}
 
-<div class="result"><a href="https://www.mozilla.com/firefox">Download Firefox</a></div>
+Bu [16 HTML atributu](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) _bütün_ HTML elementləri ilə işləyə bilir. Bunların hamısı **isdəyə bağlıdır** əlavə oluna bilər.
 
-There are [16 HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that can be used on _any_ HTML element. All of them are **optional**.
+Əsas istifadə olunanlar, `class` (CSS üçün istifadə olunur), və `title`-dır (oxu bir kontentin üzərinə gətirdiyinzə çıxan məlumat). 
 
-You'll mostly use `class` (which is used for CSS), and `title` (which is the tooltip that appears when hovering an item like this one).
+Bəzi HTML elementlərinin isə **mütləq** əlavə olunmalı atriubtları var. Misal üçün, şəkil əlavə edərkən `src` (source) atributunu istafə edərək şəklin yerini bildirməlisiniz.
 
-Some HTML elements have **obligatory** attributes. For example, when inserting an image, you have to provide the location of the image, using the `src` (source) attribute:
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/BRI_kitten_%285467145697%29.jpg/232px-BRI_kitten_%285467145697%29.jpg" alt="Description of the image">
 
-{% highlight html %}
-<img src="#" alt="Description of the image">
-{% endhighlight %}
+`<img>` elementini şəkil əlavə etmək üçün işlənildiyimizi nəzərə alsaq, şəklin mənbəyini **tələb etməyi** məntiqlidir.
 
-Considering that the purpose of the `<img>` element is to display an image, it makes sense for the path to the image to be **required**.
+### Commentlər (Şərhlər)
 
-### Comments
+Əgər kodunuza brauzerdə göəsdərilən səhifəni dəyişməyəcək bir şey yazmaq isdəsəniz, sizə **commentlərdən** istifadə edə bilərsiniz. Commentlər brauzer tərəfindən _gösdərilmir_ və əsasən kodu yazanlar üçün yararlı olurlar.
 
-If you write something in your code without disrupting how the browser will display your page, you can write **comments**. They will be _ignored_ by the browser, and are only useful for us humans who write the code.
-
-A comment starts with `<!--` and ends with `-->`.
+Bir comment, `<!--` ilə başlayır və `-->` ilə bitir.
 
 {% highlight html %}
-<!-- This sentence will be ignored by the browser -->
+`<!-- Bu yazı brauzer tərəfindən gösdərilmir -->`
 <p>Hello World!</p>
 {% endhighlight %}
 
 <div class="result"><p>Hello World!</p></div>
 
-### Self-enclosing elements
+### Bir tərəfli elementlər
 
-Some HTML elements only have an opening tag:
+Bəzi HTML elementlərinin yalnız açılma taqı var:
 
-{% highlight html %}
-<br> <!-- line-break -->
-<img src="https://placehold.it/50x50" alt="Description"> <!-- image -->
-<input type="text"> <!-- text input -->
-{% endhighlight %}
+`<br> <!-- xətt-arası -->`
+<br>
+<img src="https://via.placeholder.com/50" alt="Description"> `<!-- şəkil -->`
 
-Because they don't have a closing tag and consequently can't contain anything _inside_ them, self-enclosing elements usually carry a few attributes, to provide them with additional information.
+`<input type="text"> <!-- yazı input -->`
+
+Bunların bağlanma taqı olmadığından və _daxillərində_ bir şey saxlaya bilməyəcəklərindən, bir tərəfli elementlərin adətən az atributu olur, bununla əlavə məlumat verilə bilinir.
