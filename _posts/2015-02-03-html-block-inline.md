@@ -1,53 +1,52 @@
 ---
-layout: post
-title: "HTML <strong>Block</strong> and <strong>Inline</strong>"
-subtitle: "HTML has 2 main <strong>types</strong> of elements"
-section: html
+sxem: post
+başlıq: "HTML <strong>Block</strong> and <strong>Inline</strong>"
+altbaşlıq: "HTML has 2 main <strong>types</strong> of elements"
+bölmə: html
 ---
 
-In HTML, you'll mainly come across 2 types of HTML elements:
+HTML-də əsasən 2 növ elementlə rastlaşırsınız:
 
-* **block** elements like:
+* **block** elementlər, misal:
 
-    * paragraphs `<p>`
-    * lists: unordered (with bullet points) `<ul>` or ordered lists (with numbers) `<ol>`
-    * headings: from 1st level `<h1>` to 6th level headings `<h6>`
-    * articles `<article>`
-    * sections `<section>`
-    * long quotes `<blockquote>`
+    * paraqraflar `<p>`
+    * listlər: sırasız (qara nöqtələr ilə) `<ul>` vəya sıralı listlər (ədədlər ilə) `<ol>`
+    * başlıqlar: 1-ci səviyyədən `<h1>` 6-cı səviyyəyə kimi `<h6>`
+    * artikıllar `<article>`
+    * bölmələr `<section>`
+    * uzun statlar `<blockquote>`
 
-* **inline** elements like:
+* **inline** elementlər, misal:
 
-    * links `<a>`
-    * emphasised words `<em>`
-    * important words `<strong>`
-    * short quotes `<q>`
-    * abbreviations `<abbr>`
+    * linklər `<a>`
+    * vurğulanan sözlər `<em>`
+    * mühim sözlər `<strong>`
+    * qısa statlar `<q>`
+    * qısaltmalar `<abbr>`
 
-**Block** elements are meant to **structure** the main parts of your page, by dividing your content in _coherent_ blocks.
+**Block** elementlər səhifənizin əsas hissələrini **təşkil** etmək üçündür, bununla kontentinizi _müntəzəm_ bloklara bölürsünüz.
 
-**Inline** elements are meant to differentiate _part_ of a text, to give it a particular function or meaning. Inline elements usually comprise a single or few words.
-
+**Inline** elementlər yazıların _hissələrini_ fərqləndirmək üçündür, bununla yazılara məxsusi məna yükləyə bilirsiniz. Inline elementlər əsasən tək vəya bir neçə sözdən ibarət olur.
 
 {% highlight html %}
-<p>Have you seen this <a href="https://www.youtube.com">amazing video</a> on YouTube?</p>
+<p>Youtube-daki bu <a href="https://www.youtube.com">marağlı videonu</a> görmüsən?</p>
 {% endhighlight %}
 
-### Opening and closing tags
+### Açılış və bağlanış taqları
 
-**All** block-level elements have an opening and closing tags.
+**Bütün** block səviyyəsində elementlərin açılış və bağlanış taqları var.
 
-As a result, self-enclosing elements are **inline** elements, simply because their syntax don't allow them to contain any other HTML element.
+Nətciə olaraq, bütün bir tərəfli elementlər **inlilne** elementlər olur, çünki bunların sintaksı daxillərində başqa bir HTML elementi saxlamağa imkan vermir.
 
 <div class="table">
   <table>
     <tr>
       <th class="empty"></th>
-      <th>Have opening and closing tags</th>
-      <th>Self-enclosing</th>
+      <th>Açılış və bağlanış taqı var</th>
+      <th>Bir-tərəflidir</th>
     </tr>
     <tr>
-      <th>Block elements</th>
+      <th>Block elementlər</th>
       <td>
         <code>&lt;p&gt;</code>
         <code>&lt;/p&gt;</code>
@@ -59,11 +58,11 @@ As a result, self-enclosing elements are **inline** elements, simply because the
         <code>&lt;/ol&gt;</code>
       </td>
       <td>
-        <strong>Impossible</strong>
+        <strong>Mümkünsüzdür</strong>
       </td>
     </tr>
     <tr>
-      <th>Inline elements</th>
+      <th>Inline elementlər</th>
       <td>
         <code>&lt;a&gt;</code>
         <code>&lt;/a&gt;</code>
@@ -85,9 +84,9 @@ As a result, self-enclosing elements are **inline** elements, simply because the
   </table>
 </div>
 
-### Other types of HTML elements
+### Başqa növ HTML elementləri
 
-There are several exceptions to the block/inline elements, but the ones you will most often encounter are:
+Block/inline elementlərə bəzi instisnalar var, bunlardan ən çox rastlaşa biləcəkləriniz bunlardır:
 
-* **list items** for the `<li>`
-* **table**, **table rows**, **table cells** for `<table>`, `<tr>` and `<td>` respectively
+* **list items** `<li>` ilə işlənir
+* **table**, **table rows**, **table cells** isə sırası ilə `<table>`, `<tr>` və `<td>` ilə işlənir
