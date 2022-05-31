@@ -5,109 +5,105 @@ subtitle: "It's a big family <strong>tree</strong>"
 section: html
 ---
 
-An HTML document is like a big **family tree**, with parents, siblings, children, ancestors, and descendants.
+Hər hansi bir HTML sənədi böyük bir **ailə ağacıdır**, valideyinləri, qardaşları, uşaqları, əcdadları, və nəvələri ilə birlikdə.
 
-It comes from the ability to **nest** HTML elements within one another.
+Bu bir birlərinin içərisində **yerləşmə** qabiliyyətindən irəli gəlir
 
-### Nesting
+### Yuvalama
 
-Let's write a simple paragraph and enhance it by _differentiating_ parts of the text, by inserting two **inline** elements:
+Gəlin sadə bir paraqraf yazaq və mətnin hissələrini _fərqləndirmək_ yolu ilə onu gücləndirək, iki ədəd maraqlı **inline** elementlər:
 
-{% highlight html %}
+{% HTML-i vurğulamaq %}
 <p>
-  Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi:<q>"That lad must have been born offside."</q>.
+  Cənab <strong>Alex Ferguson</strong> bir dəfəsində Flippo İnzaqi haqqında demişdi:<q>"Bu oğlan ofsaydda doğulmalı idi."</q>.
 </p>
-{% endhighlight %}
+{% vurğunun sonu %}
 
-<div class="result"><p>Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi: <q>"That lad must have been born offside."</q>.</p></div>
+<div class="result"><p>Cənab <strong>Alex Ferguson</strong>  bir dəfəsində Flippo İnzaqi haqqında demişdi: <q>"Bu oğlan ofsaydda doğulmalı idi."</q>.</p></div>
 
-In this setup:
+Bu qurmada:
 
-* the `<strong>` element gives the words "Alex Ferguson" more importance
-* the `<q>` marks his quote about Inzaghi
+* `<strong>` elementi "Alex Ferguson" sozlərini daha vurğulu şekildə göstərir
+* `<q>` İnzaqi haqqında statını qeyd edir
 
-The fact that `<strong>` is displayed in **bold** is **only the browser's default behavior**. Remember that you have to choose HTML elements according to their _meaning_, not how they look like.
+Fakt odur ki, `<strong>` **qalın** şekilde ekrana çıxarması **sadəcə brauzerin default davranişidir**. HTML elementlərini onların mənalarına gorə seçməli olduğumuzu xatirlayaq, onların necə göründüklərinə görə deyil.
 
-In this case:
+Bu halda:
 
-* `<p>` is the **parent** element of `<strong>` and `<q>`
-* `<strong>` and `<q>` are **child** elements of `<p>`
-* `<strong>` and `<q>` are **sibling** elements
+*  `<strong>` və `<q>` elementləri `<p>` elementinin alt elementləridir
 
-### Order
+### Sifariş
+_açılan_ və _bağlanan_ teqlər arasinda yerləşdirilmiş elementlər məkanından asılı olaraq necə işləyirlər
 
-How **nesting** works depends on the location of _opening_ and _closing_ tags.
-
-Because an HTML element comprises an opening tag, a closing tag, and _everything in between_, a _child_ element must be closed **before** closing the _parent_ element.
+Çünki HTML elementləri teqlərin acilmasini ehtiva edir, bağlaniş teqi, və _arasındakı hər şey_, _alt elementdir_ Element mütləq bağlanmalıdır **öncə** _üst element_ baglanır.
 
 
-{% highlight html %}
+{% HTML-i vurğulamaq %}
 <!-- This is INVALID code! :-( -->
 <p>
-  This HTML code won't work because I the "strong" tag is opened here <strong>but is only closed after the paragraph.
+  Bu HTML teqi işləməyəcək çünki "strong" teqi burada açıqdır <strong> ancaq sadəcə paraqrafdan sonra bağlanmışdır.
 </p></strong>
-{% endhighlight %}
+{% vurğunun sonu %}
 
-Because the `<strong>` was opened _after_ the `<p>` (and is thus considered a **child** of `<p>`), the `<strong>` element must be closed **before** its parent `<p>`. 
+çünki `<strong>`, `<p>`dən _sonra_ açılmlşdır (və beləliklə `<p>`-in **alt elementi** hesab olunur), `<strong>` elementi onun üst elementi `<p>` -dən **öncə** bağlanmalıdır. 
 
-{% highlight html %}
+{% HTML-i vurğulamaq %}
 <!-- This is valid code. :-) -->
 <p>
-  This HTML code will work because I the "strong" tag is opened <strong>and closed</strong> properly.
+  Bu HTML kodu işləyəcəkdir, çünki "strong" teqi açildi <strong>və bağlandı</strong> düzgün.
 </p>
-{% endhighlight %}
+{% vurğunun sonu %}
 
-### Depth
+### Dərinlik
 
-Because child elements can themselves contain _other_ child elements, it's possible to write a **deeper hierarchy** within an HTML document.
+Alt elementlər özləri başqa alt elementləri ehtiva edə bilər, HTML faylı daxilində **dərin hiyerarxiya** yazmaq mümkündür.
 
-Our above paragraph could be part of a blog **article**:
+Bizim yuxarıdakı paraqrafımız blog **məqaləsinin** bir hissəsi ola bilər:
 
-{% highlight html %}
+{% HTML-i vurğulamaq %}
 <article>
-  <h1>Famous football quotes</h1>
+  <h1>Məşhur futbol sitatları</h1>
   <p>
-    Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi:<q>"That lad must have been born offside"</q>.
+    Cənab <strong>Alex Ferguson</strong> bir dəfəsində Flippo İnzaqi haqqında demişdi:<q>"Bu oğlan ofsaydda doğulmalı idi."</q>.
   </p>
   <p>
-    When criticized by John Carew, <strong>Zlatan Ibrahimovic</strong> replied: <q>"What Carew does with a football, I can do with an orange"</q>.
+    John Carrew tərəfindən tənqid edildikdə, <strong>Zlatan Ibrahimovic</strong> cavabladı: <q>"Carew futbol ilə nə edir, Mən bunu sadəcə bir portağal ilə edə bilərəm"</q>.
   </p>
   <p>
-    <strong>George Best</strong> said <q>"I spent a lot of money on booze, birds and fast cars. The rest I just squandered."</q> when asked about his lifestyle.
+    <strong>George Best</strong> dedi <q>"Mən içkiyə çox pul xərcləyirəm, quşlara və sürətli maşınlara. Mən İstirahətimi sadəcə israf etdim."</q> nə zaman ki, onun         həyat tərzi ilə əlaqəli soruşduqda.
   </p>
 </article>
-{% endhighlight %}
+{% vurğunun sonu %}
 
 <div class="result">
   <article>
-    <h1>Famous football quotes</h1>
+    <h1>Məşhur futbol sitatları</h1>
     <p>
-      Sir <strong>Alex Ferguson</strong> once said about Filipo Inzaghi:<q>"That lad must have been born offside"</q>.
+      Cənab <strong>Alex Ferguson</strong> bir dəfəsində Flippo İnzaqi haqqında demişdi:<q>"Bu oğlan ofsaydda doğulmalı idi."</q>.
     </p>
     <p>
-      When criticized by John Carew, <strong>Zlatan Ibrahimovic</strong> replied: <q>"What Carew does with a football, I can do with an orange"</q>.
+      John Carrew tərəfindən tənqid edildikdə, <strong>Zlatan Ibrahimovic</strong> cavabladı: <q>"Carew futbol ilə nə edir, Mən bunu sadəcə bir portağal ilə edə             bilərəm"
     </p>
     <p>
-      <strong>George Best</strong> replied <q>"I spent a lot of money on booze, birds and fast cars. The rest I just squandered"</q> when asked about his lifestyle.
+      <strong>George Best</strong> dedi <q>"Mən içkiyə çox pul xərcləyirəm, quşlara və sürətli maşınlara. Mən İstirahətimi sadəcə israf etdim."</q> nə zaman ki, onun         həyat tərzi ilə əlaqəli soruşduqda.
     </p>
   </article>
 </div>
 
-In this setup:
+Bu qurmada:
 
-* `<article>` is the **ancestor** of _every_ other element
-* `<article>` is the **parent** of the `<h1>` and the 3 `<p>`
-* `<h1>` and the 3 `<p>` are **siblings**
-* each `<p>` is the **parent** of the `<strong>` and `<q>` they contain
-* every `<h1>`, `<p>`, `<strong>` and `<q>` are all **descendants** of `<article>`
+* `<article>` digər _bütün_ elementlərin **əcdadıdır**.
+* `<article>` elementi `<h1>` və  3 `<p>` elementlərinin **valideyini** hesab olunur
+* `<h1>` və 3 `<p>` elementləri **qardasdirlar
+* Hər bir `<p>` elementi `<strong>` elementinin **valideyini** hesab edilir və onlar `<q>` elementini ehtiva edirlər.
+* Hər bir `<h1>`, `<p>`, `<strong>` və`<q>` elementləri hamısı `<article>` elementinin **nəvələridir**.
 
-The family tree analogy still applies when **traversing** several layers of HTML nesting:
-
-* a **descendant** of element X is any element _contained_ within X
-* a **child** is just a _direct_ descendant
-* an **ancestor** of element Y is any element that _contains_ Y
-* the **parent** is just the first _direct_ ancestor
-* a **sibling** of element X is any element which has the _same_ parent
+Ailə ağacı bənzətməsi hələ də HTML yuvasının bir neçə qatını **keçərkən** tətbiq edilir:
+* X elementini nəsli X-in daxilində ehtiva olunan her hansı bir elementdir
+* **övlad**: elemendin birbaşa nəvəsidir
+* Y elementinin əcdadı Y elementini daxilinə alan hər hansi bir elementdir
+* **valideyin** sadəcə birinci birbasa əcdaddir
+* X elementinin **qardaşı** X ilə eyni alideyinlərə sahib olan hər hansı bir elementdir
 
 ### Block and inline nesting
 
