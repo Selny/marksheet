@@ -5,98 +5,89 @@ subtitle: "HTML is about <strong>meaning</strong>"
 section: html
 ---
 
-The purpose of HTML tags is to deliver **meaning** to a document. Don't be concerned about how your webpage looks like. Focus on the significance of each tag you'll use.
+HTML teqlərinin məqsədi sənədə **mənanı** çatdırmaqdır. Veb səhifənizin necə göründüyündən narahat olmayın. İstifadə edəcəyiniz hər bir etiketin özünəməxsus funksiyası vardır.
 
-Depending on the content you're writing, you can choose the appropriate element that matches the meaning of your text.
+Yazdığınız məzmundan asılı olaraq, mətninizin mənasına uyğun gələn elementi seçə bilərsiniz.
 
-This **range** of elements is wide enough to both accomodate for **general** purpose matter (like paragraphs or lists), and more **specific** content like `<output>` (to display the result of a calculation) or `<progress>` (to display the progress of a task).
+### Struktur elementləri: Səhifənizi təşkil edir
 
-### Structure elements: organizing your page
+Struktur elementləri səhifənizin **əsas hissələrini** təşkil etməyə imkan verir. Onlar adətən başqa HTML elementlərinin tipində olurlar.
 
-Structure elements allow you to organize the **main parts** of your page. They usually contain other HTML elements.
+Sadə bir Web səhifə qurarkən aşağıdakı teqlərdən istifadə edirik.
 
-Here's what a typical webpage could include:
+* `<header>` səhifənin **ilk** elementidir. Loqo və slogan kimi componentlər daxil ola bilər.
+* `<nav>` websaytın müxtəlif səhifələrinə gedən **linklər** burada yerləşdirilir.
+* `<h1>` səhifənin başlığı bu tag-da yazılır.
+* `<article>` adətən səhifənin əsas məzmunu yazılır.
+* `<footer>` səhifənin **son** elementi kimi, aşağıda yerləşir.
 
-* `<header>` as the **first** element of the page, that can include the logo and the tagline.
-* `<nav>` as a list of **links** that go to the different pages of the website.
-* `<h1>` as the title of the page.
-* `<article>` as the main content of the page, like a blog post.
-* `<footer>` as the **last** element of the page, located at the bottom.
+### Text elements: Məzmunun müəyyən edilməsi
 
-### Text elements: defining your content
+Bu struktur elementlərinin içərisində siz adətən məzmununuzun **məqsədini** müəyyən etmək üçün nəzərdə tutulmuş **mətn** elementlərini tapırsınız.
 
-Inside these structure elements, you usually find **text** elements meant to define the **purpose** of your content.
+Əsasən istifadə edəcəksiniz:
 
-You'll mainly use:
+* `<p>` Paraqraf yazmaq üçün
+* `<ul>` yazının altından xətt çəkmək üçün
+* `<ol>` nömrələnmiş siyahı
+* `<li>` həmin siyahıdakı yazılar
 
-* `<p>` for paragraphs
-* `<ul>` for (unordered) lists
-* `<ol>` for (ordered) lists
-* `<li>` for individual list items
-* `<blockquote>` for quotes
+### Inline elements(Daxili elementlər): Mətninizi fərqləndirmək
 
-### Inline elements: distinguishing your text
+Mətn elementləri uzun olsa da, müxtəlif məzmunlu ola bildiyi üçün **daxili** elementlər mətninizin hissələrini **fərqləndirməyə** imkan verir.
 
-Because text elements can be long but with varied content, **inline** elements allow to **distinguish** parts of your text.
-
-There are a lot of inline elements available, but you'll usually come across the following:
+Çoxlu inline-elements mövcuddur, lakin siz adətən aşağıdakılarla rastlaşacaqsınız:
 
 <ul>
-  <li><code>&lt;strong&gt;</code> for <strong>important</strong> words</li>
-  <li><code>&lt;em&gt;</code> for <em>emphasized</em> words</li>
-  <li><code>&lt;a&gt;</code> for <a href="#">links</a></li>
-  <li><code>&lt;small&gt;</code> for <small>less important</small> words</li>
-  <li><code>&lt;abbr&gt;</code> for abbreviations like W3C</li>
+  <li><code>&lt;strong&gt;</code><strong> Önəmli</strong> yazılar üçündür</li>
+  <li><code>&lt;em&gt;</code> Yaıları <em>vurğulamaq</em> üçün</li>
+  <li><code>&lt;a&gt;</code>  <a href="#">youtube.com</a> link qoymaq üçün</li>
+  <li><code>&lt;small&gt;</code> Çox da<small> önəmli olmayan</small> yazılar üçündür</li>
 </ul>
 
 <aside class="comments">
-  Just by reading this HTML code, you can easily understand what each <strong>HTML element</strong> means.
+ Sadəcə bu HTML kodunu oxumaqla siz hər bir <strong>HTML elementinin</strong> nə demək olduğunu asanlıqla başa düşə bilərsiniz.
 </aside>
 
-{% highlight html %}
 <article>
-  <h1>Main title of the page</h1>
-  <h2>A subtitle</h2>
+  <h1>Səhifənin əsas başlığı</h1>
+  <h2>Altyazı</h2>
   <p>
-    Something something an other stuff and some <em>emphasis</em> and even <strong>important</strong> words.
+    Digər başqa yazılar və bəzi <em>vurğulu</em> və hətta <strong>vacib</strong> sözlər.
   </p>
   <p>
-    Another paragraph.
+    Digər paraqraf.
   </p>
   <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
+    <li>Bir</li>
+    <li>İki</li>
+    <li>Üç</li>
   </ul>
   <blockquote>
-    Once said
+  Bir dəfə dedi
   </blockquote>
 </article>
 <aside>
-  <h3>My latest posts</h3>
+  <h3>Axrıncı yazı ola bilər</h3>
   <ul>
-    <li><a href="#">One</a></li>
-    <li><a href="#">One</a></li>
-    <li><a href="#">One</a></li>
+    <li><a href="#">Bir</a></li>
+    <li><a href="#">Bir</a></li>
+    <li><a href="#">Bir</a></li>
   </ul>
 </aside>
 {% endhighlight %}
 
 
-### Generic elements
+### Ümumi elementlər
+Göründüyü kimi, heç bir _semantic_ elementi məzmununuz üçün uyğun görünmürsə, lakin siz hələ də HTML elementi daxil etmək istəyirsinizsə, siz iki **ümumi** elementdən birini seçməlisiniz:
 
-When apparently no _semantic_ element seems suited for your content but you still want to insert an HTML element (either for grouping or styling purposes), you can settle for one of the two **generic** elements:
+* `<div>` blok seviyyəsi elementi
+* `<span>` sətir səviyyəsi elementi
 
-* `<div>` for block-level elements
-* `<span>` for inline elements
+Bu HTML elementləri əslində heç nəyi ifadə etməsə də, biz CSS-dən istifadə etməyə başladığımız zaman onlar çox faydalı olacaq!
+### Semantika haqqında çox düşünməyin :)
 
-Although these HTML elements don't actually _mean_ anything, they will come in handy when we'll start using CSS.
-
-### Don't overthink semantics
-
-There are about [100 semantic HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to choose from. That's a _lot_. It can be overwhelming to go through that list and choose the _appropriate_ element for your content.
-
-But don't spend too much time worrying about that. If you stick to the following list for now, you'll be well enough:
+Ancaq bunun üçün narahat olmayın. Hələlik aşağıdakı siyahını bilsəniz başlanğıc üçün bəs edəcəkdir:
 
 <div class="table">
   <table>
@@ -135,4 +126,3 @@ But don't spend too much time worrying about that. If you stick to the following
   </table>
 </div>
 
-*[W3C]: World Wide Web Consortium
