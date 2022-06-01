@@ -5,25 +5,25 @@ subtitle: "Sharing common properties"
 section: sass
 ---
 
-### The common properties case
+### Ümumi xassələri
 
-Sometimes you find yourself writing the **same set of properties** across different CSS rules.
+Bəzən fərqli CSS qaydaları üzrə **eyni xassələr coxlugunu** yazırsınız.
 
-For example, let's say your design makes use of **small spaced uppercase letters** throughout the page: buttons, navigation bar, sidebar headings, tabs...
+  Məsələn, tutaq ki, dizaynınız səhifə boyu **kiçik aralı böyük hərflərdən** istifadə edir: buttons, naviqasiya barı, yan panel başlıqları, tablar...
 
-Something like this:
+Buna bənzər:
 
 <div class="result">
-  <p style="color: lightslategrey; font-size: 10px; letter-spacing: 0.1em; line-height: 12px; text-transform: uppercase;">Small spaced uppercase letters</p>
+  <p style="color: lightslategrey; font-size: 10px; letter-spacing: 0.1em; line-height: 12px; text-transform: uppercase;">Kiçik məzafəli böyük hərflər</p>
 </div>
 
-How would that look like in your CSS? You could:
+Yazdiğiniz CSS nece görünəcək? You could:
 
 * use a common CSS **class** like `.small-uppercase`
-* **combine** the selectors
-* use a Sass **extend**
+* operatorları**birləşdirin**
+* Sass **uzatmasinadan** istifadə edin
 
-#### Common CSS Class
+#### Ümumi CSS Sinfi
 
 {% highlight css %}
 .small-uppercase{
@@ -35,11 +35,10 @@ How would that look like in your CSS? You could:
 }
 {% endhighlight %}
 
-Having a `.small-uppercase` CSS rule is **semantically incorrect** because you'd end up writing your HTML as `<p class="small-uppercase">` which reverts to basically writing styles _within_ your HTML.
+`.small-uppercase`-in olması CSS qaydalarına görə **semantik olaraq səhvdir** çünki HTML-ni `<p class="small-uppercase">` kimi yazırsınız və bu, əsasən HTML daxilində _yazma_ üslublarına uyğun gəlmir.
 
-#### Combine the selectors
-
-Because a CSS rule can accept any number of _selectors_, you could combine the shared properties under a **list** of selectors:
+#### Seçiciləri Birləşdirin
+Çünki CSS qaydaları _seçicilərin_ nömrələrini qəbul edirs, paylaşılan bütün xassələri seçicilərin **siyahısı** altında birləşdirə bilərsiniz:
 
 {% highlight css %}
 .button,
@@ -54,18 +53,18 @@ Because a CSS rule can accept any number of _selectors_, you could combine the s
 }
 {% endhighlight %}
 
-This approach remains **semantically valid** because each selector describes the HTML element they're attached to.
+Bu yaxınlaşma **semantik olaraq doğrudur** çünki hər bir seçici HTML elementini təsvir edir və bağlıdırlar.
 
-However, there are 2 problems:
+Lakin, iki problem var:
 
-* this CSS rule can become unmanagable as soon as the list of selectors becomes longer
-* because each selector has _specific_ rules of their own, you're separating your set of properties in **two** (the `.button` can have additional rules further down the CSS)
+* seçicilərin siyahısı böyüdükcə bu CSS qaydası idarəolunmaz hala gələ bilər
+* çünki hər bir seçicinin özünəməxsus qaydaları var, siz xassələr coxlugunu **iki** hisseye ayirirdiniz (`.button` CSS-in daha aşağı hissələrində əlavə qaydalara malik ola bilər)
 
-Sass helps solving these problems.
+Sass bu problemləri həll etməyə bizə komək edir.
 
-### Sass @extend syntax
+### Sass @uzanti sintaksis
 
-A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector**:
+Sass `@uzantısı` CSS xassələrini _başqa_ **selektor**-dan **miras almağa** imkan verir:
 
 {% highlight scss %}
 // scss
@@ -102,22 +101,22 @@ A Sass `@extend` allows to **inherit** CSS properties from _another_ **selector*
 }
 {% endhighlight %}
 
-The `@extend` will **regroup** common properties under a **list** of selectors.
+`@uzantı`ümumi xassələri **list** seçicisi atinda yenidən quruplaşdıracaq.
 
-The list is easily **maintainable** because you only add selectors one by one, and directly in the related selector.
+Bu siyaı çox asanlıqla **saxlanıla biləndir** çünki seçiciləri sadəcə bir bir əlavə edirsiniz, və birbaşa əlaqəli seçicinin içərisinə.
 
-Your HTML remains **semantic** because each element keeps its descriptive class name.
+HTML-niz **semantik** qalır çünki her element özünün təsviri sinif adını saxlayır.
 
-### Difference with mixins
+### Qarşılıqlı fərqlər
 
-Well, you might be thinking _"Wait, isn't it just like mixins then?"_?
+_"Gözləyin, o zaman miksinlər kimi deyilmi?"_ deyə düşünürsünüz?
 
-There are 2 differences:
+Aralarında 2 fərq var:
 
-* The `@extend` rule **doesn't** have parameters. Mixins do.
-* The `@extend` rule **does** combine selectors. Mixins don't.
+* `@uzanti` qaydasının parametrləri yoxdur. Miksinlərin isə var.
+* `@uzantı` qaydası seçiciləri birləşdirir. Miksinlər isə xeyir.
 
-Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.small-uppercase` rule:
+Gəlin [overlay mixin](/sass-mixins.html#syntax) -zi yenidən istifadə edək, və həmçinin `.small-uppercase` qaydasını yazaq:
 
 {% highlight scss %}
 // scss
@@ -168,17 +167,18 @@ Let's reuse our [overlay mixin](/sass-mixins.html#syntax), and also write a `.sm
 }
 {% endhighlight %}
 
-The list of properties is simply **repeated** as many times as the `@include small-uppercase()` is called.
+Xassələr siyahısı çağırılan `@include small-uppercase()` kimi sadəcə bir neçə dəfə **təkrarlanır**.
 
-A Sass `@extend` is more **efficient**, as it only writes the common properties **once**.
+Bu səbəbdən Sass `@uzantısı` cox **səmərəlidir**, 
+A Sass `@extend` is more **efficient**, çünki yalnız ümumi xassələri **bir dəfə** yazır.
 
-### Placeholders
+### Placeholders(Yer Tutucular)
 
-Well, you might be thinking _"The `.small-uppercase` isn't semantic! I could use it in my HTML!"_?
+Siz düşünə bilərsiniz ki, _".kiçik-böyük hərf' semantik deyil! Mən onu HTML-də istifadə edə bilərdim!"_?
 
-You're right, and that's why **placeholders** exist in Sass.
+Bəli haqlısınız, və bu səbəbdən Sass-da **placeholders(Yer Tutucular)** mövcuddur.
 
-If you don't want or need the `.small-uppercase` selector, transform it into a **Sass placeholder** by replacing the dot with a **percentage sign** `%`:
+Əgər istəmirsinizsə və ya `.small-uppercase` seçicisinə ehtiyacınız varsa, onu **Sass placeholder**-ə **percentage sign** `%`-dən istifadə etmədən çevirə bilərsiniz:
 
 {% highlight scss %}
 // scss
@@ -214,9 +214,10 @@ If you don't want or need the `.small-uppercase` selector, transform it into a *
 }
 {% endhighlight %}
 
-Note that the generated CSS **doesn't include the `.small-uppercase` selector anymore**. That's because the `%small-uppercase` rule is only here to provide a **location** for common properties.
+Qeyd edək ki, yaradılmış CSS `.small-uppercase` **seçicisini artıq q
+bul eləmir**. Çünki `%small-uppercase` qaydası ancaq ümumi xassələrin yerini təmin etmək üçün var.
 
-### Difference between extend, placeholders and mixins
+### Uzatma, yer tutucular və qarışıqlar arasındakı fərq
 
 <div class="table">
   <table>
@@ -255,4 +256,4 @@ Note that the generated CSS **doesn't include the `.small-uppercase` selector an
   </table>
 </div>
 
-When in doubt, use **mixins**. They generate more CSS lines and are less elegant than extend/placeholders, but they are straightforward.
+Şübhə olduqda, **mixins** istifadə edin. Onlar çoxlu CSS sətirlərini yaradır və uzatma/yer tutuculardan daha az zərifdir, lakin onlar düzdür.
