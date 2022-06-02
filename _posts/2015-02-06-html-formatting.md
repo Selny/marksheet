@@ -5,21 +5,21 @@ subtitle: "When <strong>whitespace</strong> doesn't matter"
 section: html
 ---
 
-There is a difference between what is **written** in your HTML code, and what is **displayed** in the browser.
+HTML-də **yazılmış** kodlar, və ekrana çıxan nəticələr arasıda fərqlər var.
 
-As we've already seen, HTML **tags** like `<p>` are only _read_ by the browser (to know what _kind_ of content is written), but are **not displayed** by the browser.
+Gördüyümüz kimi, HTML **teqləri** `<p>` kimi məsələn sadəcə brauzer tətəfindən _oxunur_ (hansı _növ_ məzmunun yazıldığını bilmək üçün), ancaq brauzer tərəfindən**ekrana çıxarılmır**.
 
-We've also seen how it's possible to write HTML **comments** in your code, to help the human reading the code, without having these comments being displayed by the browser.
+Həmçinin biz HTML də **komment sərilərinin** necə yazıdığınıda görmüşük, insanların kodu oxumasına kömək etmək məqsədilə, Bu lommentlər olmadan da brauzer kodları ekrna çıxardır.
 
-Another kind of written code _ignored_ by the browser is **whitespace**, which includes:
+Brauzer tərəfindən **nəzərə alınmayan** basqa növ kodlarda bosluqlardır, hansı ki, bunlara daxildir:
 
-* line-breaks
-* empty lines
-* tabulations (or indentation)
+* sətir-qırılmaları
+* boş sətirlər
+  * cədvəllər (və ya abzaslar)
 
-### Line-breaks
+### Sətir qırılmaları
 
-Line-breaks and empty lines (which are a succession of line-breaks) in HTML code are **ignored** by the browser. They only account for a **single** space.
+Sətir qırılmalar və boş sətirlə (hansı ki, sətir-qırılmalarının ardıcıllığıdı) HTML-də brauzer tərəfindən nəzərə alınmır. Onlar **sadəcə**  bosluqlar kimi hesab olunur.
 
 {% highlight html %}
 <blockquote>
@@ -39,7 +39,7 @@ where you can communicate through sharing information.
   </blockquote>
 </div>
 
-In order to actually **force** a line-break, you need to use the `<br>` HTML element:
+Sətri qırılmağa məcbur etmlək üçün, `<br>` HTML elementindən istifadə eməyə ehtiyaciniz var:
 
 {% highlight html %}
 <p>At its best, life is completely<br>unpredictable.</p>
@@ -49,11 +49,11 @@ In order to actually **force** a line-break, you need to use the `<br>` HTML ele
   <p>At its best, life is completely<br>unpredictable.</p>
 </div>
 
-### Tabulations
+### Cədvələşdirmə
 
-A **tabulation** is a special character obtained by pressing the _"Tab"_ key. It usually moves the cursor to the next tab stop, but sometimes is converted to 2 spaces.
+**Cədvəlləşdirmə** _Tab_ düyməsini basmaqla əldə edilmiş xüsusi xarakterdir. Adətən kursoru növbəti taba hərəkət etdirir, ancaq bəzən iki bosluğa çevirilir.
 
-Anyway, like a regular space, a tabulation is **invisible**. It's also ignored by the browser:
+Hər halda, Adi bosluq kimi, Cədvəlləşdirmə **Görünməzdir**. Həmçinin brauzer tərəfindən nəzərə alınmır:
 
 {% highlight html %}
 <p>
@@ -69,34 +69,33 @@ Anyway, like a regular space, a tabulation is **invisible**. It's also ignored b
   </p>
 </div>
 
-If you want to add space _before_ a word, you'll have to use CSS, which we'll cover in the next chapter.
+Sözlərdən əvvəl **boşluq** əlavə etmək istəsəniz bunun üçün CSS istifadə etməlisiniz, bu barədə növbəti fəsildə bu barədə bəhs edəcəyik.
 
-If you want to **close** an HTML element, you first have to close all its _children_ elements.
+HTML elementlərini  **bağlama istəsəniz**, ilk öncə onun alt lement lərini bir bir bağlamalısınız.
 {: .info}
 
-### Tree format
+### Ağac formatı
 
-As HTML elements can be nested within each other, you have to keep track of the **order** in which they have been opened, as it will affect the order in which they are closed.
+HTML elementləri bir birinin içərisinə yerləşdirilə bilər, onların açıldığı **sifarişi** izləməlisiniz, çünki onların bağlanma sırasına təsir edəcək.
 
 {% highlight html %}
-<article><p>This code is written on a <strong>single</strong> line.</p></article>
+<article><p>Bu kod <strong>sadə/bir</strong> sətirdə yazılmışdır.</p></article>
 {% endhighlight %}
 
 <div class="result">
-  <article><p>This code is written on a <strong>single</strong> line.</p></article>
+  <article><p>Bu kod <strong>sadə/bir</strong> sətirdə yazılmışdır.</p></article>
 </div>
 
-As it can be hard to keep track of the order in which HTML elements have been opened, it is recommended to write HTML in a **tree format**:
+HTML elementkərini açılma ardıcıllığını izləmək çətin görünə bilər, bu səbəbdən HTML kodlarını **ağac formatında** yazmaq məsləhətlidir:
 
 {% highlight html %}
 <article>
   <p>
-    This code is written on
-    <strong>multiple</strong>
-    lines but will nevertheless
-    be displayed on a
-    <em>single</em>
-    one.
+    Bu HTML kodu
+    <strong>çoxlu</strong>
+    sətirdə yazılmışdır ancaq buna baxmayaraq
+    <em>tək</em>
+    tək sətirdə ekrana çıxacaqdır
   </p>
 </article>
 {% endhighlight %}
@@ -104,30 +103,29 @@ As it can be hard to keep track of the order in which HTML elements have been op
 <div class="result">
   <article>
     <p>
-      This code is written on
-      <strong>multiple</strong>
-      lines but will nevertheless
-      be displayed on a
-      <em>single</em>
-      one.
+      Bu HTML kodu
+      <strong>çoxlu</strong>
+      sətirdə yazılmışdır ancaq buna baxmayaraq
+      <em>tək</em>
+      tək sətirdə ekrana çıxacaqdır
     </p>
   </article>
 </div>
 
-The tree format allows to _visually_ replicate the **nesting levels** of your HTML code. It's thus easy to see that:
+Ağac formatı HTML kodunuzun **yuva səviyyələrini** _vizual_ olaraq təkrarlamağa imkan verir. Beləliklə kodu görmək rahratlaşır:
 
-* `<article>` is the **ancestor**
-* `<p>` is the **parent** of `<strong>` and `<em>`
-* `<strong>` and `<em>` are **siblings**
+* `<article>` **əcdaddır**
+* `<p>` elementi `<strong>` və `<em>` elementlərinin **valideyinidir**
+* `<strong>` və `<em>` elementləri **qardaşlardır**
 
-### Write HTML for you to read
+### Özünüz oxumaq ücün HTML kodu yazın
 
-Tabulations, empty lines, successive spaces, and line-breaks, are dismissed by the computer, and are all converted into a **single space**.
+Cədvəlləşdirmə, boş sətirlər, ardıcıl boşluqlar, və sətir-qırılmaları, komputer tərəfindən rədd edilir ixtisar olunur, və hamsı **tək** halına çevrilir.
 
-An HTML document is both written and read by a human, but only _read_ by a computer. Considering tabulations, spaces and line-breaks don't affect the way a browser will read and subsequently _display_ your webpage, you may as well format your document in the most readable way for **you**.
+HTML sənədi insan tərəfindən həm oxunur həmdə yazılır, ancaq lomputer sadəcə _oxuyur_. Cədvəlləşdirməni nəzərə alaq, boşluq və sətir-qırılmaları komputerinizin oxumasına və sonra sizin web səhifənizi ekrana çıxarmasına mane olmur, öz sənədini sizin üçün daha oxunaqlı şəkildə format edə bilərsiniz.
 
-There aren't specific rules concerning HTML formatting, but there are implicit **conventions**, specifically:
+HTML formatlama ilə bağlı xüsusi bir qayda yoxdur lakin gizli **konvensiyalar** var, xüsusən:
 
-* use **tabulations** to help visualize how HTML elements are **nested**
-* put opening and closing tags of block-level elements on their **own line**
-* write inline elements on one line (including opening and closing tags)
+* **Cədvəlləşdirmə** istifadə etmək sizə **iç-içə** necə yerləsdiyini görməyə kömək edəcək.
+* Blok elementlərini açılış və qapanış teqlərini onların **öz sətirlərində** yerləşdirin.
+* İnline elementlərini bir sətirdə yazın (açılış və qapanış teqləri daxil olmaqla)
