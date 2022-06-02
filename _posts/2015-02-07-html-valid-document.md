@@ -5,36 +5,36 @@ subtitle: "Some boilerplate"
 section: html
 ---
 
-Up until now, we've been looking at _isolated_ snippets of HTML code. But an **HTML document** (or webpage, it means the same thing) requires a specific structure in order to be **valid**.
+İndiyə qədər, _təcrid olunmuş_ HTML kod fraqmetlərinə baxdıq. Ancaq HTML sənədi (vəya web səhifə, eyni mənaya gəlirlər) **etibarlı** olmaq üçün xüsusi quruluş tələb edir.
 
-Why do we care about _validating_ an HTML document?
+HTML sənədini **təsdiqə** nə üçün ehtiyacımız var?
 
-* **correct**: a valid document is _correctly displayed_ by the browser
-* **debugging**: invalid HTML code can trigger bugs hard to target
-* **maintenance**: a valid document is easier to _update_ later, even by someone else
+* **düzgün**: etivarlı sənə brauzer tərəfindən _dügün ekrana çıxarılır_
+* **sazlama**: etibarsız HTML kodları hədəflənməsi çətin səhvlərə yol aça bilər
+* **texniki qulluq**:etibarlı sənədi daha sonra _yeniləmək_ rahat olur, həmçinin başqaları tərəfindən
 
-### Doctype
+### Sənəd növü
 
-The first information to provide is the _type_ of HTML document we're writing: the **Doctype**.
+İlk təmin olunacaq məlumat HTML sənədini növünü yazırıq: **Sənəd növü**.
 
-Think of the doctype as the version of a car throughout the years: a Ford Fiesta bought in 1986 was a Fiesta 2. If you buy one today, it's a Fiesta 7.
+Doctipi illərdir gələn avtomobil versiyası kimi düşünə bilərsiniz: 1984-da alınan Ford Fiesta Fiesta 2 idi. bu gün bir eded alsanız, bu Fiesta 7 olacaq.
 
-There used to be multiple versions of HTML coexisting (XHTML and HTML 4.01 have been competing standards). Nowadays, **HTML 5** is the norm.
+Əvvəllər HTML-nin bir neçə versiyası var idi (XHTML və HTML 4.01 standartlarla rəqabət aparırdılar). Bu günlərdə, **HTML 5** normadır.
 
-To tell the browser that the HTML document is an HTML 5, just start your document with the following line:
+Brauzerə HTML sənədinin HTML 5 olduğunu demək üçün, sadəcə sənədinizi göstərildiyi şəkildə yazmağa başlayın:
 
 {% highlight html %}
 <!DOCTYPE html>
 {% endhighlight %}
 
-That's it. Just set it and forget it.
+Budur. Sadəcə yazın və artıq unudun.
 
-You may wonder why this HTML 5 doctype doesn't mention the number "5". The W3C thought the previous doctype definitions were too confusing and took the opportunity to simplify it by removing any mention of the HTML version.
+Bu HTML 5 sənədinin niyə 5 reqemi ile ni qey olunamamğı sizi narahat edə bilər. W3C əvvəlki doktip təriflərinin çox qarışıq olduğunu düşündü və HTML versiyası haqqında hər hansı qeydi silməklə onu sadələşdirmək fürsətindən istifadə etdi.
 {: .info}
 
-### The <html> element
+### <html> elementi
 
-Apart from the doctype line, **all** your HTML document must be wrapped inside an `<html>` element:
+doctype sətrində ayrı olaraq, **bütün** HTML sənədləri `<html>` elementi ilə əhatə olunmalıdır
 
 {% highlight html %}
 <!DOCTYPE html>
@@ -43,21 +43,21 @@ Apart from the doctype line, **all** your HTML document must be wrapped inside a
 </html>
 {% endhighlight %}
 
-The `<html>` is technically the **ancestor** of all HTML elements.
+`<html>` elementi texniki olaraq bütün HTML elementlərini əcdadıdır..
 
 ### <head>
 
-The same way attributes carry additional information for an HTML element, the `<head>` element carries additional information for the _whole_ webpage.
+Eyni şəkildə atributlar HTML elementi üçün əlavə məlumat daşıyır, `<head>` elementi bütöv veb səhifə üçün əlavə məlumatlar daşıyır.
 
-For example, the **title** of the page (displayed on the tab) is located in the `<head>`:
+Məsələn, veb səhifənin **başlığı** (tabda görünür) `<head>` elementini içərisində yerləşir:
 
 {% highlight html %}
 <head>
-  <title>My fabulous blog</title>
+  <title>MƏnim möhtəşəm bloqum</title>
 </head>
 {% endhighlight %}
 
-Other HTML elements can appear in the `<head>`, and _only_ in the `<head>`:
+Başqa HTML elementləridə `<head>` elementinin içərisində görünə bilər, və _ancaq_ `<head>`-də:
 
 * `<link>`
 * `<meta>`
@@ -65,11 +65,11 @@ Other HTML elements can appear in the `<head>`, and _only_ in the `<head>`:
 
 ### <body>
 
-While the `<head>` only contains metadata not meant to be displayed anywhere (apart from the `<title>`), the `<body>` element is where we write all our content. Everything _inside_ the `<body>` will be **displayed** in the browser window.
+`<head>` elementi sadəcə içərisində metadata saxlayırsa və heç bir yerdə çap olunmayacaqsa (`<title>` elementindən başqa), `<body>` elementi bizim içərisini bütün məzmunu yazacağımız elementdir. `<body>`-in _içərisindəki_ hər şey brauzerdə görünəcəkdir
 
-### A complete valid HTML document
+### Tamamilə etibarlı HTML sənədi
 
-Combining all these requirements, we can write a simple and valid HTML document:
+Bu tələblərin hər birini özündə birləşdiri, biz sadə və etibarlı bir HTML sənədi yaza bilərik:
 
 {% highlight html %}
 <!DOCTYPE html>
@@ -85,9 +85,9 @@ Combining all these requirements, we can write a simple and valid HTML document:
 </html>
 {% endhighlight %}
 
-If you view this example in your browser, you'll see that:
+Əgər bu nümunəni brauzerinizdə görürsünüzsə, ki, görəcəksiniz:
 
-* _"MarkSheet"_ is written on the browser tab
-* _"Hello World!"_ is the only text displayed in the window, because it's the only content _within_ the `<body>`
+* _"MarkSheet"_ brauzerdə tabda görünəcək
+* _"Hello World!"_ pəncərədə görünəcək tək mətn olacaq, `<body>`-in _içərisindəki_ yeganə məzmundur
 
 <p>The <abbr title="World Wide Web Consortium">W3C</abbr> provides a <a href="https://validator.w3.org/#validate_by_input">Markup Validation Service</a> to check any HTML document for errors and warnings.</p>
