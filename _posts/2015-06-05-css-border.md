@@ -5,58 +5,55 @@ subtitle: "The <strong>edges</strong> of the rectangle"
 section: css
 ---
 
-Because an HTML element is rendered as a rectangle, it can have up to **4 borders**: top, bottom, left and right. You can set a border on all sides at once, or on each side individually.
+HTML elementi düzbucaqlı kimi göstərildiyi üçün onun 4 tərəfi ola bilər: yuxarı, aşağı, sol və sağ. Siz bir anda bütün tərəflərə və ya hər tərəfə ayrı-ayrılıqda sərhəd qoya bilərsiniz.
 
-### Border types and location
+### Border types and location(Sərhəd tipləri)
 
-A CSS border has 3 properties:
 
-* `border-color` defined by using a [color unit](css-color-units.html)
-* `border-style` can be solid, dashed, dotted...
-* `border-width` defined by using a [size unit](css-size-units.html)
+CSS -də **border** 3 xüsusiyyətə malikdir:
 
-It also has 4 possible sides:
+* `border-color` çərçivənin(kənarların,sərhədlərin) rəngini təyin edir 
+* `border-style` kənarlar xətt(solid), nöqtəli(dashed), dotted və s formalarda olur
+* `border-width` kənarların qalınlığını təyin edir
 
-* `border-top`
-* `border-bottom`
-* `border-left`
-* `border-right`
+Çərçivənin da 4 tərəfi var:
+* `border-top` üst-kənar
+* `border-bottom` alt-kənar
+* `border-left` sol-kənar
+* `border-right` sağ-kənar
 
-{% highlight css %}
+```css
 blockquote{ border-color: yellow; border-style: solid; border-width: 1px;}
-{% endhighlight %}
+```
 
-The shorthand property `border` allows to define all 3 properties at once:
+**border** xüsususiyyəti eyni anda 3 xassəni 1 sətirdə birləşdirə bilir.
 
-{% highlight css %}
+```css
 blockquote{ border: 1px solid yellow;}
-{% endhighlight %}
+```
 
-### Single border
+### Single border (Tək xətt)
 
-If you want to set a border on only one of the four sides, you need to include the border's **position** in the CSS property. For example, for a bottom border, you can write:
-
-{% highlight css %}
+Əgər siz dörd tərəfdən yalnız birində sərhəd qurmaq istəyirsinizsə, bu formada yaza biləsiniz.
+```css
 blockquote{ border-bottom-color: yellow; border-bottom-style: solid; border-bottom-width: 1px;}
-{% endhighlight %}
+```
 
-As for the `border` property, _each_ side has its shorthand version:
-
-{% highlight css %}
+```css
 blockquote{ border-bottom: 1px solid yellow;}
-{% endhighlight %}
+```
 
-#### What if I want 3 borders? Do I have to set them individually?
+#### 3 sərhəd istəsəm nə olar? Onları ayrıca təyin etməliyəmmi?
 
-As you would have guessed, the quickest way to have 3 borders is to set all 4 of them and then remove the one you don't want:
+Təxmin etdiyiniz kimi, 3 xassəyə sahib olmağın ən qısa yolu onların 4-nü təyin etmək və sonra istəmədiyinizi silməkdir:)
 
-{% highlight css %}
+```css
 blockquote{ border: 1px solid yellow; border-left: none;}
-{% endhighlight %}
+```
 
 ### Shorthand combinations
 
-Because there exist 3 border _properties_ and 4 border _locations_, there are **12** combinations possible:
+**border**-ə aid bütün xüsusiyyətləri bir daha ayrıca təkrar edək!
 
 <div class="table">
   <table>
@@ -93,7 +90,7 @@ Because there exist 3 border _properties_ and 4 border _locations_, there are **
   </table>
 </div>
 
-That's a lot of CSS properties available. You'll usually end up using the **5 shorthand versions** only:
+Bu, bir çox CSS xassələridir. Siz adətən yalnız **5 versiyadan** istifadə edəcəksiniz:
 
 * `border`
 * `border-top`
