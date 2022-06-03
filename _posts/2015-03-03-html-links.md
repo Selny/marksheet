@@ -5,47 +5,47 @@ subtitle: "The <strong>core</strong> of the Web"
 section: html
 ---
 
-**Links** are essential in HTML, as the Web was initially designed to be an information network of documents **linked** between each other.
+HTML-də **Linklər** vacibdir, İnternet ilk başlarda bir biri ilə **əlaqəli** sənədlərin məlumat şəbəkəsi kimi nəzərdə tutulmuşdu.
 
-The _"HyperText"_ part of HTML defines what kind of links we use: _hypertext_ links, a.k.a **hyperlinks**.
+HTML-in _HiperMətn_ hissəsi bizim hansı növ bağlantılardan istifadə etdiyimizi müəyyən edir: _hipermətn_ .linklər, a.k.a **hipermətnlər**.
 
-In HTML, links are **inline elements** written with the `<a>` tag.
+HTML-də, linklər **inline elementlərdir** `<a>` teqi kimi yazilir.
 
-The `href` attribute (hypertext reference) is used to define the **target** of the link (where you navigate to when you click).
+`href` atributu (hipermətn istinadları) linklərin **hədəfini** göstərmək üçün istifadə olunur (basildiqda hara naviqasiya edeceyini göstərir).
 
 {% highlight html %}
 <p>
-  To search for something, visit <a href="https://www.google.com">Google</a>.
+  Nə isə axtarmaq üçün, <a href="https://www.google.com">Google</a>-i ziyarət edin.
 </p>
 {% endhighlight %}
 
 <div class="result">
   <p>
-    To search for something, visit <a href="https://www.google.com">Google</a>.
+    Nə isə axtarmaq üçün, <a href="https://www.google.com">Google</a> -i ziyarət edin.
   </p>
 </div>
 
-Links are the **primary** interaction of a webpage: you navigate from one document to another by clicking on links.
+Linklər veb sehifənin qarşılıqlı əlaqəsinin **əsasıjdır**: bir sənəddən başqa bir sənədə naviqasiya etmək üçün linklərdən istifadə edilir.
 
-There are **3** types of target you can define.
+**3** növ hedef aşkar edə bilərsiniz.
 
-* **anchor** targets, to navigate within the _same page_
-* **relative** URLs, usually to navigate within the _same website_
-* **absolute** URLs, usually to navigate to _another_ website
+* **lövbər** hədəflər,  _eyni səhifə_ içərisində naviqasiya etmək üçün
+* **qohum** URL-lər,adətən _həmin veb sayta_ naviqasiya etmək üçün istifadə olunur
+* **şərtsiz** URL-lər, adətən _başqa veb sayta_ naviqasiya eymək üçün istifadə olunur
 
-### Anchor targets
+### Lövbər hədəflər
 
-**Anchor** target to navigate _within_ the **same** page. By prepending your href with `#`, you can target an HTML element with a specific `id` attribute.
+**Lövbər** _eyni səhifə_ içərisində naviqasiya etmək üçün istifadə olunur. href içərisinə `#` yazmaqla hazırlanır, HTML elementini spessifik `id` atributu ilə hədəf ala bilərsiniz.
 
-For example, `<a href="#footer">` will navigate to the `<div id="footer">` within the same HTML document. This type of href is often used to navigate back to the top of the page.
+məsələn, `<a href="#footer">` elementi eyni HTML sənədi içərisində `<div id="footer">` elementinə hədəf alacaq və naviqasiya edəcək. Bu tip hreflər əsasən **yuxarı qayıt** düymələrində istifadə olunur.
 
-### Relative URLs
+### Qohum URL-lər
 
-If you want to define a link to another page of the _same_ website, you can use **relative** URLs.
+_eyni_ vebsayt içərisində başqa bir səhifəyə naviqasiya etmək istəyirsinizsə əgərr, **qohum** URL-lər dən istifadə edə bilərsiniz.
 
-But relative to what? Well, relative to the **current page**.
+Ancaq nəyə nisbətən? **Cari səhifəyə** nisbətən.
 
-Let's use a simple example where the folder `my-first-website` contains 2 HTML files:
+İndi isə sadə bir nümumə edək hansı ki, `my-first-website` folderi içərisində 2 HTML faylı var:
 
 <ul class="files">
   <li>
@@ -64,9 +64,9 @@ Let's use a simple example where the folder `my-first-website` contains 2 HTML f
   </li>
 </ul>
 
-In `home.html`, you want to define a link to `contact.html`.
+`home.html` də, `contact.html`-ə link etmək istəyirsiniz.
 
-As the two files are **in the same folder**, you can simply write in `home.html`:
+Hər iki fayl **eyni folderin içərisindədir**, `home.html`-in içərisində asanlıqla yaza bilərsiniz:
 
 {% highlight html %}
 <p>
@@ -80,9 +80,9 @@ As the two files are **in the same folder**, you can simply write in `home.html`
   </p>
 </div>
 
-On an actual website, the process is similar.
+aktual vebsaytda, proseslər oxşardır.
 
-Let's say you have a website called `https://ireallylovecats.com` on which you have 2 webpages: `index.html` and `gallery.html`:
+`https://ireallylovecats.com` adında bir vebsatyınızın olduğunu hesab edək hansı ki, içərisində iki ədəd səhifə var: `index.html` və`gallery.html`:
 
 <ul class="files">
   <li>
@@ -101,7 +101,7 @@ Let's say you have a website called `https://ireallylovecats.com` on which you h
   </li>
 </ul>
 
-In `index.html` you could write the following link:
+`index.html`-də aşağıdakı linki yaza bilərsiniz:
 
 {% highlight html %}
 <p>
@@ -109,26 +109,26 @@ In `index.html` you could write the following link:
 </p>
 {% endhighlight %}
 
-Remember: websites are hosted on **computers** just like the one you're currently using. They are simply called **"servers"** because their sole purpose is to host websites. But they still have **files** and **folders** like "regular" computers.
+Xatırlayaq: vebsaytlar **komputerdə** saxlanılır eynilə hal hazırda istifadə etdiyimiz kimi. Onlar sadəc **server** adlanır çünki onların yeganə məqsədi vebsaytlara ev sahibliyi etməkdir. Ancaq onların hələ də **adi** komputerlər kimi **faylları** və **folderləri** var.
 {: .info}
 
-### Absolute URLs
+### Şərtsiz URL-lər
 
-If you wanted to share your cats gallery with a friend, you wouldn't be able to just send `gallery.html`, as this **relative** URL only works for HTML documents that are on the same **computer** or same **domain**.
+  Əgər siz pişiklərinizin qalereyasını dostlarınızla paylaşmaq istəyirsinizsə, sadəcə `gallery.html`-ə göndərməklə buna nail ola bilməyəcəksiniz, çünki bu **nisbi** URL yalnız eyni **kompüter** və ya eyni **domen**-də olan HTML sənədləri üçün işləyir.
 
-You need the _complete_ URL to your HTML document: `https://ireallylovecats.com/gallery.html`.
+Sizə HTML sənədinizə _complete_ URL lazımdır: `https://ireallylovecats.com/gallery.html`.
 
-This URL can be segmented in 3 parts:
+Bu URL 3 hissə ilə seqmentlənmişdir:
 
 * **protocol** `https://`
 * **domain** `ireallylovecats.com`
-* **file path** `gallery.html`
+* **fayl  yolu** `gallery.html`
 
-This **absolute URL** is **self-sufficient**: no matter where you use the link form, it contains _all_ the information required to find the correct file, on the correct domain, with the correct protocol.
+Bu **şərtsiz URL** **özünü təmin edəndir**: link formasını harada istifadə etdiyinizin fərqi yoxdur, düzgün faylı tapmaq üçün **bütün** məlumatları ehtiva edir, düzgen domain-də, düzgün protoko olə.
 
-You usually use absolute URLs defining a link from _your_ website to _another_ website.
+_sizin_ saytınızdan basqa bir sayta keçid eləmək üçün siz şərtsiz URL-lərdən istifadə edirsiniz.
 
-In your `https://ireallylovecats.com/gallery.html` file, you could write:
+Sizin `https://ireallylovecats.com/gallery.html` faylınızda, yaza bilərsiniz
 
 {% highlight html %}
 <p>
@@ -136,8 +136,8 @@ In your `https://ireallylovecats.com/gallery.html` file, you could write:
 </p>
 {% endhighlight %}
 
-### Relative or absolute links?
+### Nisbi və ya şırtsiz bağlantılar?
 
-Let's say you want to link from the first to the second. The most direct approach is to use the absolute URL. So you add `<a href="https://ireallylovecats.com/gallery.html">Go the second page</a>` in your `index.html` file.
+Birincidən ikinciyə keçid eləmək istədiyinizi deyək. Ən birbaşa yanaşma şərtsiz URL-lərdən istifadə etməkdir. Beləliklə `<a href="https://ireallylovecats.com/gallery.html">Go the second page</a>` elementini sizin `index.html` faylına əlavə edirsiniz.
 
-Because the two files are in the same directory, you could use the **relative** URL by using `<a href="first-blog-post.html">`. This is useful if you decide to move your directory: your links won't be broken because the link targets are relative to each other, as long as you move both files simultaneously and keep them in the same directory. This relative approach is particularly useful when switching domains.
+Çünki hər iki faylınız eyni folderdə yerləşir, **qohum** URL-lərdən istifadə edə bilərsiniz `<a href="first-blog-post.html">`-i istifadə edərək. Bu istifadəlidir əgər  siz kataloqunuzu dəyişmək istəyirsinizsə: linkləriniz pozulmayacaq, çünki link hədəfləri bir-birilə nisbidir,hər iki faylı eyni vaxtda köçürmək və onları eyni qovluqda saxlamaq şərti ilə. Bu nisbi yanaşma domenləri dəyişdirərkən faydalıdır.
