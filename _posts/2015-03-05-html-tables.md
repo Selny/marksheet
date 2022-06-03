@@ -5,21 +5,21 @@ subtitle: "For <strong>multi-dimensional</strong> data"
 section: html
 ---
 
-HTML **tables** are meant for **tabular data** only, which is any type of content that can be semantically arranged in **rows** and **columns**.
+HTML **cədvəllər** yalnız **cədvəl məlumatları** üçün nəzərdə tutulub, w**sətirlərdə** və **sütunlarda** semantik düzülə bilən istənilən məzmun növüdür.
 
-It's like having a **spreadsheet** in Excel.
+Bu, Excel-də **elektron cədvəlin** olması kimidir.
 
-### Syntax
+### Sintaksis
 
-Building a table in HTML requires a **specific structure**:
+HTML-də cədvəl qurmaq **xüsusi bir struktur** tələb edir:
 
-* open a `<table>`
-* add rows with `<tr>`
-* add _regular_ cells with `<td>` or _heading_ cells with `<th>`
+* `<table>` teqini acin
+* `<tr>` ilə sətirləri əlavə edin
+* `<td>` ilə _müntəzəm_ xanalar və ya '<th>` ilə _başlıq_ xanaları əlavə edin
 
-This **hierarchy** is required, and all 3 elements are necessary to build a table.
+Bu **iyerarxiya** tələb olunur, və bu 3 elementin hamisi cədvəl düzəltmək üçün zəruridir.
 
-When writing the code, you need to define your table cells from left to right, and _then_ from to bottom.
+Kod yazarkən, cədvəlinizin hüceyrələrini soldan sağa doğru təyin etmək lazımdır, və _sonra_ aşağıdan.
 
 {% highlight html %}
 <table>
@@ -63,17 +63,17 @@ When writing the code, you need to define your table cells from left to right, a
   </table>
 </div>
 
-As you can see, a table in HTML is relatively **verbose**: there are a lot of tags for just a few rows of data.
+Gördüyünüz kimi,HTML-də cədvəl nisbətən **müfəssəldir**: yalnız bir neçə sıra məlumat üçün çoxlu etiketlər var.
 
-### thead, tfoot and tbody
+### thead, tfoot və tbody
 
-Just like a webpage can have a header and a footer, a **table** can have a head, a body, and a foot. As anything in HTML, this is purely for **semantic** reasons: providing more structure to your table.
+Vebsəhifə kimi header və footer-i ola bilər, **table**-in head-i ola bilər, body, və foot. HTML-dəki hər hansi bir element kimi, bu sırf **semantik** səbəblərdəndir: cədvəlinizə daha çox quruluş verir.
 
-`<thead>`, `<tfoot>` and `<tbody>` are collections of **rows**. As such, they are _direct_ children of `<table>` and _direct_ parents of one or more `<tr>`. In short, they add **one level of hierarchy**.
+`<thead>`, `<tfoot>` və `<tbody>` sadəcə sətir kolleksiyalarıdır. `<table>`-in birbaşa uşaqlarıdır və bir və ya daha çox `<tr>`-in _birabaşa_  valideyinləridir. qısacası, **iyerarxiyanın bir səviyyəsini** daha əlavə edirlər.
 
-`<thead>` and `<tfoot>` are used as a **summary** of the columns.
+`<thead>` və `<tfoot>` sütunların **qısa məzmunu** kimi istifadə olunur.
 
-Let's enhance the previous table with a head and a body:
+Gəlin əvvəlki cədvəli `<thead>` və `<tbody>` ilə gücləndirək:
 
 {% highlight html %}
 <table>
@@ -133,9 +133,9 @@ Let's enhance the previous table with a head and a body:
   </table>
 </div>
 
-### tfoot particularity
+### tfoot özəllikləri
 
-Let's also add a foot to the table:
+Gəlin cədvəlimizə həmçinin `<tfoot>` əlavə edək
 
 {% highlight html %}
 <table>
@@ -207,15 +207,15 @@ Let's also add a foot to the table:
   </table>
 </div>
 
-Although we've added a `<tfoot>` **before** the `<tbody>`, it still appears **at the end**.
+Həmçinin cədvəlimizə `<tbody>`-dən **əvvələ** `<tfoot>` əlavl etdik, hələdə **sonda** görünür.
 
-It comes from the fact that the `<tbody>` can contain a _lot_ of rows. But the browser wants to render the foot before receiving all of the (potentially numerous) rows of data. That's why the `<tfoot>` is first in the code.
+Bu ondan irəli gəlir ki, `<tbody>` çoxlu sayda cərgələrdə ibarət ola bilər. Ancaq brauzer sətirlərdən əvvəl _foot_-ı göstərmək istəyir. buna görə də `<tfoot>` kodda birincidir.
 
-### colspan and rowspan
+### colspan və rowspan
 
-You can **merge** columns or rows by using the `rowspan` and `colspan` respectively.
+Siz müvafiq olaraq 'rowspan' və 'colspan' istifadə edərək sütun və ya sətirləri **birləşdirə bilərsiniz**.
 
-Keep in mind that in order to merge _columns_ you need to use the `rowspan` attribute, as it allows to _span_ a **column** across several _rows_.
+Unutmayın ki, sütunları birləşdirmək üçün `rowspan` atributundan istifadə etməlisiniz, çünki o, bir neçə _sətir_ arasında **sütun** _aşdırmağa_ imkan verir.
 
 {% highlight html %}
 <table>
@@ -253,11 +253,11 @@ Keep in mind that in order to merge _columns_ you need to use the `rowspan` attr
   </table>
 </div>
 
-The "Michael Jackson Singles" cell spans across 2 columns, so the following row includes **two** cells.
+"Michael Jackson Singles" xanası iki sütunu əhatə olunur, beləliklə aşağıdakı xanaya iki sətir daxildir.
 
-Because the cell "1979" spans across 3 rows, the 2 following rows only include a **one** cell, to allow space for the "1979" column.
+Çünki "1979" xanası 3 sətirə ayrılır, beləliklə buradakə iki sətir bir elementi ehtiva edir, 1979 sətirinə yer vermək üçün.
 
-It can be hard to keep track of how many cells are either missing or superfluous. One easy way to build a complete 2 by 4 table first, and then _remove_ cells while adding `colspan` and `rowspan` attributes.  
-In our case, we are supposed to have **8** cells. We only write **5** cells, but the `colspan="2"` and `rowspan="3"` add **3 additional cells**.
+Nə qədər elementin əksik və ya artıq olduğunu görmək sizin üçün çətin ola bilər. Əvvəlcə tam 2-in 4-ə cədvəl qurmağın asan bir yolu, və daha sonra `colspan` və `rowspan` əlavə etməklə elementləri _silmək_.  
+Bizim vəziyyətimizdə hal hazırda **8** elementimiz olmalıdır. Biz sadəcə **5** element yazmışıq,lakin `colspan="2"` və `rowspan="3"` **3 əlavə xana əlavə edir**.
 {: .info}
 
