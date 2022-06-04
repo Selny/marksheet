@@ -5,26 +5,26 @@ subtitle: "To make a page <strong>interactive</strong>"
 section: html
 ---
 
-While navigating the Web, a user's interaction is mostly only to click on **links** in order to navigate through webpages.
+Səhifə naviqasiya edilərkən, istifadəcilərin qarşılıqlı əlaqəsi sadəcə **linklərin** üzərinə tıklamaqdan ibarət olmalıdır.
 
-But the Web understands that a user is sometimes required to provide his own **input**. These types of interaction include:
+Ancaq internet başa düşür ki, bəzən istifadıçilərdən onların girişinin təmin etmək tələb olunur. Bu tip qarşılıqlı əlaqələrə daxildir:
 
-* signing up and logging in to websites
-* entering personal information (name, address, credit card details...)
-* filtering content (by using dropdowns, checkboxes...)
-* performing a search
-* uploading files
+* qeydiyyatdan keçmək və vebsayta daxil olmaq
+* şəxsi məlumatlarını daxil etmək (ad, adres, kredit kartı məlumatları...)
+* məzmunun filtirlənməsi (dropdownlar istifadə etməklə, checkboxelar...)
+* axtarış həyata keçirməklə
+* fayllar yükləmək
 
-To accomodate for these needs, HTML provides interactive **form controls**:
+Bu tələbləri yerləşdirmək üçün, HTML interaktiv **form controls** təmin edir:
 
-* text inputs (for one or multiple lines)
-* radio buttons
-* checkboxes
-* dropdowns
-* upload widgets
-* submit buttons
+* mətn daxiletmələri (bir və ya bir neçə sətir üçün)
+* radio düymələr
+* checkboxlar
+* dropdownlar
+* widgetlər yükləmək
+* təsdiq buttonləri
 
-These controls use different HTML **tags**, but most of them use the `<input>` tag. Because it is a self-closing element, the _type_ of input is defined by its `type` attribute:
+Bu kontrollar **fərqli** HTML teqləri istifadə edir, ancaq əksəriyyəti `<input>` teqindən istifadə edirlər. Çünki bu öz-özünə bağlanan teqdir, inputların _tipi_ onların `input` atributu ilə təyin olunur: 
 
 {% highlight html %}
 <!-- A text input -->
@@ -43,30 +43,30 @@ These controls use different HTML **tags**, but most of them use the `<input>` t
   <input type="radio">
 </div>
 
-### The Form element
+### Form elementi
 
-The `<form>` is a block-level element thats defines an **interactive** part of a webpage. As a result, all form controls (like `<input>`, `<textarea>` or `<button>`) must appear _within_ a `<form>` element.
+<form>` elementi blok elementdir vebsəhifənin **interaktiv** hissəsi kimi təyin olunur. Nəticə etibarilə, bütün form kontrollar ( `<input>`, `<textarea>` və ya `<button>` kimi) `<form>` elementinin içərisində yerləşməlidir.
 
-Two HTML attributes are **required**:
+İki HTML atributu tələb olunur:
 
-* `action` contains an address that defines _where_ the form information will be sent
-* `method` can be either GET or POST and defines _how_ the form information will be sent
+* `action` form məlumatlarının hansı adresə gondəriləcəyini özündə saxlayır
+* `method` GET və ya POST metodlarından biri ola bilər, və məlumatların necə gondəriləcəyini təyin edir
 
-Usually, the form information is sent to a **server**. _How_ this data will then be processed goes beyond the scope of this tutorial.
+Adətən, form məlumatları **serverə** göndərilir. Bu məlumatların _necə_ işlənəcəyi bu təlimatın əhatəsindən çıxır.
 
-Think of a form as a collection of input controls that work together to perform a **single** operation. If you wrote a login form, you could have **3** controls:
+Sadə əməliyyatları həyata keçirilməsi üçün nəzərdə tutulmuş birlikdə işləyən giriş kontrollarının yığımı kimidə fikirləşə bilərsiniz. Əgər siz giriş formu yazmısınızsa, **3** kontroleriniz ola bilər:
 
-* a email input `<input type="email">`
-* a password input `<input type="password">`
-* a submit button `<input type="submit">`
+* email girişi `<input type="email">`
+* şifrə girişi `<input type="password">`
+* təsdiq ddüyməsi `<input type="submit">`
 
-These 3 HTML elements would be enclosed within a single `<form action="/login" method="POST">`.
+Bu 3 HTML teqi `<form action="/login" method="POST">`elementinin içərisində bağlıdır.
 
-You could similarly add a signup form within the same HTML page, in a separate `<form>` element.
+Qeydiyyat səhifəsinidə siz həmin HTML səhifəsinin içərisində yaza bilərsiniz, aprı `<form>` elementinin içərisində.
 
-### Text inputs
+### Mıtn inputları
 
-Almost all forms require **textual** input from users, in order for them to enter their name, email, password, address... Text form controls come in different variations:
+Demək olar ki, bütün `inputlar` istifadəçidən mətn daxil edilməsini tələb edir, adlarını daxil etmələri üçün, email, şifrə, adres... Mətn form kontrollerlər müxtəlif versiyalarda olur:
 
 <div class="table">
   <table>
@@ -109,25 +109,25 @@ Almost all forms require **textual** input from users, in order for them to ente
   </table>
 </div>
 
-Although these inputs look very similar and allow users to enter _any_ kind of text (even wrong input), their _type_ provides specific **semantics** to the input, by defining what kind of information it is **supposed** to contain.
+Baxmayaraq ki, bu `inputlar` çox oxşar görünür və istifadəçilərin _istənilən_ mətni daxil etmələrinə icazə verir (hətta yanlış `input`), onların tipləri inpurlara xüsusi **semantka** təmin edir, hansı məlumatın **ehtimal olunduğunu** müəyyən etməklə.
 
-Browsers can subsequently slightly alter a control's interface to increase its _interactivity_ or hint at what kind of content is _expected_.
+Brauzerlər sonradan onun interaktivliyini artırmaq və ya hansı məzmunun gözlənildiyinə işarə etmək üçün idarəetmə interfeysini bir qədər dəyişə bilər.
 
-For example, password inputs show dots instead of characters.
+Məsələn, şifrə inputu xarakterlərin yerinə nöqtələr göstərir.
 
 <div class="result">
   <input type="password" value="hunter2">
 </div>
 
-And number inputs allow their value to be increased/decreased using up and down keys.
+Və nömrə daxiletmələri yuxarı və aşağı düymələri ilə onların dəyərini artırmağa/azaltmağa imkan verir.
 
 <div class="result">
   <input type="number" value="12">
 </div>
 
-### Placeholders
+### Placeholders.(Yer tutucular)
 
-Text inputs can display a **placeholder** text, that will disappear as soon as some text is entered.
+Mətn `inputları` **placeholder** mətnləri göstərə bilər, hər hansı bir mətn daxil edilən kimi yox olacaq.
 
 {% highlight html %}
 <input type="text" placeholder="Enter your name">
@@ -137,11 +137,11 @@ Text inputs can display a **placeholder** text, that will disappear as soon as s
   <input type="text" placeholder="Enter your name">
 </div>
 
-If you start typing something, you'll see the text _"Enter your name"_ disappear.
+nə isə yazmağa başlamısınızsa əgər, _"Adınızı daxil edin"_ mətni yox olacaq.
 
-### Labels
+### Labels.(Etiketlər)
 
-Because form elements on their own are not very descriptive, they are usually preceded by a text **label**.
+Çünki form elementləri özləri çox təsvir edici deyil, onlardan əvvəl adətən mətn **etiket** gəlir.
 
 {% highlight html %}
 <label>Email</label>
@@ -153,9 +153,9 @@ Because form elements on their own are not very descriptive, they are usually pr
   <input type="email">
 </div>
 
-While placeholders already provide some hint at what content is expected, labels have the advantage of remaining visible at all times, and can be used alongside other types of form controls, like checkboxes or radio buttons.
+Baxmayaraq ki, `placeholders` hansı məzmunun gözlənilməsi barədə ipucu verir, `labelin` olmasının hər zaman üstünlüyü vardır, və digər form kontrollerlərlə istifadə oluna bilər, checkboxes və ya radio buttonlar ilə.
 
-Although you could use short paragraphs to describe form elements, using `<label>` is semantically more valid because they only exist within forms, and can be paired with a specific form control by using the `for` attribute and matching its value with the input's `id`.
+Həmçinin elementi təsvir etmək üçün qısa paraqraf istifadə edə bilərsiniz, `<label>` istifadə etmək semantik olaraq çox etibarlidir çünki onlar sadəcə formlarda mövcuddur, və xüsusi form kontrollerlə qoşalana bilər `for` attributundan istifadə etməklə və inputun `id`-i ilə uygulaşdırmaqla.
 
 {% highlight html %}
 <label for="first_name">First name</label>
@@ -167,11 +167,11 @@ Although you could use short paragraphs to describe form elements, using `<label
   <input id="first_name" type="text">
 </div>
 
-Clicking on the label will focus the text input and place the text cursor inside. While this pairing seems useless, it will come in handy with checkboxes and radio buttons.
+Etiketə klikləməklə, mətn daxiletmə diqqət mərkəzində olacaq və mətn kursoru içəriyə yerləşdiriləcək. bu cütluk mənasız və istifadəsiz görünə bilər, chechboxlar və radio düymələri ilə lazımlı olacaq.
 
-### Checkboxes
+### Checkboxes/(onay düymələri)
 
-**Checkboxes** are form controls that only have 2 states: checked or unchecked. They basically allow the user to say "Yes" or "No" to something.
+**Checkboxes** ancaq 2 halı olan form kontrollerləridir: checked və ya unchecked. Əsasən istifadəçilərə `hə` ya da `yox` cavabı verməyə imkan yaradır.
 
 {% highlight html %}
 <input type="checkbox"> Remember me
@@ -181,7 +181,7 @@ Clicking on the label will focus the text input and place the text cursor inside
   <input type="checkbox"> Remember me
 </div>
 
-Because it can be hard to click on a small checkbox, it is recommended to wrap a `<label>` around the checkbox **and** its description.
+xırda checkboxlara tıklamaq çətin ola bilər, checkboxları ətrafını `<label>` ilə əhatə etmək tövsiyyə olunandır **və** onların açıqlamalarını.
 
 {% highlight html %}
 <label>
@@ -195,9 +195,9 @@ Because it can be hard to click on a small checkbox, it is recommended to wrap a
   </label>
 </div>
 
-You can click on _"I agree to the terms"_ to toggle the checkbox.
+Checkbox-un üzərinə basmaq yerinə _"Şərtlə razıyam"_ mətninin üzərinə basmağınız kifayət edir.
 
-By default, a checkbox input is unchecked. You can mark it as checked by using the simply called `checked` attribute.
+default olaraq, checkbox inputları unchecked olur. `checked` attributu əlavə etməklə checked olaraq təyin edə bilərsiniz.
 
 {% highlight html %}
 <label>
@@ -211,11 +211,11 @@ By default, a checkbox input is unchecked. You can mark it as checked by using t
   </label>
 </div>
 
-### Radio buttons
+### Radio buttons/(radio düymələr)
 
-You can present the user a **list of options** to choose from by using radio buttons.
+Siz radio button-lardan istifadə etməklə istifadəçiyə seçim etmək üçün **seçimlərin siyahısını** təqdim edə bilərsiniz.
 
-For this form control to work, your HTML code needs to **group** a list of radio buttons together. This is achieved by using the _same_ value for the `name` attribute:
+bu form kontrolleri işlək etmək üçün, sizin HTML kodlarınızın radio buttonların siyahısını gruplaşdırılması lazımdır. bu `name` atributu ilə eyni dəyəei istifadə etməklə mümkündür:
 
 {% highlight html %}
 <label>Marital status</label>
@@ -261,19 +261,19 @@ For this form control to work, your HTML code needs to **group** a list of radio
   </label>
 </div>
 
-Because all radio buttons use the same _value_ for their `name` attribute (in this case the value `"status"`), selecting one option will unselect all other ones. Radio buttons are said to be **mutually exclusive**.
+Çünki bütün radiobuttonlar onların `name` atributu üçün eyni _dəyəri_ istifadə edirlər (bu halda dəyər `"statusdur"`), bir variantın seçilməsi bütün digərlərinin seçimini ləğv edəcək. radiobuttonlara **bir-birlərini istinad** edənlər demək olar.
 
-#### Difference between radio buttons and checkboxes
+#### buttons və checkboxes arasındakı fərqlər
 
-While a checkbox exists **on its own**, radio buttons can only appear as a **list** (which means having at least _2_ options).
+nə zaman ki, checkbox özlüyündə mövcud olsa belə, radio buttonlar sadəcə siyahı kimi görünə bilər (bu da ən azı _2_ variantın olması deməkdir).
 
-Also, clicking a checkbox is **optional** while choosing one of the radio buttons is **mandatory**. That's why it is impossible to uncheck a radio button unless choosing a sibling option. But in the end, one of the radio buttons is always selected.
+Həmçinin, checkbox-a klikləmək **istəyə bağlıdır**radio düymələrindən birini secmək **məcburidir**. Buna görə radio buttonun digərinin seçimini seçməyincə radio düyməsinin işarəsini silmək mümkün deyil. Ancaq sonda, rado buttonlardan birini secmək zəruridir.
 
-### Dropdown menus
+### Dropdown menus/(Açılan menyular)
 
-If the number of options to choose from takes up too much space, you can use `<select>` dropdown menus.
+Seçmək üçün seçimlərin sayı çox yer tutursa, `<select>` dropdown menusundan istifadə edə bilərsiniz.
 
-They work like radio buttons. Only their layout is different.
+Onlarda radio buttonlar kimi istifadə olunur. Yalnız onların sxemi fərqlidir.
 
 {% highlight html %}
 <select>
@@ -309,9 +309,9 @@ They work like radio buttons. Only their layout is different.
   </select>
 </div>
 
-#### Multiple choice dropdown menus
+#### Çoxlu seçim dropdown menusu
 
-If you add the `multiple` attribute, you can provide the ability to select multiple choices.
+Əgər `çoxlu` attributlar əlavə etmisinizsə, birdən çox seçim seçmək imkanı verə bilərsiniz.
 
 {% highlight html %}
 <label>Which browsers do you have?</label>
@@ -336,9 +336,9 @@ If you add the `multiple` attribute, you can provide the ability to select multi
   </select>
 </div>
 
-Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a good alternative to using multiple checkboxes in a row.
+  Ctrl (və ya ⌘) düyməsini basılı saxlamaqla çoxlu seçim edə bilərsiniz. Bu, ardıcıl olaraq birdən çox checkbox-dan istifadə etmək üçün yaxşı alternativ ola bilər.
 
-### Example: a complete signup form
+### Nümunə: tam bir qeydiyyat formu
 
 {% highlight html %}
 <form action="/signup" method="POST">
@@ -476,6 +476,6 @@ Select multiple options by maintaining Ctrl (or ⌘) and clicking. This can be a
   </form>
 </div>
 
-There are other form controls available, but we've covered the ones who'll mostly use.
+Başqa form kontrollerləridə mövcuddur, ancaq biz ən cox istifadə olunanlardan bu mövzuda bəhs etdik.
 
-It's time to start **styling** our page.
+Səhifəmizi dizayn eləməyimizin vaxtıdır artıq.
