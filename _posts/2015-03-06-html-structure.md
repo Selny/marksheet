@@ -5,20 +5,20 @@ subtitle: "To <strong>organize</strong> the <strong>main</strong> parts of your 
 section: html
 ---
 
-When writing HTML content like paragraphs, lists or links, you provide **meaning** to your _text_. But you might want to **group** some of these elements _together_.
+Paraqraf kimi hər hansı bir HTML məzmunu yazarkən, listlər və ya linklər, _mətninizə_ **məna** verirsiniz. Ancaq bu elementlərin bəzilərini _birlikdə_ quruplaşdırmaq istəyə bilərsiniz.
 
-For example, a blog's webpage can be divided in  **4** parts:
+Məsələn, bloq veb səhifəsi **4** hissəyə bölünə bilər:
 
-* a **header** that is similar on every page, and is the main navigation of the website
-* a **main** content, that changes for every page: a list of articles, a single article with comments, an about page...
-* a **sidebar** that links to monthly archives and categories
-* a **footer** for additional links to less important pages
+* **header** bu hər bir səhifədəki kimi oxşardır, və vebsaytın naviqası mənasına gəlir
+* **main** məzmun, bu hər bir veb səhifəyə görə dəyişir: məqalələrin siyahısı, sadə məqalələr şərhlərlə birgə, haqqıda səhifəsi...
+* **sidebar** aylıq arxivlərə və kateqoriyalara keçid verir
+* a **footer** az əhəmiyyətli səhifələrə əlavə bağlantılar üçün
 
-There are some **structural HTML elements** you can use as **containers** for other elements.
+Bəzi **struktur HTML elementləri** var ki, digər elementlər üçün **konteyner** kimi istifadə edə bilərsiniz.
 
-### Header
+### Header/(başlıq)
 
-The `header` is usually the **first** HTML element in the code. It acts as an **introduction** to the webpage, with the logo, a tagline, and navigation links.
+`header` adətən kodda birinci HTLM elementidir. It acts as an **introduction** to the webpage,loqo ilə, a şüar, və naviqasiya linkləri.
 
 {% highlight html %}
 <header>
@@ -38,9 +38,9 @@ The `header` is usually the **first** HTML element in the code. It acts as an **
 </header>
 {% endhighlight %}
 
-### Footer
+### Footer/(altbilgi)
 
-As opposed to the `header`, the `footer` is usually the **last** element of a page, where the main navigation links are repeated and secondary ones added.
+`header`-ın əksi kimidə fikirləşilə bilər, `footer` adətən səhifənin **son** elementidir, naviqasiya linkləri təkrar olunduqda və ya ikinci dəfə əlavə olunduqda burdan istifadə olunur.
 
 {% highlight html %}
 <footer>
@@ -67,31 +67,31 @@ As opposed to the `header`, the `footer` is usually the **last** element of a pa
 </footer>
 {% endhighlight %}
 
-### Main
+### Main/(əsas)
 
-The `main` element contains, as its name suggests, the **most important content of the page**, the one that defines the purpose of the page.
+`main` elementi ehtiva edir, adından göründüyü kimi, **səhifənin çox önəmli məzmunları**, hansı ki, səhifənin məqsədini müəyyən edən.
 
-While all webpages of a website contain _common_ elements (like the header, the navigation, the footer...), the `main` element focuses on **unique** content.
+Vebsaytın bütün səhifələri ümumi elementləri ehtiva edir (header kimi, naviqasiya, altbilgi...), `main` elementi **vahid** bir məzmuna fokuslanır.
 
-For example, the article you are currently reading lies within the `main` element of this webpage, because its content is unique throughout the whole MarkSheet website.
+məsələn, bu veb səhifənin `main` elementində yerləşən və hal hazırda oxumaqda olduğunuz bu məqalə, çünki onun məzmunu bütün veb səhifə boyu vahiddir.
 
 ### Aside
 
-The `aside` element usually lives alongside the `main` and contains _additional_ information _related to_ the main content.
+  `aside` elementi əsasən `main` elementi ilə eyni mənanı daşıyır və əsas məzmun ilə bağlı alavə məlumat ehtiva edir.
 
-### Section
+### Section/(bölmə)
 
-The `section` element allows to **group**
+`section` elementi qruplaşmaya imkan verir
 
-Sections _themselves_ don't carry a specific meaning. It's more about the _relation between its child elements_ rather than its own meaning within the overall page.
+Sectionlar özləri heç bir məna daşımır. Bu, ümumi səhifə daxilində öz mənasından daha çox onun uşaq elementləri arasındakı əlaqəyə aiddir.
 
-The [MarkSheet homepage](https://marksheet.io) displays 3 sections:
+[MarkSheet ana səhifəsi](https://marksheet.io) 3 section ekrana çıxarır:
 
-* the **heading** (logo, title, subtitle)
-* the **introduction** (_"Short"_, _"Simple"_, _"Free"_)
-* the **chapters** (_"Web"_, _"HTML"_, _"CSS"_)
+* **heading** (logo, title, subtitle)
+* **introduction** (_"Short"_, _"Simple"_, _"Free"_)
+* **chapters** (_"Web"_, _"HTML"_, _"CSS"_)
 
-They all reside within the homepage `main` element, but are divided logically to group similar content and provide more meaning to the page's structure.
+onları hər biri ana səhifədə `main` elementinin içərisində yaşayırlar, lakin oxşar məzmunu qruplaşdırmaq və səhifənin strukturuna daha çox məna vermək üçün məntiqi olaraq bölünür.
 
 
 
