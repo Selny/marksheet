@@ -5,23 +5,23 @@ subtitle: "<strong>Separating</strong> content and styling"
 section: css
 ---
 
-As the Web grew in popularity in the 90s, the intent to apply a specific design to a website grew as well. Web developers relied upon specific HTML tags to enhance webpages:
+90-cı illərdə İnternet populyarlıq qazandıqca, vebsayta xüsusi dizayn tətbiq etmək nəqsədləri də artdı.. Veb tərtibatçıları veb-səhifələri təkmilləşdirmək üçün xüsusi HTML etiketlərinə etibar edirdilər:
 
-* `<basefont>` defined a font for a whole HTML document
-* `<font>` defined a typeface, a color, and a size for the text it contains
-* `<center>` horizontally centered all its content
-* `<big>` increased the size of the text
-* `<strike>` rendered text with a strikethrough
+* `<basefont>` büten HTML sənədinə font təyin edir
+* `<font>` daxilindəki mətnlər üçün şrift, rəng, və ölçü ölçü təyin edir
+* `<center>` bütün məzmununu üfüqi olaraq mərkəzləşdirir
+* `<big>` mətnin ölçünü böyüdür
+* `<strike>` mətnin üstündən xət çəkir
 
-Several HTML attributes could also be used:
+Bir neçə HTML atributu istifadə oluna bilər:
 
-* `bgcolor` defined a background color on the element
-* `text` defined the text color
-* several `margin` attributes could be used to add space on any side of the element
+* `bgcolor` arxxa fon rəngi təyin edir
+* `text` mətn rəngi təyin edir
+*  elementin her bir tərəfinə boşluqlar əlavə etmək üçün bir çox `margin` atributu isrifadə oluna bilər
 
-### Why avoid tables
+### Nə üçün cədvəllərdən qaçınmalı
 
-But most of all, in order to create columns, visually align elements, and generally position elements relatively to each other, Web developers used the `<table>` element to design their webpages because it naturally provided a visual **grid**:
+Ancaq ən cox, sütunlar yaratmaq üçüb, elementləri vizual olaraq tarazlayın, və əsasən elementlərin mövqeləri bir birinə qohumdur, veq tərtibatçılar veb səhifələrini dizayn etmək üçün `<table>` elementindən istifadə edirlər çünki cədvəl vizual olaraq təbii bir **şəbələ** təmin edir:
 
 {% highlight html %}
 <table>
@@ -46,46 +46,46 @@ But most of all, in order to create columns, visually align elements, and genera
 </table>
 {% endhighlight %}
 
-This approach was cumbersome for several reasons:
+Bu yanaşma bir çox səbəbdən çətin idi:
 
-* HTML tables are **verbose**: they require a lot of boilerplate code
-* the markup was **semantically wrong**: tables should be used for multidimensional data
-* changing the layout required to change the markup: if we wanted to move the left column to the right, we had to **modify the HTML structure**
-* tables were prone to **syntax errors**: rows and cells need to be ordered and nested in a specific way to be valid
-* the markup was **unreadable**: tables were nested within tables to provide additional columns _within_ columns
+* HTML cədvəlləri **müxtəlifdir** və onlar çoxlu kod tələb edir
+* işarələməsi **semantik olaraq yanlışdır**: cədvəllərdən çoxölçele məlumatlar üçün istifadə edilməlidir
+* işarələməni dəyişmək üçün tələb olunan tərtibatın dəyişdirilməsi: əgər biz sol sütunu sağa keçirmək istəyiriksə, biz **HTML quruluşunu dəyişməliyik**
+* cədvəllər **sintaksis səhvlərinə** meylli idi: sətirlərin və xanaların etibarlı olması üçün müəyyən bir şəkildə sıralanması və iç-içə olması lazımdır
+* işarələnməsi **oxunaqlı deyildi**: cədvəllər sütunların içərisində əlavə sütunlar təmin etmək üçün cədvəllərin içərisinə yerləşdirildi
 
-That is why using tables _for layout purposes_ was slowly abandoned, and CSS was used instead.
+Məhz buna görə cədvəllərin tərtibat məqsədləri üçün istifadəsi yavaş-yavaş tərk edildi və əvəzinə CSS istifadə edildi.
 
-### What CSS is
+### CSS nədir
 
-**CSS** stands for **C**ascading **S**tyle **S**heets. Its purpose is to _style_ markup languages (like HTML or XML). Therefore, CSS is worthless on its own, unless associated with an HTML document.
+**CSS** --> **C**ascading **S**tyle **S**heets. Onun məqsədi işarələmə dillərini dizay etməkdir (HTML və ya XML kimi). Buna gorə də, CSS özlüyündə dəyərsizdir, hər hansı bir HTML sənədi ilə əlaqəsi olmadıqda
 
-CSS brings an HTML document to **life**, by choosing fonts, applying colors, defining margins, positioning elements, animating interactions, and much more.
+CSS HTML sənədinə **həyat** gətirir, fontları seçnəklə, rənglərə müraciət etməklə, səhifənin kənarlarını tayin etməklə, elementləri mövqeləndirməklə, qarşılıqlı əlaqəni canlandırmaqla, və daha çoxunu etməklə.
 
-### How CSS works
+### CSS necə işləyir
 
-How CSS works is by **selecting** an HTML element (like a paragraph), choosing a **property** to alter (like the color), and applying a certain **value** (like red):
+HTML elementlərini seçməklə CSS necə işləyir (paraqraf kimi), dəyişdirmək üçün **xassələrini** seçir (rəng kimi), və müıyyın **dəyərə** müraciət edir (qırmızı kimi):
 
 {% highlight css %}
 p{ color: red;}
 {% endhighlight %}
 
-The word _"Style"_ can be deceiving. You might think CSS is only used to change the text's color, size, and font. But CSS is able to define an HTML document's **layout**, by defining heights, widths, inner and outer margins, positions, columns...
+_"Stil"_ sözü aldadıcı ola bilər. Siz CSS-i sadəcə mətnlərin rəngini dəyişmək üçün istifadə olunduğunu düşünə bilərsiniz, ölçüsünü, və şriftini. Ancaq CSS HTML sənədinin görünüşünü dəyişmə qabiliyyətinə malikdir, hündürlüyünü təyin etməklə, enini, daxili və xarici səhifə kənarı boşluqlarını, mövqelərini, sütunlarını...
 {: .info}
 
-### Where do I write CSS?
+### CSS harada yazılır?
 
-#### CSS as an attribute
+#### CSS atribut kimi
 
-You can write CSS directly on an HTML elements, by using the `style` attribute:
+CSS-i birbaşa HTML elementlərinin içərisinə yaza bilərsiniz, `style` attributunu istifadə etməklə:
 
 {% highlight html %}
 <p style="color: red;">This text is important.</p>
 {% endhighlight %}
 
-#### CSS in the <head>
+#### CSS <head>-in içərisində
 
-You can use a `<style>` tag in the `<head>` of your HTML document:
+HTML sənədinin içərisində `<head>`teqləri arasında `<style>` teqini yazmaqla:
 
 {% highlight html %}
 <html>
@@ -101,9 +101,9 @@ You can use a `<style>` tag in the `<head>` of your HTML document:
 </html>
 {% endhighlight %}
 
-#### CSS in a separate file
+#### CSS ayrı bir faylda
 
-You can write your CSS in a separate file with a `.css` extension, and then link it to your HTML by using the `<link>` HTML tag.
+`.css` uzantısından istifadə etməklə siz CSS-i ayrı bir faylda yaza bilərsiniz, və HTML `<link>` teqindən istifadə etməklə HTML sənədinizə link edin.
 
 {% highlight css %}
 p{ color: red;}
@@ -121,14 +121,14 @@ p{ color: red;}
 </html>
 {% endhighlight %}
 
-It is the HTML document who "calls" the CSS file, in this case a file called `style.css` located in the same folder as the HTML file.
+Bu CSS adlandırılan HTML faylıdır, bu halda fayl `style.css` adlandırılır və HTML ilə eyni folderdə yerləşir.
 
-This **3rd method** of using a separate CSS file is **preferred**.
+Bu tövsiyyə olunan **3-cü metoddur** ayrı CSS faylı .
 
-### Why not style directly in the HTML?
+### Niyə birbaşa HTML içərisində dizayn etmirik?
 
-Because we want to separate the **content** (HTML) from its **presentation** (CSS).
+Çünki biz **məzmunu** (HTML) onun **təqdimatından** ayırmaq istəyirik (CSS).
 
-If you want to visualize the purpose of this distinction, head towards the wonderful [CSS Zen Garden](https://www.csszengarden.com/): each design uses the _exact_ same HTML but a _different_ CSS each time.
+Əgər siz bu fərqin məqsədini vizuallaşdırmaq istəyirsinizsə, möcüzəyə doğru irəliləyin [CSS Zen Garden](https://www.csszengarden.com/): hər dizayn _dəqiq_eyni HTML-dən, lakin hər dəfə _fərqli_CSS-dən istifadə edir.
 
-It makes **maintenance** easier as well: the same CSS file can be used for a whole website. It provides **flexiblity**: focus on the content on one side, the styling on the other. SEO purposes, different concerns.
+Bu hər sanam **texniki qulluğu** rahatlaşdırır: eyni CSS faylı bütün veb sayt üçün istifadə oluna bilər. bu **eviklik** təmin edir: bir tərəfdən məzmuna diqqət yetirin, digər tərəfdən üslubu. SEO məqsədləri, müxtəlif narahatlıqlar.
