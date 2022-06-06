@@ -5,44 +5,44 @@ subtitle: "who{ what: how;}"
 section: css
 ---
 
-The purpose of CSS is to define the layout _and_ styling of your HTML elements. The syntax is very simple:
+Css-in məqsədi görünüş təyin etmək _və_ HTML elementlərinizə Stil verməkdir. Sintaksisi çox rahatdır:
 
 {% highlight css %}
 /* A CSS rule */
 selector{ property: value;}
 {% endhighlight %}
 
-You can read that as:
+Belədə oxuya bilərsiniz:
 
 {% highlight css %}
 who{ what: how;}
 {% endhighlight %}
 
-CSS is a 3-part process:
+CSS 3-hissəli prosesdir:
 
-* the **selector** defines _who_ is targeted, which HTML element(s)
-* the **property** defines _what_ charateristic to alter
-* the **value** defines _how_ to alter that charateristic
+* **selector** _nəyin_ hədəf alındığını təyin edir, hansı HTML elementinin
+* **property** hansı xarakteristikanın dəyişdiriləcəyini müəyyən edir
+* **value** bu xarakteristikaları _necə_ necə dəyişdiriləcəyini müəyyən edir
 
-This whole block (selector/property/value) is a **CSS rule**.
+Bütün bu blok (selector/property/value) **CSS qaydasıdır**.
 
-### Quick example
+### Tez bir nümunə
 
-Let's say you want to change the color of all your **blockquotes**.
+diyək ki, siz bütün **blockquoteların** rəngini dəyişmək istəyirsiniz.
 
 {% highlight html %}
 <blockquote>Something something</blockquote>
 {% endhighlight %}
 
-Focus on the **tag name** (and forget about the angle brackets <> and the text). In our case, all that remains is _"blockquote"_. There's a direct relation between the tag name and the selector.
+**teq adına** fokuslanın (böyük kiçin işarələrini <> və mətni unudun). Bu halda, bütün bunlardan sadəcə _"blockquote"_ qalır. teq adı ilə selektor arasında birbaşa əlaqə var.
 
-Let's use that in our CSS as a **selector**, and let's apply some styling:
+Gəlin indi bunu CSS-də **selector** kimi istifadə edək, və bəzi stillər tətbiq edək:
 
 {% highlight css %}
 blockquote{ background: lightgreen;}
 {% endhighlight %}
 
-Interesting. But now, the text color doesn't really match the background color. Let's improve that:
+Maraqlıdır. Ancaq indi, mətn rəngi ilə arxa fon rəngləri bir biri ilə uyğunlaşmır. Gəlin bunu sübut edək:
 
 {% highlight css %}
 blockquote{
@@ -51,12 +51,12 @@ blockquote{
 }
 {% endhighlight %}
 
-So 2 things happened:
+Beləliklə 2 şey baş verir:
 
-* we added a _second_ property/value pair, while keeping only _one_ selector: you can set as many properties as you want for any set of selectors
-* we put each property/value pair on its _own line_: like in HTML, the **whitespace** isn't important. It's the special characters `{}` `:` and `;` that matter. As a result, you can format your CSS as you wish, to make it more readable, as long as its syntax remains valid.
+* _ikinci_ xassə/dəyər cütlüyü əlavə etdik, yalnız bir selektoru saxlamaqla: hər hansı selektorlar çoxluğuna istədiyiniz kimi bir neçə xassə təyin edə bilərsiniz
+* bütün xassə/dəyərləri öz sətirlərində saxlayərəq: HTML-də kimi, **boşlqlar** önəmli deyil. `{}` `:` və `;`xüsusi xaralterlərdir bunların yazılışlarında fərqlilik olsa dərq edəcə. nəticə etibarilə, CSS-zi istədiyiniz kimi format edə bilərsiniz, onu oxunaqlı etmək üçün, nə qədər ki, onun sintaksisi qüvvədə qalır.
 
-The `<blockquote>` HTML tag is a **block** element. It has an **inline** counterpart: `<q>`. As they both serve the same purpose (but in different contexts), we'd like to style them identically. We could copy-paste the CSS rule and just change the selector, but there is as you would have guessed, a quicker way:
+`<blockquote>`HTML elementi **blok** elementdir. onun **inline** tərəf müqabili də var: `<q>`. Çünki onların hər ikisi eyni məqsədə xidmət edirlər (ancaq başqa başqa məzmunlarla), biz onların hər ikisini eyni şəkildə tərtib etmək istərdik. Biz CSS qaydalarını kopyalayıb yapışdıra bilərik ancaq selektorları dəyişmək lazımdır, ancaq təxmin etdiyiniz kimi daha sürətli bir yolu var:
 
 {% highlight css %}
 q,
@@ -66,14 +66,14 @@ blockquote{
 }
 {% endhighlight %}
 
-Now we have 2 selectors and 2 properties. We consequently have a _set_ of selectors and a _set_ of properties (with their respective values).
+İndi isə bizim iki selektorumuz və iki xassəmiz var. nəticədə bizim selektorlar _coxluğumuz_ və xassələr _çoxluğumuz_ var (və onların əlaqəli dəyərləri ilə birlikdə).
 
-We can have multiple selectors, multiple properties, and sometimes (but rarely) multiple values.
+Çoxlu selektorlarımızda ola bilər, çoxlu xassələrimiz, və bəzən (lakin nadir hallarda) çoxlu dəyərlərimiz.
 {: .info}
 
-### Comments
+### Comments/(Kommentlər)
 
-As in HTML, it can be handy to write CSS comments:
+HTML-də kimi, CSS-də də əl yazısı kommentlərimiz ola bilər:
 
 {% highlight css %}
 /* This is a CSS comment */
@@ -83,7 +83,7 @@ blockquote{
   color: darkgreen;
 }
 /*
-Comments are only meant to be read by humans
-and won't be parsed by the computer
+Kommentlər sadəcə insanlar tərəfindən oxunmaq üçündür
+və komputer tərəfində çevirilməyəcəkdir
 */
 {% endhighlight %}
