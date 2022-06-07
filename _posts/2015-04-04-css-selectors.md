@@ -5,13 +5,13 @@ subtitle: "How to <strong>target</strong> HTML elements"
 section: css
 ---
 
-Because we don't want to style all our HTML elements at once, we need to be able to **target** a subset of these HTML elements.
+Çünki biz bütün HTML elememtlərimizi bir dəfədə stayl etmək istəmirik, biz bu HTML elementlərinin alt çoxluğunu **hədəfləyə** bilməliyik.
 
-CSS selectors define _which_ elements we want our styling to be applied to.
+CSS selektorları səsbiq etmək istədiyimiz üslubumuzun hansı elementlərə tətbiq olunmasını istədiyimizi müəyyənləşdirir
 
-### Generic tag selectors
+### Ümumi teq selektorları
 
-Targeting generic HTML tags is easy: just use the tag name.
+Ümumi HTML elementlərini hədəf almaq rahatdır: sadəcə teq adını istifadə edin.
 
 {% highlight css %}
 a{ /* Links */ }
@@ -20,13 +20,13 @@ ul{ /* Unordered lists */ }
 li{ /* List items */ }
 {% endhighlight %}
 
-There's a direct connection between the _name_ of the HTML tag and the CSS _selector_ used.
+HTML teq adları ilə CSS selektorları arasında birbaşa əlaqə var.
 
-### Classes
+### Classes/(Siniflər)
 
-Considering we probably don't want to style all paragraphs or all titles identically, we need to _differentiate_ them.
+Nəzərə alsaq ki, bütün paraqrafları və ya bütün başlıqları eyni şəkildə tərtib etmək istəmirik, bizim onları _fərqləndirməyə_ ehtiyacımız var.
 
-Of all HTML attributes, the `class` attribute is the most important for CSS. It allows us to define a **group** of HTML elements that we can _target specifically_. Just put a dot `.` in front of the class name you want to use:
+Bütün HTML atributlarından, `class` attributu CSS üçün çox önəmlidir. Bu, bizə xüsusi olaraq hədəf ala biləcəyimiz HTML elementlərinin **qrupunu** müəyyən etməyə imkan verir. İstifadə etmək istədiyimiz sinif adının qarışısına sadəcə nöqtə qoyuruq `.`:
 
 {% highlight css %}
 .date {
@@ -34,12 +34,12 @@ Of all HTML attributes, the `class` attribute is the most important for CSS. It 
 }
 {% endhighlight %}
 
-On one side, there is the HTML `class` attribute with the value `date`. It must match the name of the CSS class.
+Bir tərəfdə, bir tərəfdə `date` dəyəri ilə HTM `class` atributu var. O metləq CSS sinif adı ilə uyğunlaşmalıdır.
 
-You can use any name for your CSS class, as long as it doesn't start with a number.
+CSS sinif adlarını istifadə edə bilərsiniz, hər hansı bir rəqəmlə başlamadığı müddətcə.
 {: .info}
 
-The `.date` class selector will target all HTML elements that have the `class="date"` attribute. So, the following HTML elements will **all** be styled:
+`.date` sinif selektoru `class="date"` attributu olan HTML elementlərini hədəf alacaq. Beləliklə, aşağıdakı HTML elementlərini **hamısı** üslublu olacaq:
 
 {% highlight html %}
 <p class="date">
@@ -55,11 +55,11 @@ The `.date` class selector will target all HTML elements that have the `class="d
   <p>The event will be on <em style="color:red;">Saturday</em>.</p>
 </div>
 
-Bear in mind that the tag name is **irrelevant**. Only the `class` HTML attribute is.
+Nəzərə alın ki, teq adı **əlaqəsizdir**. Yalnız `class` HTML attributu əlaqəlidir.
 
-### IDs
+### IDs/(ID-lər)
 
-You can also use the `id` attribute in your HTML, and target it with a hash `#` in your CSS:
+HTMlL-də `id` attributundan da istifadə edə bilərsiniz, və CSS-də  diyez `#` ilə hədəf ala bilərsiniz:
 
 {% highlight css %}
 #tagline{ color: orange;}
@@ -69,9 +69,9 @@ You can also use the `id` attribute in your HTML, and target it with a hash `#` 
 <h1 id="tagline">This heading will be orange.</h1>
 {% endhighlight %}
 
-ID are similar to Classes, as they rely upon an HTML attribute.
+ID-lər siniflərə oxşardırlar, çünki onlar HTML atributuna əsaslanırlar.
 
-### Example
+### Nümunə
 
 <div class="table">
   <table>
@@ -132,9 +132,9 @@ ID are similar to Classes, as they rely upon an HTML attribute.
   </table>
 </div>
 
-### Combining selectors
+### Selektorların birləşdirilməsi
 
-Let's reuse our previous example where we want our dates to be red:
+Tarixlərimizin qırmızı olmasını istədiyimiz yerdə əvvəlki nümunəmizi təkrar istifadə edək:
 
 {% highlight css %}
 .date {
@@ -156,7 +156,7 @@ Let's reuse our previous example where we want our dates to be red:
   <p>The event will be on <em style="color:red;">Saturday</em>.</p>
 </div>
 
-What if we want our dates that are in `em` elements to blue instead? We can **add** the following CSS rule:
+Bəs `em` elementlərində olan tarixlərimizin mavi olmasını istəsək? Aşağıdakə CSS qaydasını **əlavə edə** bilərik:
 
 {% highlight css %}
 em.date {
@@ -169,11 +169,11 @@ The `em.date` combines:
 * a tag selector `em`
 * a class selector `.date`
 
-It will only apply to `<em class="date"></em>` HTML elements. It **won't** affect other `.date` or `em`.
+Bu ancaq `<em class="date"></em>` HTML elementlərinə tətbiq olunacaq. Bu başqa `.date` və ya `em` elementlərinə təsir etməyəcək.
 
-### Hierarchy selectors
+### İyerarxiya selectorları
 
-A **space** in a selector defines a ancestor/descendant relationship. Let's say we want the links in our header to be in red:
+Selektordakı **boşluq** əcdad/nəsil əlaqəsini müəyyən edir. Tutaq ki, başlığımızda olan keçidlərin qırmızı rəngdə olmasını istəyirik:
 
 {% highlight css %}
 header a {
@@ -181,13 +181,13 @@ header a {
 }
 {% endhighlight %}
 
-This can be read from right to left as: _"Select all `a` elements that are within a `header` element"_. This will prevent all other links (that aren't in the header) from being affected.
+Bunu sağdan sola belə oxumaq olar: _"Başlıq" elementində olan bütün `a` elementlərini seçin"_. Bu, bütün digər bağlantıların (başlıqda olmayan) təsirlənməsinin qarşısını alacaq.
 
-### Pseudo-class selectors
+### Pseudo-class selectorlar
 
-HTML elements can have different **states**. The most common case is when you hover over a link. It's possible in CSS to apply a different style when such an event occurs.
+HTML elementlərinin müxtəlif **vəziyyətləri** ola bilr. Ən çox rast gəlinən hal, siçanı keçidin üzərinə gətirdiyiniz zaman olur. CSS-də belə bir hadisə baş verdikdə fərqli stayl tətbiq etmək mümkündür.
 
-Pseudo-class selectors are attached to usual selectors and start with a **colon** `:`:
+Pseudo-class selectorlar adi seçicilərə əlavə olunur və **kolon** ilə başlayır `:`:
 
 {% highlight css %}
 a {
