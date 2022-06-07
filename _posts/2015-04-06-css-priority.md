@@ -5,7 +5,7 @@ subtitle: "When several rules <strong>collide</strong>"
 section: css
 ---
 
-An HTML element can be targeted by **multiple CSS rules**. Let's use a simple paragraph for example:
+HTML elementi **coxlu CSS qaydaları** ilə hədəf alına bilər. Gəlin nümunə üçün kiçik bir paraqraf hazırlayaq:
 
 {% highlight html %}
 <p class="message" id="introduction">
@@ -13,31 +13,31 @@ An HTML element can be targeted by **multiple CSS rules**. Let's use a simple pa
 </p>
 {% endhighlight %}
 
-We can alter this paragraph just by using its **tag name**:
+Bu paraqrafı sadəcə onan **teq adından** istifadə etməklə dəyişdirə bilərik:
 
 {% highlight css %}
 p{ color: blue;}
 {% endhighlight %}
 
-Or we can use its **class name**:
+Və ya onun sinif adından istidadə edə bilərik:
 
 {% highlight css %}
 .message{ color: green;}
 {% endhighlight %}
 
-Or we can use its **id**:
+Və ya onun ID-ni istifadə edə bilərik
 
 {% highlight css %}
 #introduction{ color: red;}
 {% endhighlight %}
 
-Because the browser can only pick **one color** to apply on this paragraph, it will have to decide which CSS rule takes **priority** over other ones. This is what CSS priority (or CSS _specificity_ is about).
+BÇünki brauzer bu paraqrafa tətbiq etmək üçün yalnız **bir rəng** seçə bilər, hansı CSS qaydasının digərlərinə görə **prioritet** tutacağına qərar verməli olacaq. CSS prioriteti budur (və ya CSS _specificity_ haqqındadır).
 
-In our example, the paragraph will be **red** because an `#id` selector is more _specific_ and thus more **important** than other selectors.
+Nümunəmizdə, paraqraf **qırmızı** olacaq çünki `#id` selektoru digər seçicilərə nisbətən daha _xüsusidir_ və bu səbəbdəndə də daha **əhəmiyyətlidir**.
 
-### Order of CSS rules
+### CSS qaydalarının sırası
 
-If similar selectors are in your CSS, the last one defined will take priority.
+CSS-də oxşar seçicilər varsa, sonuncu müəyyən edilənə üstünlük veriləcək.
 
 {% highlight css %}
 p{ color: green;}
@@ -45,15 +45,15 @@ p{ color: red;}
 /* Paragraphs will be red */
 {% endhighlight %}
 
-### The 100 measure
+### 100 əncam
 
-One quick way to figure out how "powerful" a CSS rule is, is by measuring the specificty of the **selectors**:
+CSS qaydasının nə qədər "güclü" olduğunu anlamaq üçün sürətli bir yol, **selektorların** spesifikliyini ölçməklə olur:
 
-* `#id` selectors are worth 100
-* `.class` selectors are worth 10
-* `tag` selectors are worth 1
+* `#id` selektorları 100 dəyərindədir
+* `.class` selektorları 10 dəyərindədir
+* `tag` selectorı 1 dəyərindədir
 
-The selector with the highest "score" will prevail, _no matter the order in which the CSS rules appear_.
+Ən yüksək "bal" toplayan selektor qalib gələcək, _CSS qaydalarının hansı ardıcıllıqla görünməsindən asılı olmayaraq_.
 
 {% highlight css %}
 #introduction{ color: red;}
@@ -73,16 +73,16 @@ p{ color: blue;}
   </p>
 </div>
 
-The `#introduction{ color: red;}` rule is more _specific_ than the others because ids must be **unique** throughout a webpage, and can thus only target **one** element.
+`#introduction{ color: red;}` qaydası digərlərindən daha çox _spesifikdir_ çünki ID-lər **vahid** olmalıdır, və beləliklə yalnız **bir** elementi hədəfləyə bilər.
 
-`.message{ color: green;}` can target _any_ HTML element with a `class="message"` attribute, and is consequently less specific. Same goes for `p{ color: blue;}` which can target _any_ HTML paragraph.
+`.message{ color: green;}` selektoru`class="message"` attributu ilə hər hansı HTML elementini hədəf ala bilər, və buna görə də daha az spesifikdir. Eyni şey "p{ color: blue;}" üçün də gedir, hansı ki, _istənilən_ HTML paraqrafını hədəfləyə bilər.
 
-### How to avoid conflicts
+### Münaqişələrdən necə qaçmaq olar
 
-While writing your CSS, it's easy to write **conflicting rules**, where the same _property_ is applied several times.
+CSS yazarkən, **ziddiyyətli qaydalar** yazmaq asandır, burada eyni _xassə_ bir neçə dəfə tətbiq olunur.
 
-To avoid that:
+Bunun qarşısını almaq üçün:
 
-* only use **classes**: use `.introduction` instead of `#introduction`, even if that element only appears once in your webpage
-* avoid applying **multiple classes** on a single HTML element: don't write `<p class="big red important">` but rather `<p class="title">` which is more semantically descriptive
-* don't use **inline styles** like `<div style="background: blue;">`
+* ancaq **siniflərdən** istifadə edin: `#introduction` əvəzinə `.introduction` istifadə edin, hətta bu element səhifənizdə yalnız bir dəfə görünsə belə
+* sadə HTML elementinizə **çoxlu siniflər* əlavə etməklə qarşısını alın: `<p class="big red important">` kimi yazmayın əksinə `<p class="title">` semanti olaraq hansı daha açıqlayıcıdır
+* **daxili stayllardan** istifadə etməyin `<div style="background: blue;">` kimi
