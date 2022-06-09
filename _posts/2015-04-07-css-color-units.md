@@ -5,24 +5,24 @@ subtitle: "Different ways to define <strong>colors</strong>"
 section: css
 ---
 
-**Colors** are widely used in CSS, whether for text color, background color, gradients, shadows, borders... There are several ways to define colors in CSS, each with their own pros and cons.
+**Rənglər CSS-də gelişliklə istifadə olunur, istər mətn rəngi olaraq, istər arxa fon əngi olaraq, gradientlər, kölgələr, istərsə də sərhədlərin rəngi olaraq... CSS-də rəngləri təyin etmənin bir çox yolu vardır, hər iki mütbət və mənfi cəhətləri ilə birlikdə.
 
-The `color` property defines the color of the **text**. It is pretty straightforward. What is more important is the different types of **color units** available.
+`Color` xassəsi mətnin rəngini təyin edir. Bu olduqca sadədir. Daha vacib olan müxtəlif növ **rəng vahidlərinin** mövcud olmasıdır.
 
-### Color names
+### Color names/(Rəng adları)
 
-CSS provides [145 colors names](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), from the most basic (black, white, orange, yellow, blue...) to the more specific (lawngreen, orchid, crimson...).
+CSS təmin edir [145 rəng adları](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value), ən sadəsindən (qara, ağ, narıncı, sarı, mavi...) çox spesifik olanlara kimi (çəmənlik, səhləb, al qırmızı...).
 
 {% highlight css %}
 body{ color: black;}
 a{ color: orange;}
 {% endhighlight %}
 
-Because the color names are hard to remember, and because you probably want very specific colors, color names are not often used.
+Çünki rəng adları xatırlamaq üçün çətindir, və çünki siz spesifik bir rəng istəyə bilərsiniz, rəng adları sıxlıqla istifadə olunan deyildir.
 
-### rgb
+### rgb/red.green.blue(qırmızı.yaşıl.mavi)
 
-Computer monitors, TVs, mobile phones, all use the RGB color model to display colors. Basically, each color is defined by a combination of Red, Green, and Blue. There are 256 possible values for Red, Green or Blue. Because computers start counting at 0 (zero), the maximum value is 255.
+Komputer manitorları, Televizorlar, mobil telefonlar, hamsı ekrana rəngləri çıxarmaq üçün RGB rəng modellərindən istifadə edirlər. Əsasən, hər bir rəng qırmızı, Yaşıl, və Mavi rənglərin kombinasiyasından meydana gəlir. Qırmızı üçün 256 mümünkün dəyər vardır, Yaşıl və ya Mavi. Çünki komputerlər saymağa 0-dan başlayır (sıfır), maksimum dəyər isə 255-dir.
 
 Considering a color is the result of a _combination_ of Red, Green and Blue, and because each of these 3 colors have 256 possible values, there are `256 * 256 * 256 = 16,777,216` possible colors available.
 
