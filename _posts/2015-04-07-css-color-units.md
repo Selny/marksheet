@@ -24,44 +24,44 @@ a{ color: orange;}
 
 Komputer manitorları, Televizorlar, mobil telefonlar, hamsı ekrana rəngləri çıxarmaq üçün RGB rəng modellərindən istifadə edirlər. Əsasən, hər bir rəng qırmızı, Yaşıl, və Mavi rənglərin kombinasiyasından meydana gəlir. Qırmızı üçün 256 mümünkün dəyər vardır, Yaşıl və ya Mavi. Çünki komputerlər saymağa 0-dan başlayır (sıfır), maksimum dəyər isə 255-dir.
 
-Considering a color is the result of a _combination_ of Red, Green and Blue, and because each of these 3 colors have 256 possible values, there are `256 * 256 * 256 = 16,777,216` possible colors available.
+Hər hansı bir rəngi nəzərə alsaq o qırmızı, yaşıl və mavi rənglərin _kombinasiyasıdır_, və çünki bu üç rəngin hər birinin 256 dəyəri var, `256 * 256 * 256 = 16,777,216` mümükin rəng mövcuddur.
 
-Because the RGB model is directly related to how colors are _physically_ rendered, it has become a CSS color unit.
+  çünki RGB modeli rənglərin necə göstərildikləri ilə birbaşa əlaqəlidir, CSS rəng vahidinə çevrildi.
 
-For example, the red color of this website is 219 amounts of Red, 78 of Green, and 68 of Blue:
+Məsələn, bu vebsaytın qırmızı rənginin 219 Qırmızı dəyəri var, 78 Yaşıl, və 68 Mavi:
 
 {% highlight css %}
 a{ color: rgb(219, 78, 68);}
 {% endhighlight %}
 
-The black color is no amount of either Red, Green or Blue:
+Qara rəngin heç bir nə Qırmızı, nə Yaşı nədə Mavi rəng dəyəri mövcuddur:
 
 {% highlight css %}
 body{ color: rgb(0, 0, 0);}
 {% endhighlight %}
 
-On the other side of the spectrum, white is the full amount of each Red, Green and Blue:
+Başqa bir spektrdan baxdıqda, ağ rəng isə hər birinin Qırmızı, Yaşıl və Qırmızının full dəyərlərini alır:
 
 {% highlight css %}
 body{ color: rgb(255, 255, 255);}
 {% endhighlight %}
 
-### rgba
+### rgba/red.green.blue.alfa(here alfa is the channel(burada alfa sadəcə bir kanaldır))
 
-The `rgba` color unit is `rgb` to which we add an **alpha** value (ranging from 0 to 1, in decimal values), which defines how transparent the color is:
+`rgba` rəngin vahidi `rgb`-dir hansı ki, biz ona **alfa** kanalı əlavə etmişik sadəcə (0 və 1 aralığındadır, ikilik sistemdə), hansı ki, rəngin nə qədər şəffaf olacağını təyin edir:
 
 {% highlight css %}
 body{ color: rgba(0, 0, 0, 0.8);}
 {% endhighlight %}
 
-A slightly transparent black color.
+Qara rəngin yüngül səffaf halıdır.
 {: .info}
 
-The purpose of a color being transparent is to blend with the background, and consequently look slightly different depending on the context. It is particularly useful for **background colors**.
+Rənglərin şəffaf olmasının səbəbi sadəcə arxa fon ilə qarışdırmaqdır, nəticədə kontekstdən asələ olaraq biraz fərqli görqnqr. Bu xüsusilə **arxa fon rənglərində** istifadə üçün əlverişlidir.
 
-### hsl and hsla
+### hsl and hsla/(hue, saturation, lightness) və (hue, saturation, lightness, alfa)
 
-**HSL** is another way to define a color. Think of it as a **color wheel**.
+**HSL**rəng təyin etmənin başqa bir yoludur. Bunu rəng çarxı kimidə düşünə bilərsiniz.
 
 <figure>
 <img src="/images/hsl-model.png" alt="HSL model">
@@ -70,23 +70,23 @@ Source: <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#/media/File:Hsl-hsv_m
 </figcaption>
 </figure>
 
-Instead of a color being a combination of Red, Green and Blue, you define:
+Qırmızı, Yaşıl və Mavi rənglərin kombinasiyasından yaranan rənglər yerinə, siz təyin edirsiniz:
 
-* the **Hue** a value ranging from 0 to 360, defines _which color_ you want.
-* the **Saturation** percentage, ranging from 0% to 100%, defines _how much_ of that color you want.
-* the **Lightness** percentage, ranging from 0% to 100%, defines _how bright_ you want that color to be.
+* **Hue** 0 ilə 360 arasında bir dəyərdir, istədiyiniz rəndi təyin edir.
+* **Saturation** faiz, 0% ilə 100% aralığındadır, bu rəngdən nə qədər istədiyinizi təyin edir.
+* **Lightness** faiz, 0% ilə 100% aralığındadır, bu rəngin nə qədər işıqlı olmağını istədiyinizi təyin edir.
 
-Again, the red color of this website is defined this way in HSL:
+Bir daha, bu vebsaytın qırmızı rənginin HSL-i belədir:
 
 {% highlight css %}
 a{ color: hsl(4, 68%, 56%);}
 {% endhighlight %}
 
-`4` indicates it's red
-`68%` indicates the red is quite prominent
-`56%` indicates it's halfway between black and white
+`4` qırmızı olduğunu göstərir
+`68%` qırmızının olduqca qabarıq olduğunu göstərir
+`56%` qara ilə ağın aralığında yerləşdiyini göstərir
 
-The `hsl` color unit is easier to understand than `rgb` because the expected result is clearer. You basically define a color in 3 separate steps, and can play around with each value to come up with the color you want. If you want a yellow shade, you can start with a value like `hsl(50, 68%, 56%)`, and alter the Saturation and Lightness value to find the specific shade you're looking for.
+`hsl` rəng vahidi anlamaq üçün `rgb`-dən daha rahatdır gözlənilən dəyər aydındır. Əsasən 3 hissəyə ayırmaqla rəngi təyin edirsən, və istədiyiniz rəngi tapmaq üçün hər bir dəyərlə oynaya bilər. If you want a yellow shade, you can start with a value like `hsl(50, 68%, 56%)`, and alter the Saturation and Lightness value to find the specific shade you're looking for.
 
 I consider `hsl` to be **human-readable**, whereas `rgb` is more **computer-readable**.
 
