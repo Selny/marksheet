@@ -86,24 +86,23 @@ a{ color: hsl(4, 68%, 56%);}
 `68%` qırmızının olduqca qabarıq olduğunu göstərir
 `56%` qara ilə ağın aralığında yerləşdiyini göstərir
 
-`hsl` rəng vahidi anlamaq üçün `rgb`-dən daha rahatdır gözlənilən dəyər aydındır. Əsasən 3 hissəyə ayırmaqla rəngi təyin edirsən, və istədiyiniz rəngi tapmaq üçün hər bir dəyərlə oynaya bilər. If you want a yellow shade, you can start with a value like `hsl(50, 68%, 56%)`, and alter the Saturation and Lightness value to find the specific shade you're looking for.
+`hsl` rəng vahidi anlamaq üçün `rgb`-dən daha rahatdır gözlənilən dəyər aydındır. Əsasən 3 hissəyə ayırmaqla rəngi təyin edirsən, və istədiyiniz rəngi tapmaq üçün hər bir dəyərlə oynaya bilər. Əgər sarı rəngdə bir kölgə istəyirsinizsə, `hsl(50, 68%, 56%)` dəyəri ilə başlaya bilərsiniz, və istədiyiniz spesifik kölgəni tapana qədər doyğunluq və parlaqlıq dəyərlərini dəyişə bilərsiniz.
+Hesab edirəm ki `hsl`**insan tərəfində oxunabiləndir**, halbuki `rgb` daha çox **komputer tərəfindən oxunabiləndir**.
 
-I consider `hsl` to be **human-readable**, whereas `rgb` is more **computer-readable**.
-
-`hsla` is the same as `hsl`, with the added value of being able to define an **alpha** value:
+`hsla` `hsl` ilə eynidirlər, **alfa** dəyərini təyin edə biləcəyimiz dəyər əlavə edilmişdir:
 
 {% highlight css %}
 body{ color: hsla(4, 68%, 56%, 0.5);}
 {% endhighlight %}
 
-A transparent red color.
+Yuxarıda gördüyünüz şəffaf qırmızı rəngdir.
 {: .info}
 
-### Hexadecimal
+### Hexadecimal/onaltılıq
 
-Colors in CSS can also be defined with **hexadecimal values**, like `#db4e44`.
+CSS-də rənglər həmçinin **onaltılıq dəyərlərlədə ** təyin oluna bilər, `#db4e44` kimi.
 
-To understand what hexadecimal values are, let's look at how binary and decimal work:
+Onaltılıq dəyərlərin nə olduğunu anlamaq üçün, gəlin ikilik və onluq dəyərlərin necə işlədiyinə nəzər salaq:
 
 <div class="table">
   <table>
@@ -176,40 +175,40 @@ To understand what hexadecimal values are, let's look at how binary and decimal 
   </table>
 </div>
 
-Consider the 0-9 numbers and the A-F letters as **symbols**.
+0-9 aralığındakı rəqəmlər və A-F aralığındakı hərflər **simvol** kimi hesab olunur
 
-Humans use the **decimal** system. We have 10 symbols to form numbers.
+İnsanlar **onluq** sistemdən istifadə edirlər. Rəqəmləri düzəltmək üçün 10 ədəd simvolumuz var.
 
-In **hexadecimal**, we have 16 symbols to form numbers. Because 0-9 are not enough symbols, we also use A-F. And it starts at zero. So:
+**onaltılıq sistemdə**, rəqəmləri düzəltmək üçün 16 simvolumuz var. Çünki 0-9 simvollar kifayət qədər deyik, biz həmçinin A-F simvollarıdan da istifadə edirik. Və 0-dan başlayır. Beləliklə:
 
-* the number `4` in hexadecimal is `4`
-* the number `12` in hexadecimal is `C`
-* the number `16` in hexadecimal is `10` because after you've run out of symbols (the last one being `F`), you add a second symbol to the left and increment (`0` becomes `1`) and the right one starts over (from `F` to `0`)
+* `4` rəqəmi onaltılıqda `4`-dür
+* `12` rəqəmi onaltılıqda `C`-dir
+* `16` rəqəmi onaltılıqda `10`-dur çünki simvollar bitdikdən sonra (ən sonuncusu `F`-dir), sola ikinci simvol əlavə edin və artırın (`0` olacaq `1`) və sağ tərəfdəki isə sondan başlayacaq ( `F`-dən  `0`-a)
 
-#### Do I have to remember this?
+#### Bunu xatırlamalayıqmı?
 
-Not at all! It is here to provide an explanation of how hexadecimal values work. The most important thing to remember is that there are 16 hexadecimal symbols.
+Qətiyyən yox! Burada sadəcə onaltılıq dəyərlərin necə işlədiyini izah etmək üçün yazmışıq. Unutmamağınız lazım olan ən vacib məsələ sadəcə 16 simvolun olmasıdır.
 
-Just like RGB, a hexadecimal color value is a combination of Red, Green, and Blue, each of them being represent as a hexadecimal value, like `DB` for Red, `4E` for Green, and `44` for Blue.
+RGB kimi, onaltılıq rəng dəyərlləri sadəcə Qırmızı, Yaşıl və Mavi rənglərinin kombinasiyasıdır, hər biri onaltılıq dəyərləri təqdim edirlər, qırmızı üçün `DB` kimi, Yaşıl üçün `4E`, və Mavi üçün isə `44` kimi.
 
-Because Red, Green or Blue can only have 2 symbols, their possible values are `16 * 16 = 256`, which mirrors the RGB color unit!
+Çünki Qırmızı, Yaşıl və Mavinin ancaq ikidəyəri var, onların mümkün dəyərləri `16 * 16 = 256`-dır, Hansı ki, RGB rəng vahidini əks etdiri!
 
-#### Why not use RGB then?
+#### O zaman nə üçün RGB istifadə etmirik?
 
-Usually, when choosing colors, you **don't write** them directly. You either use a color picker, or copy/paste it from Photoshop, or choose a [colour palette](https://www.colourlovers.com/palettes) somewhere.
+Adətən, rəngləri seçərkən, rəngləri birbaşa **yazmırsınız**. Ya rəng seçici istifadə edirsiniz, ya da fotoşopdan kopyalayıb/yapışdırırsınız, və ya başqa bir yerdən [colour palette](https://www.colourlovers.com/palettes) seçirsiniz.
 
-Hexadecimal values are easier to **copy and paste**, as they only comprise 6 characters.
+Onaltılıq dəyərlər **kopyalayıb və yapıışdırmaq üçün** rahatdır, onlar sadəcə 6 xarakterdən ibarətdirlər.
 
 ![Photoshop one field for hex](/images/photoshop-color-picker.png)
 
-#### It is easier to copy paste a single field than 3 separate ones.
+#### Tək bir sahəni kopyalayıb yapışdırmaq 3 ayrı sahədən daha asandır.
 
-In CSS, you only need to prepend a hexadecimal color value with a hash `#`.
+CSS-də, yalnız hexadecimal rəng dəyərini diyez `#` ilə yazmalısınız.
 
-### Which one to pick?
+### Hansını seçməli?
 
-If you don't intend to use any transparent color, stick to **hexadecimal** values, as they are easier to copy/paste and don't take much space in your code.
+Əgər hər hansı şəffaf rəngdən istifadə etmək fikrində deyilsinizsə, **onaltılıq** dəyərlərinə sadiq qalın, onlar kopyalamaq/yapışdırmaq üçün rahatdır və kodunuzda çox yer tutmur.
 
-If you want some transparency, convert your color from hex to rgba, and use the `rgba` color unit.
+Bir az şəffaflıq istəyirsinizsə, rənginizi hex-dən rgba-ya çevirin və `rgba` rəng vahidindən istifadə edin.
 
-If you want to play around with your color directly in the browser, try `hsl`.
+Rənginizlə birbaşa brauzerdə oynamaq istəyirsinizsə,'hsl' cəhd edin.
