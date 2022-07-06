@@ -5,44 +5,44 @@ subtitle: "Choosing a <strong>font</strong>"
 section: css
 ---
 
-CSS provides several **font** properties, that directly affect text rendering. The `font-family` property defines _which_ font to use.
+CSS bir çox **şrift** xüsusiyyətlərini təmin edir, bu birbaşa mətnin ekrana çıxarılmasına təsir edir. `font-family` xassəsi  _hansı_ şriftin istifadə olunacağını müəyyən edir.
 
 ### Generic font families
 
-Fonts are grouped in 5 **generic** families:
+Fontları 5 **ümumi** ailəsi var:
 
-* `serif` fonts have small lines attached to the end of each character
+* `serif` fontlarda hər simvolun sonuna kiçik xətlər əlavə olunur
 * `sans-serif`
 * `monospace`
 * `cursive`
 * `fantasy`
 
-`cursive` and `fantasy` are never used.
+`cursive` və `fantasy` heç vaxt istifadə olunlmur.
 {: .info}
 
-Because the `font-family` property is inherited by all HTML children elements, you can apply a font for the whole HTML document by applying it on the ancestor of all HTML elements: the `<body>` element.
+Çünki `font-family` xassəsi bütün HTML children elementləri tərəfindən inheriteddir, bütün HTML elementlərinin ancestor elementinə tətbiq etməklə bütün HTML sənədi üçün şrift təyin edə bilərsiniz: `<body>` elementi.
 
 {% highlight css %}
 body{ font-family: sans-serif;}
 {% endhighlight %}
 
-With this CSS rule, the webpage will use the **sans-serif** font defined by the user in his preferences.
+Bu CSS qaydası ilə, web səhifə istifadəçi tərəfindən təyin edilmiş **sans-serif** şriftindən istifadə edəcək.
 
 ### Web-safe fonts
 
-The problem with using generic font names is that the design of your webpage will rely upon the font set by the user in his settings.
+Ümumi şrift adlarından istifadə ilə bağlı problem ondan ibarətdir ki, veb-səhifənizin dizaynı istifadəçinin öz parametrlərində təyin etdiyi şriftdən asılıdır.
 
-As you probably want your webpage to look the same on anyone's computer, you'll want to define a **specific** font to be used. To do so, just use the **name** of the font.
+Yəqin ki, veb səhifənizin hər kəsin kompüterində eyni görünməsini istədiyiniz kimi, **spesifik** font istifadə etmək istəyəcəksiniz. Belə etmək üçün, sadəcə şrift **adını** istifadə edin.
 
 {% highlight css %}
 body{ font-family: Arial;}
 {% endhighlight %}
 
-Your webpage will use Arial **provided it is installed on the user's computer**. If the Arial font is not available on the user's computer, it will use the browser's default serif font (which is usually Times).
+Veb səhifəniz Arial-dan istifadə edəcək **istifadəçinin kompüterində quraşdırılmış olması şərtilə**. Əgər Arial istifadəçinin komputerində mövcud deyilsə, o zama brauzerin default sans-serif şriftindən istifadə edəcək (Çox zaman).
 
-Arial is a safe choice though, because it is installed on all Windows and Mac computers, and on most Linux systems. That is why Arial is considered a **web-safe** font: you can safely use it in your CSS and be almost sure that the user's computer will have it installed.
+Arial təhlükəsiz seçim kimi düşünülmüşdür, çünki bütün Windows və Mac komputerlərdə quraşdırılmışdır, və bir çox Linux sistemlərində. Buna gorə də Arial **web-safe** şrift kimi hesab olunur: qısaca desək CSS-də onu təhlükəsiz şəkildə istifadə edə bilərsiniz və istifadəçinin komputerində quraşdırıldığından demək olar ki, əmin ola bilərsiniz.
 
-There are **9** web-safe fonts:
+**9** web-safe fonts var:
 
 * Arial
 * Arial Black
@@ -54,18 +54,18 @@ There are **9** web-safe fonts:
 * Trebuchet MS
 * Verdana
 
-### Applying a list of fonts
+### Şriftlər siyahısının tətbiqi
 
-Although using _any_ of these values for the `font-family` property is a safe bet, you can define **fallback** values by writing a **list of font families**:
+Baxmayaraq ki, bu şriftlərin _hər hansının_ istifadəsi `font-family` xassəsi üçüb təhlükəsizdir, **list of font families** yazmaqla **fallback** dəyər təyin edə bilərsiniz:
 
 {% highlight css %}
 body{ font-family: Arial, Verdana, sans-serif;}
 {% endhighlight %}
 
-By defining **multiple values** for `font-family`, the browser will look for the first value `Arial` and use it. If it's not available, it will use the following one `Verdana`. Finally, if that one isn't available either, it will use the browser's default sans-serif font.
+`font-family` üçün **multiple values** təyin etməklə, brauzer birinci dəyərin `Arial` olduğunu görəcək onu istifadə edəcək. Əgər bu mövcud deyilsə, o zaman növbətini istifadə edəcək `Verdana`. Son olaraq, əgər buda mövcud deyilsə, o zaman brauzerin default sans-seriv dəyərindən istifadə edəcək.
 
-It is good practice to use a **generic family** as the last value. If you can't define the specific font to use, you can at least define the _type_ of font you want.
+**generic family**-dən istifadə etmək üçün yaxşı təcrübədir. Əgər istifadə etmək üçün spesifik font təyin edə bilmirsinizsə, heç olmasa istədiyiniz şriftin _tipini_ təyin edə bilərsiniz.
 
-Because designers want to use more original fonts but still want their webpage to look exactly the same on anyone's computer, it is possible to **include a font** in a webpage. That way, they make sure the font is available even if it's not present on the user's computer, simply because the website provides the font.
+Çünki dizaynerlər daha orijinal şriftlərdən istifadə etmək istəyirlər, lakin yenə də veb səhifələrinin hər kəsin kompüterində eyni görünməsini istəyirlər, veb səhifəyə **şrift daxil etmək** mümkündür. Bu yolla, onlar istifadəçinin kompüterində olmasa belə şriftin mövcud oldu]una əmin olurlar, sadəcə olaraq veb sayt şrifti təmin etdiyi üçün.
 
-We'll look into this method called `@font-face`, and see how services like Google Fonts or Typekit can help you.
+Biz `@font-face` adlı bu metodu nəzərdən keçirəcəyik, və Google Fonts və ya Typekit kimi xidmətlərin sizə necə kömək edə biləcəyinə görəcəyik.
