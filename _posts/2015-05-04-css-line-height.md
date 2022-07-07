@@ -5,42 +5,42 @@ subtitle: "For <strong>readibility</strong> concerns"
 section: css
 ---
 
-The `line-height` property, when applied to block-level element, defines, as its name literally suggests, the **height of each line**. It is **not** to be confused with the line spacing (a.k.a "leading") found in most graphical softwares (like Photoshop) which determines the amount of space _between_ lines in a paragraph. Although they both carry the same purpose (spacing lines of text), they do so in different ways.
+`line-height` xassəsi, block-level elementlərə təttbiz olunduqda, adındanda göründüyü kimi, **hər bir sətrin yüksəkliyini** təyin edir. Paraqrafdakı sətirlər arasındakı boşluğun miqdarını təyin edən əksər qrafik proqramlarda (Photoshop kimi) tapılan sətir aralığı ilə qarışdırılmamalıdır. Baxmayaraq ki, onların hər ikisi eyni məqsədi daşıyır (mətn sətirləri arasında məsafəni təyin etmək), bunun müxtəlif yolları var təbii ki.
 
-The `line-height` property uses the following units:
+`line-height` xassəsi aşağıdakı dəyərləri istifadə edir:
 
 * `px`
 * `em`
 * `%`
-* unitless numbers, like `1.5`
+* vahidsiz sadəcə ədədlərdə ola bilər, `1.5` kimi
 
-The unitless values basically act like percentages. So `150%` is equal to `1.5`. The latter is just more compact and readable.
+Vahidsiz dəyərlər əsasən faizlər kimi fəaliyyət göstərir. yəni `150%` `1.5`-ə bərabərdir. Sonuincu sadəcə daha yığcam və oxunaqlıdır.
 
 ### Why line-height is important
 
-The purpose of the `line-height` is to define a readable line spacing for your text. Because readibility is dependent upon the size of the text, it is recommended to use a **dynamic** value that is relative to the size of the text. Using `px` is therefore not recommended because it defines a **static** value.
+`line-height`-ın məqsədi mətniniz üçün oxunaqlı sətir aralığını təmin etməkdir. Çünki oxunaqlılıq mətnin ölçüsündən asılıdır, **dinamik** dəyərdən istifadə etmək tövsiyə olunur. Buna görə də 'px' istifadə etmək tövsiyə edilmir, çünki o, **statik** dəyəri müəyyən edir.
 
-In some cases, using `px` does come in handy (when you wish to vertically align text according to another element and not according to the font size).
+Bəzi hallarda, 'px' istifadə etmək faydalıdır (mətni şrift ölçüsünə görə deyil, başqa elementə görə şaquli şəkildə hizalamaq istədiyiniz zaman).
 {: .info}
 
-Because using `%` or `em` values can have unexpected values, the recommended method is **unitless numbers**:
+Çünki `%` və ya `em` dəyərlərindən istifadə gözlənilməz nəticələrə səbəb ola bilər, tövsiyə olunan metod **unitless numbers**-dir
 
-* for body text, a line height of 1.5 times the size of the text is recommended.
-* for headings, a line height of 1.2 is recommended
+* bodynin mətni üçün, mətnin ölçüsündən 1,5 dəfə çox olan sətir hündürlüyü tövsiyə olunur.
+* headinglər üçün, 1.2 line-height tövsiyyə olunandır
 
 {% highlight css %}
 body{ font-size: 16px; line-height: 1.5;}
 {% endhighlight %}
 
-The computed line height will thus be 16 * 1.5 = `24px`.
+Mətnin hündürlüyünü hesablasaq belə ki, 16 * 1.5 = `24px` dir
 
 ### Line-height inheritance
 
-Because the `line-height` property is inherited by the child elements, it will remain consistent no matter what `font-size` is subsequently applied.
+Çünki `line-height` xassəsi child element ilə inherited dir sonradan hansı `şrift ölçüsü` tətbiq olunmasından asılı olmayaraq ardıcıl olaraq qalacaq.
 
 {% highlight css %}
 body{ font-size: 16px; line-height: 1.5;}
 blockquote{ font-size: 18px;}
 {% endhighlight %}
 
-The `blockquote` element will have a line height of `27px`.
+`blockquote` elementinin `27px` sətir hündürlüyü olacaq.
