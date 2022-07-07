@@ -5,7 +5,7 @@ subtitle: "A <strong>shortcut</strong> for several font properties"
 section: css
 ---
 
-In CSS, some properties can be **grouped** together under another property, to save time and space. The `font` property regroups (in this particular order):
+CSS-də, bəzi xassələr digər bir xassə altında quruplaşa bilər, vaxta və yerə qənaət etmək məqsədilə. 'font' xüsusiyyəti yenidən qruplaşır (aşağıdakı Xüsusi qaydada):
 
 * `font-style`
 * `font-variant`
@@ -14,31 +14,31 @@ In CSS, some properties can be **grouped** together under another property, to s
 * `line-height`
 * `font-family`
 
-You can thus define 6 properties through a single one:
+Beləliklə 6 xassəni birində təyin edə bilərdiniz:
 
 {% highlight css %}
 body{ font: italic small-caps bold 16px/1.5 Arial, sans-serif;}
 {% endhighlight %}
 
-They have to be written in this particular order and there must be a slash `/` between the `font-size` and the `line-height`.
+Bunlar bu xüsusi ardıcıllıqla yazılmalıdır və slash `font-size` və `line-height` arasında slash  `/` olmalıdır.
 
-Although I've defined all 6 properties, only the `font-size` and `font-family` are mandatory. You can thus omit to define the other properties if you intend to keep their **default** values:
+Baxmayaraq ki 6 xassəni təyin eləmisəm, yalnız `font-size` və `font-family` məcburidir.Beləliklə, siz onların **defolt** dəyərlərini saxlamaq niyyətindəsinizsə, digər xassələri təyin etməyi buraxa bilərsiniz:
 
 {% highlight css %}
 body{ font: bold 16px/1.5 Arial, sans-serif;}
 {% endhighlight %}
 
-Because `font-style` and `font-variant` have not been defined, they'll use their default value `normal`.
+Çünki `font-style` və `font-variant` təyin olunmalıdır, onlar default dəyərlərini istifadə edəcəklər `normal`.
 {: .info}
 
-Beware! If you've previously define one of the font properties and use the `font` shorthand afterwards, it will **override** the previously defined values.
+Diqqətli olun!Əgər siz əvvəllər font xassələrindən birini təyin etmisinizsə və sonra `font` stenoqrafiyasından istifadə etmisinizsə, o, əvvəllər müəyyən edilmiş dəyərləri **əsaslandıracaq**.
 
 {% highlight css %}
 body{ font-size: 16px; line-height: 1.5;}
 ul{ font: 14px Georgia, serif;}
 {% endhighlight %}
 
-In the `font` shorthand, the `line-height` has not been defined, and will lose its ancestor's value of `1.5` and will revert to its default value `medium` (which is usually `1.2`).
+`font` da stenoqrafiya, `line-height` təyin edilməmişdir, və ancestor's `1.5` dəyərini itirəcək və default dəyərini `medium` olaraq dəyişəcək (hansı ki, əsasən `1.2` dir).
 {: .info}
 
-Other shorthand properties exist, like `background`, `border` and `margin`.
+Başqa stenoqrafiya xassəsi daha mövcuddur, `background`, `border` və `margin` kimi.
