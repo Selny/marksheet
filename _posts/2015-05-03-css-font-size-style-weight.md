@@ -7,37 +7,37 @@ section: css
 
 ### font-size
 
-We've already covered **[CSS size units](/css-size-units.html)**, which are used to set the font size among other things.
+Biz artıq **[CSS size units](/css-size-units.html)**-ı qavradıq, başqa başqa şeylər arasında şrift ölçüsünü təyin etmək üçün istifadə olunur.
 
 {% highlight css %}
 p{ font-size: 16px;}
 {% endhighlight %}
 
-Bear in mind that setting a font size of `16px` won't make each letter `16px` high. The _actual_ size of each letter depends on the font-family used.
+Nəzərə alın ki, `16px` şrift ölçüsünün təyin edilməsi hər bir hərfi `16px` yüksək etməyəcək. Hər hərfin _faktiki_ ölçüsü istifadə olunan şrift ailəsindən asılıdır.
 
 ### font-style
 
-This property can make your text _italic_:
+Bu xassə mətninizi _italic_ edə bilər:
 
 {% highlight css %}
 h2{ font-style: italic;}
 {% endhighlight %}
 
-Default value: `font-style: normal;`.
+Default dəyər: `font-style: normal;`.
 
-Another possible value is `oblique` but is never used.
+Başqa mümkün dəyər isə `oblique` ancaq heç vaxt istifadə olunmur.
 
 ### font-weight
 
-This property can make your text **bold**:
+Bu xassə mətninizi **qalın** edə bilər:
 
 {% highlight css %}
 h2{ font-weight: bold;}
 {% endhighlight %}
 
-Default value: `font-weight: normal;`.
+Default dəyər: `font-weight: normal;`.
 
-Depending on the `font-family` used, there is a range of font weights available, from `100` to `900`:
+İstifadə olunan `font-family`-dən asılıdır, bir neşə srift dəyəri mövcuddur,  `100` dən `900`-a qədər:
 
 {% highlight css %}
 font-weight: 100; /* Thin */
@@ -51,18 +51,18 @@ font-weight: 800; /* Extra Bold */
 font-weight: 900; /* Ultra Bold */
 {% endhighlight %}
 
-Very few fonts provide all 9 weights. The [Exo font](https://www.google.com/fonts/specimen/Exo) is one of them.
+Çox az srift 9 dəyərin hər birini ehtiva edir. [Exo font](https://www.google.com/fonts/specimen/Exo) bunlardan biridir.
 
-You'll mostly find 400 (normal) and 700 (bold), and sometimes 300 (light) and 500 (medium).
+ 400 (normal) və 700 (bold) kimidə görə bilərsiniz, və bəzən 300 (light) və 500 (medium).
 
 ### font-variant
 
-This property turn your text into small caps:
+Bu xassə mətninizi kiçik hərflərə çevirir:
 
 {% highlight css %}
 h2{ font-variant: small-caps;}
 {% endhighlight %}
 
-Default value: `font-variant: normal;`.
+Default dəyəri: `font-variant: normal;`.
 
-It's not a widely used property.
+Geniş istifadə olunan xassə deyil.
