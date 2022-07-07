@@ -5,50 +5,50 @@ subtitle: "Sizing for <strong>content</strong> and <strong>space</strong>"
 section: css
 ---
 
-There many CSS properties that require **size units**:
+**Ölçü vahidi** tələb edən bir çox css xassələri var:
 
-* `font-size` defines the size of the text
-* `border-width` defines the weight of element borders
-* `margin` defines the spacing between elements
-* `left/right/top/bottom` allows to position and move elements
+* `font-size` mətnin ölçüsünü təyin edir
+* `border-width` elementin borderlərinin ölçülərini təyin edir
+* `margin` elementlər arasındakı məsafəni təyin edir
+* `left/right/top/bottom` elementləri yerləşdirməyə imkan verir
 
-The most used units are:
+Ən çox istifadə olunanlar:
 
-* `px` for pixels
-* `%` for percentage
-* `em` for sizing relative to the parent's `font-size` value.
+* piksel vahidi üçün `px`
+* faiz vahidi üçün `%`
+* `font-size` dəyərinin parent-lərin nisbi ölçüləri üçün `em`.
 
-### Pixels
+### Pixels/Piksellər
 
-Because computer screens use pixels to display the content, it is the **most common size unit in CSS**.
+Çünki komputer ekranları məzmunu çap etmək üçün piksellərdən istifadə edir, bu **CSS də ən çox istifadə olunan ölçü vahididir**.
 
-It can be used to fix the **width** of an element:
+Bu elementlərin enini düzəltmək üçün istifadə oluna bilər:
 
 {% highlight css %}
 body{ width: 400px;}
 {% endhighlight %}
 
-Or set the **text size**:
+Və ya **nətnin ölçüsünü** verə bilərsiniz:
 
 {% highlight css %}
 body{ font-size: 20px;}
 {% endhighlight %}
 
-Pixels in CSS are straightforward because they define **absolute values**: they are not affected by other inherited CSS properties.
+Piksellər CSS də çox sadədir, çünki onlar **mütləq dəyərləri** müəyyən edirlər: onlar digər inherited CSS xassələrinə təsir etmirlər.
 
-They are also widely used for **positioning** and **spacing** purposes.
+Onlar həmçinin **positioning/(yerləşdirmə)** və **boşluqları** təyin etmə .
 
 ### Percentages
 
-Percentages are **relative units**: they rely upon the element's parent and/or ancestor.
+Percentages **nisbi vahidlərdir**: onlar elementin parentlərinə və/yaxud ancestorlarına etibar edirlər.
 
-For example, block-level elements like paragraphs naturally take up the **whole width available**. The following CSS rule will resize them to **half** of the width available.
+Məsələn, block-level elementlər paraqraflar kimi təbii olaraq **əlçatan bütün genişliyi** götürür. Aşağıdakı CSS qaydası mövcud olan genişliyi **yarıya** endirir.
 
 {% highlight css %}
 p{ width: 50%;}
 {% endhighlight %}
 
-Percentages can help set other CSS properties, like text size:
+Percentages başqa CSS xassələri ilədə istifadə oluna bilər, text size kimi:
 
 {% highlight css %}
 strong{ font-size: 150%;}
@@ -64,14 +64,14 @@ strong{ font-size: 150%;}
 
 ### Em
 
-`em` is a **relative** unit: it depends upon the value of the element's `font-size`.
+`em`  **relative** dəyərdir: `font-size` elementinin dəyərindən asılıdır.
 
-For example, if the parent has a font-size of `20px` and you apply `font-size: 0.8em` to a child element, this child element will render a font-size of `16px`.
+Məsələn, əgər parent elementin `20px` font-size-ı varsa və child elementə `font-size: 0.8em` versək, bu chil element font-size `16px` dəyərində ekrana cıxaracaq.
 
-Don't confuse the `em` CSS size unit and the `em` CSS selector, which targets `<em>` HTML elements
+CSS olçü vahidi olan `em`-i qarışdırmayın və `em` CSS selektorlarını, hansı ki, `<em>` HTML elementini hədəf alır
 {: .info}
 
-The `em` unit is interesting as you define font sizes of HTML elements _relative_ to one another. To design a pleasing and easy to read webpage, you need consistent visual depth. For example, you want your `<h1>` to be twice as big as your body text, your `<h2>` only 1.5 times as big, and your sidebar slightly smaller. This could easily be achieved in CSS:
+HTML elementlərinin şrift ölçülərini bir-birinə _nisbi olaraq təyin etdiyiniz üçün `em` vahidi maraqlıdır. Dizayn üçün cəlbedici və veb səhifələri oxumaq üçün rahatdır, sadəcə ardıcıl vizual dərinliyə ehtiyac var. Məsələn, `<h1>` elementinizi body elementinin mətnindən iki dəfə böyül eləmək istəsəniz, `<h2>` teqiniz sadəcə 1.5 dəfə böyük olacaq, və sidebariniz biraz daha kiçik. Buna CSS-də asanlıqla nail olmaq olar:
 
 {% highlight css %}
 body{ font-size: 16px;}
@@ -80,9 +80,9 @@ h2{ font-size: 1.5em;}      /* = 24px */
 aside{ font-size: 0.75em;}  /* = 12px */
 {% endhighlight %}
 
-If you decide to change the size of your body text, the relative sizes of your headings and sidebar will **change accordingly**, and your webpage will remain **visually balanced**.
+Əgər body elementinin mətninn olçüsünü dəyişmək qərarına gəlsəniz, headinglərinizin və sidebarinizin nisbi ölçüləri **müvafiq olaraq** dəyişəcək, və veb səhifəniz **vizual olaraq balanslı** qalacaq
 
-By just changing one value, all other values are altered:
+Sadəcə bir dəyəri dəyişməklə, bütün qalan dəyərlər dəyişmiş olur:
 
 {% highlight css %}
 body{ font-size: 20px;}
@@ -93,7 +93,7 @@ aside{ font-size: 0.75em;}  /* = 16px */
 
 ### Rem
 
-The `rem` unit is similar to `em`, but instead of depending upon the _parent's_ value, it relies upon the **root element's** value, which is the `<html>` element.
+`rem` olçü vahidi `em`-ə oxşardır, ancaq _paren_ elementin dəyərinə görə deyil, **root elementin** dəyərinə görə dəyər alır, which is the `<html>` element.
 
 {% highlight css %}
 html{ font-size: 18px;}
@@ -102,14 +102,14 @@ h1{ font-size: 2rem;}       /* = 36px */
 h2{ font-size: 1.5rem;}     /* = 27px */
 {% endhighlight %}
 
-The difference between `rem` and `em` is that `rem` values are **fixed** while `em` values can _multiply_ between each other.
+`rem` və `em` arasındakı fərq is that `rem`-in dəyərləri **sabitdir** halbuki `em`-in dəyəri isə bir birleri arasında çoxala bilər.
 
-If you set your `html{ font-size: 18px;}`:
+Əgər `html{ font-size: 18px;}` təyin etmisinizsə:
 
-* `2rem` will always be equal to `36px`, no matter where you use in your CSS
-* `2em` will always be equal to **double** the parent's `font-size`, so not necessarily `36px`
+* `2rem` hər zaman `36px`-a bərabər olacaq, CSS-də harada istifadə etdiyinizdən asılı olmayaraq
+* `2em` hər zaman parentinin  `font-size`-ın **iki qatı** qədər dəyərə sahib olacaq, yeni `36px` olması mütləq deyil
 
-Quick example where `2em` is different from `2rem`:
+`2em` ilə  `2rem` arasındakı fərqə dair nümunə:
 
 {% highlight css %}
 html{ font-size: 20px;}
@@ -118,10 +118,10 @@ p span{ font-size: 2em;}      /* = 16px * 2 = 32px */
 p strong{ font-size: 2rem;}   /* = 20px * 2 = 40px */
 {% endhighlight %}
 
-The `span` rely upon the `p` font-size value while the `strong` rely upon the `html` font-size value.
+`span` `p` şrift ölçüsü dəyərinə, `strong` isə `html` şrift ölçüsü dəyərinə əsaslanır.
 
-### Which unit to use?
+### Which unit to use?/(Hansı vahiddən istifadə edilməli)
 
-I'd recommend **pixels** to start with: as they're absolute values, they aren't affected by the element's context. They are straightforward, allow to set the text size, image dimensions, border width, position coordinates...
+Başlanğıc üçün **piksel** tövsiyə edərdim: çünki onlar mütləq dəyərlərdir, onlar elementlərin məzmununa təsir etmirlər. Onlar sadədir, text ölçüsünü, image ölçülərini, border enini, position koordinatlarını təyin etməyə imkan verir...
 
-**Percentage** and **em** values can be used alongside pixels, for relative text sizes especially.
+**Percentage** və **em** dəyərləri piksellərlə birlikdə istifadə oluna biler, xüsusəndə nisbi text size üçün.
