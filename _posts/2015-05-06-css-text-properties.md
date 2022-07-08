@@ -5,42 +5,42 @@ subtitle: "Other <strong>text</strong> alterations"
 section: css
 ---
 
-Alongside the several `font-*` properties, CSS provides many `text-*` properties.
+Bir neçə `font-*` xassələri ilə yanaşı, CSS bir çox `text-*` xassəsi də təqdim edir.
 
 ### text-align
 
-The `text-align` property must be applied on a block-level element and defines how its text and children inline elements are horizontally aligned.
+`text-align` xassəsi block-leve elementlərə tətbiq edilməlidir və textinin və ya inline child elementlərinin necə düzüləcəyini təyin edir.
 
 {% highlight css %}
 body{ text-align: left;}
 {% endhighlight %}
 
-The most used values are:
+Ən çox istifadə olunan dəyərlər:
 
 * **left**
 * **right**
 * **center**
 * **justify**
 
-These values correspond to the same alignment buttons you find in Microsoft Word or Photohop:
+Microsoft Word və ya Photoshopda görmüş ola biləcətiniz alignment düymələri ilə eynidir:
 
 <i class="fa fa-align-left"></i> <i class="fa fa-align-right"></i> <i class="fa fa-align-center"></i> <i class="fa fa-align-justify"></i>
 
-The `justify` value is **not** recommended. Although it might look visually appealing because it forms a rectangle of text, it is very hard to read.
+`justify` dəyəri **tövsiyə olunan deyil**. Baxmayaraq ki, visual olaraq cəzbedici görünür, mətndən ibarət düzbucaqlı əmələ gətirir. Ancaq heç oxunaqlı deyil
 {: .info}
 
-The `text-align` default value is `start`. Basically, `start` can either be `left` or `right`, depending on the **direction** set on the HTML document.
+`text-align` xassəsinin default dəyəri `start`-dır. Əsasən, `start` ya `left` ya da `right` ola bilər, HTML sənədində təyin edilmiş **istiqamətdən** asılıdır.
 
-`direction` is a CSS property that can either be `ltr` (left to right) or `rtl` (right to left):
+`direction` CSS xassəsidir ki, ya `ltr` (left to right) ya da `rtl` (right to left) ola bilər:
 
-* if `ltr` is chosen, `start` equals to `left`
-* if `rtl` is chosen, `start` equals to `right`
+* Əgər `ltr` secilidirsə, `start` `left`-ə bərabərdir
+* Əgər `rtl` seçilidirsə, `start` `right`-a bərabərdir
 
 ### text-decoration
 
-The `text-decoration` property is used to add a line on your text.
+`text-decoration` xassəsi textə xətt  əlavə etmək üçün istifadə olunur.
 
-Default value: `none`
+Default Qiyməti: `none`
 
 {% highlight css %}
 .deleted{ text-decoration: line-through;}
@@ -50,13 +50,13 @@ Default value: `none`
   <p style="text-decoration: line-through;">Deleted</p>
 </div>
 
-Possible values:
+Mümkün dəyərləri:
 
 * `overline`
 * `underline`
 * `line-through`
 
-By default, HTML links (`<a>`) have a `text-decoration: underline;` applied to them. One of the first things coders usually do is to remove this default styling:
+Default olaraq, HTML linklərinin (`<a>`) tətbiq edilmis `text-decoration: underline;` defaul dəyəri var. Coderlərin ilk olaraq gördüyü işlərdən bir bu default dəyəri silməkdir:
 
 {% highlight css %}
 a{ text-decoration: none;}
@@ -64,9 +64,9 @@ a{ text-decoration: none;}
 
 ### text-indent
 
-The `text-indent` property allows to add space before the first letter of the first line of a block-level element.
+`text-indent` xassəsi blok-level elementlərin birinci sətrinin birinci hərfindən əvvələ boşluq əlavə etməyə imkan verir.
 
-Default value: `0` (zero)
+Default qiyməri: `0` (zero)
 
 {% highlight css %}
 blockquote{ text-indent: 30px;}
@@ -76,22 +76,22 @@ blockquote{ text-indent: 30px;}
   <blockquote style="text-indent: 30px;">People always make the mistake of thinking art is created for them. But really, art is a private language for sophisticates to congratulate themselves on their superiority to the rest of the world. As my artist’s statement explains, my work is utterly incomprehensible and is therefore full of deep significance.</blockquote>
 </div>
 
-Notice how only the **first line** is indented. If you want to offset the whole block of text, use [paddings](/css-padding.html).
+Diqqət necə yalnız **birinci sətir** indented dir. Bütün mətn blokunu ofset etmək istəyirsinizsə, [paddings](/css-padding.html) dən istifadə edə bilərsiniz.
 
-As for the `font-size` property, you can use `px`, `em`, or even `%` values.
+`font-size` xassəsinə gəldikdə,`px`, `em`, hətta `%` dəyərlərindən istifadə edə bilərsiniz.
 {: .info}
 
 
 ### text-shadow
 
-If you've ever used Photoshop, you've probably used the drop shadow tool. In CSS, you can add shadow to a text, to make it either fancier or more readable.
+Əgər bir dəfə belə olsa Photoshop istifadə etmisinizsə, ehtimal ki drop shadow tool-dan istifadə etmisinizdir. CSS-də, text-ə kölgə əlavə edə bilərsiniz, ya daha həvəskar, ya da daha oxunaqlı etmək üçün.
 
-You define:
+Aşağıdakı kimi təyin edə bilərsiniz:
 
-* `x` the horizontal offset
-* `y` the vertical offset
-* the `blur`
-* the `color`
+* `x` üfüqi ofset
+* `y` şaquli offset
+* `blur`
+* `color`
 
 {% highlight css %}
 h1{ text-shadow: 0 2px 5px rgba(0,0,0,0.5);}
@@ -101,7 +101,7 @@ h1{ text-shadow: 0 2px 5px rgba(0,0,0,0.5);}
   <h1 style="text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Hello World</h1>
 </div>
 
-Only the `x` and `y` values are required. The `blur` defaults to `0` (zero), while the `color` defaults to the color of the text.
+Ancaq `x` və `y` dəyərləri tələb olunur. `blur` default olaraq `0` (zero)-dır, `rəng` isə mətnin default rənginə uyğundur.
 
-This property is tricky, so use it with parsimony and don't go crazy!
+Bu xassə mürəkkəbdir, ona görə də onu daha ehtiyatla istifadə edin!
 {: .info}
