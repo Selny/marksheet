@@ -5,12 +5,13 @@ subtitle: "How <strong>rectangles</strong> are made"
 section: css
 ---
 
-By default, every HTML element is rendered in the browser as a **rectangle**. The dimensions of that rectangle are **dynamic**: they vary according to the _content_ of that element. You can consider these rectangles as **fluid**, altering their shape to fit the content.
+Defaul olaraq, hər bir HTML elementi brauzerdə düzbucaqllı formatında göstərilir. Bu düzbucaqlının ölçüləri **dinamik**dir: onlar həmin elementin _məzmununa_ uyğun olaraq dəyişirlər. Bu düzbucaqlıları **maye** kimi qəbul edə bilərsiniz, formalarını məzmuna uyğunlaşdırmaq üçün dəyişdirirlər.
 
-That is because a webpage is a **living** element: just resize your browser window to see how most elements will adapt automatically to fit within the available space.
+Çünki veb səhifə **canlı** elementdir: sadəcə olaraq brauzerinizin pəncərəsinin ölçüsünü dəyişdirin ki, əksər elementlər mövcud boş yerə sığmaq üçün avtomatik olaraq uyğunlaşacaq.
 
-This is the default behavior of a webpage. But because the design of a webpage often requires to **fix** elements in place, with specific dimensions, CSS allows us to alter or even cancel this fluid behavior.
+Bu üeb səhifənin default davranışıdır.
+This is the default behavior of a webpage. Lakin veb-səhifənin dizaynı tez-tez spesifik ölçülərlə elementləri yerində **düzəltməyi** tələb etdiyi üçün, CSS bu maye davranışını dəyişdirməyə və ya hətta ləğv etməyə imkan verir.
 
-A block-level element, like a paragraph, will **horizontally** take up all the space it can, which by default is the width of your browser. Vertically, the paragraph will adapt its height to the length of its content.
+Block-level element, paragraph kimi, üfüqi olaraq bütün sahəni əhatə edə bilər, bu, standart olaraq brauzerinizin enidir. Şaquli olaraq, paraqraf öz hündürlüyünü məzmununun uzunluğuna uyğunlaşdıracaq.
 
-Many parameters are taken into account: the length of the content, the font used, its size, its spacing, the element's padding, the borders, if it's floating, its positioning...
+Bir çox parametrlər nəzərə alınır: məzmunun uzunluğu, istifadə olunan şrift, ölçüsü, aralıqları, elementlərin paddingi, borderlər...
