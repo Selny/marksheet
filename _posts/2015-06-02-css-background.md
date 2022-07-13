@@ -5,55 +5,55 @@ subtitle: "How your rectangle is <strong>filled</strong>"
 section: css
 ---
 
-The background of an HTML element is what appears _behind_ the text. Although CSS allows to apply a background on any type of HTML element, it's mostly used on block-level elements.
+HTML elementinin fonu mətnin arxasında görünən şeydir. CSS in bizə hər bir elementə background tərtib etmək imkanı verməyinə baxmayaraq, bu xassə daha çox blok-level elementlərdə istifadə olunur.
 
-Backgrounds are only applied on the targeted element. But considering most HTML elements have a transparent background, applying a background on the `body` will _look_ like it's applied on all elements.
+Backgrounds ancaq hədəf elementə tətbiq olunur. Ancaq cox HTML elementinin şəffaf backgrounda malik oldugunu nəzərə alsaq, `body`-ə background versək bütün elementlərə background tətbiq edilmiş kimi görünəcək.
 
 ### background-color
 
-Default value: `transparent`
-Inherited by children elements: no.
+Default dəyəri: `transparent`
+children elementlərlə Inherited dir: no.
 
-As we've already covered the different ways to define a [color in CSS](/css-color-units.html), applying a background color is straightforward:
+[color in CSS](/css-color-units.html) rəng təyin etməyin müxtəlif yollarını artıq əhatə etdiyimiz kimi, background təyin etməkdə sadədir:
 
 {% highlight css %}
 body{ background: #f2eee9;}
 {% endhighlight %}
 
-The whole element will be filled with a **plain** background color. Bear in mind to always choose an appropriate text color to keep your content easy to read.
+Bütün element **düz** background ilə doldurulmuş olacaq. Məzmununuzu asan oxumaq üçün həmişə uyğun mətn rəngini seçməyi unutmayın.
 
 ### background-image
 
-Because plain colors are usually not sufficient, CSS allows to apply **images** as backgrounds for elements.
+Düz rənglər hər zaman kifayət etmirlər, CSS bizə elementlərin backgrounduna **şəkil** tərtib etməyə imkan yaradır.
 
-Applying a background image only requires to specify its URL:
+Background şəklinin tətbiqi yalnız onun URL-ni göstərməyi tələb edir:
 
 {% highlight css %}
 body{ background-image: url(images/diagonal-pattern.png);}
 {% endhighlight %}
 
-The behavior of the image (how it repeats itself, where it is positioned, how it is sized) is defined by other background properties. The `background-image` only defines _which_ image to use.
+Şəklin davranışı (öz özünə təkrarlanması, yerləşməsi, ölçüsü) başqa bir CSS xasssəsi ilə təyin edilir. `background-image` xassəsi sadəcə _hansı_ şəkli istifadə edəcəyimizi təyin edir.
 
-Bear in mind that the HTML element doesn't take into consideration the dimensions of its background image. Even if the image is bigger than the element it's applied to, the element **won't resize** to fit the image, as the image is purely decorative and is here to support the element.
+Nəzərə alın ki, HTML elementi öz fon şəklinin ölçülərini nəzərə almır. Şəkil tətbiq olunduğu elementdən böyük olsa belə, element **şəkilə uyğunlaşmaq üçün ölçüsünü dəyişməyəcək**, çünki şəkil sırf dekorativdir və elementi dəstəkləmək üçündür.
 
-### The difference between HTML images `<img>` and CSS background images
+### HTML images `<img>` və CSS background images xassəsi arasındakı fərqlər
 
-The HTML `<img>` element is for images that are part of the **content**, while CSS background images are purely **decorative**. 
+HTML `<img>` element **məzmunun bir hissəsi olan şəkillər üçündür, CSS background images sırf **dekorativdir**. 
 
-The logo of a company, the thumbnail of a gallery, the picture of a product... These are all considered **content** and should use the HTML `<img>` element.
+Bir şirkətin loqosu, qalereyanın kiçik şəkli, məhsulun şəkli... Bunların hamsı **məzmun** kimi nəzərə alınır və HTML `<img>` elementindən istifadə edir.
 
-A diagonal pattern, a beautiful landscape, a cart icon... These can be considered as **decorative**, as they _support_ the content but are not _part_ of it. If they were to disappear, the webpage would still make sense.
+Diaqonal naxış, gözəl mənzərə, araba ikonu... Bunlar **decorative** olaraq nəzərə alına bilər, çünki onlar məzmunu _dəstəkləyir, lakin onun bir hissəsi deyil. Əgər onlar yoxa çıxsaydı, buna baxmayaraq veb-səhifə yenə də mənalı olardı.
 
-As for many dual choices, the frontier between content and styling is blurry. Some visual techniques are easier to achieve with CSS backgrounds. Just ask yourself if the image you're using is essential to the page. If so, use `<img>` element.
+ Bir çox dual seçimlərə gəldikdə, content və styling arasındakı sərhəd bulanıqdır. Bəzi vizual üsulları CSS background ilə əldə etmək daha asandır. Sadəcə özünüzdən soruşun ki, istifadə etdiyiniz şəkil səhifə üçün vacibdirmi? Əgr elədirsə, o zaman `<img>` elementindən istifadə edin.
 
 #### Gradients
 
-CSS also allows to define **color gradients** as background images, in 2 different shapes:
+CSS həmçinin **rəng gradientlərini** fon şəkilləri kimi müəyyən etməyə imkan verir, 2 müxtəlif formada:
 
-* `linear-gradient` for gradients in a single direction, in a rectangular shape
-* `radial-gradient` for gradients in all directions, in a circular shape
+* `linear-gradient` bir istiqamətdə, düzbucaqlı formada gradientlər üçün
+* `radial-gradient` bütün istiqamətlərdə, dairəvi formada gradientlər üçün
 
-We cover that in a chapter 8.3: [CSS gradients](/css-gradients.html). The only thing to know for now is that background gradients are considered as **background images**:
+Biz bunu 8.3-cü fəsildə əhatə edirik: [CSS gradients](/css-gradients.html). Hələlik bilmək lazım olan yeganə şey background gradientlərinin **background şəkilləri** kimi qəbul edilməsidir.:
 
 {% highlight css %}
 body{ background-image: linear-gradient(white, grey);}
@@ -61,19 +61,21 @@ body{ background-image: linear-gradient(white, grey);}
 
 ### background-position
 
-By default, a background image will repeat itself indefinitely. You can specify its **original position**, by choosing a horizontal `x` value, and a vertical `y` one.
+Default olaraq, fon şəkli sonsuz təkrarlanacaq. Siz onun **orijinal mövqeyini** təyin edə bilərsiniz, üfüqi `x` və  `y` dəyərini seçməklə.
 
-For each coordinate, you either use:
+Hər bir koordinat üçün:
 
-* pixel values `px`
-* percentages, relative to the HTML element's dimensions
-* keywords like `center`, `left`, `bottom`...
+* pixel qiymətini `px`
+* percentages, HTML elementinin ölçülərinə nisbətən
+* `center`, `left`, `bottom` kimi...
+
+istifadə edirsiniz
 
 {% highlight css %}
 body{ background-position: right bottom;}
 {% endhighlight %}
 
-You can mix different coordinate units:
+Müxtəlif koordinat vahidlərini qarışdıra bilərsiniz:
 
 {% highlight css %}
 body{ background-position: center 20px;}
@@ -81,7 +83,7 @@ body{ background-position: center 20px;}
 
 ### background-repeat
 
-By default, a background image will repeat itself indefinitely. You can choose to make it repeat only horizontally, only vertically, or not at all.
+Default olaraq, fon şəkli sonsuz təkrarlanacaq. Siz onu yalnız üfüqi, yalnız şaquli və ya hər iki istiqamətdə təkrarlanmasını ləğv edə bilərsiniz.
 
 {% highlight css %}
 body{ background-repeat: repeat-x;} /* Only horizontally */
