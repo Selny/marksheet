@@ -5,21 +5,21 @@ subtitle: "To give <strong>space</strong> to your inner content"
 section: css
 ---
 
-The **padding** is the space between an element's _border_ and its _content_.
+**padding** elementin _sərhədləri_ və _məzmunu_ arasındakı boşluqlardır.
 
-The amount of space can be defined using any of the [size units](css-size-units.html).
+Boşluqların miqdarı istənilən [size units](css-size-units.html)-dən istifadə etməklə müəyyən edilə bilər.
 
 {% highlight css %}
 blockquote{ padding: 20px;}
 {% endhighlight %}
 
-As for borders, the padding can be set _individually_ for any of the 4 sides.
+Borderlərdə olduğu kimi, paddin də istənilən 4 tərəfdən fərdiləşdirilə bilər
 
 {% highlight css %}
 blockquote{ padding-bottom: 20px;}
 {% endhighlight %}
 
-Because the padding lies **between** the _border_ and the _content_, it's easier to visualize the inner space with a border applied:
+Doldurma _sərhəd_ və _məzmun_ arasında ** olduğundan, tətbiq olunan inner spacei border ilə vizuallaşdırmaq daha asandır:
 
 {% highlight css %}
 blockquote{ background: yellow; border: 1px solid blue;}
@@ -31,7 +31,7 @@ blockquote{ background: yellow; border: 1px solid blue;}
   </blockquote>
 </div>
 
-Adding a padding will provide space between the textual content and the borders:
+Padding əlavə etmək textual content ilə border arasını boşluq ilə təmin edəcək:
 
 {% highlight css %}
 blockquote{ background: yellow; border: 1px solid blue; padding: 20px;}
@@ -43,4 +43,4 @@ blockquote{ background: yellow; border: 1px solid blue; padding: 20px;}
   </blockquote>
 </div>
 
-Notice how the element's background stretches until its borders. Applying padding allows to extend that background.
+Elementin backgroundunun borderlərinə qədər necə uzandığına diqqət yetirin. Paddingin tətbiqi bu backgroundu genişləndirməyə imkan verir
