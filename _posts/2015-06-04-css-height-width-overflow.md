@@ -5,29 +5,29 @@ subtitle: "Setting <strong>fixed</strong> dimensions to your rectangles"
 section: css
 ---
 
-The dimensions (or height and width) of an element are **dynamic**, as they fluctuate in order to fit the content. It is somehow possible to set **specific** dimensions.
+Elementin ölçüləri (hündürlüyü və eni) **dinamikdir**, çünki onlar məzmuna uyğunlaşmaq üçün dəyişir. **Xüsusi** ölçüləri təyin etmək bir növ mümkündür.
 
 {% highlight css %}
 blockquote{ width: 600px;}
 {% endhighlight %}
 
-The blockquote will not take up the whole width available, but will remain 600px wide **in any situation**:
+Blockquote bütün mövcud genişliyi tutmayacaq, lakin **istənilən vəziyyətdə** 600px enində qalacaq::
 
-* if the browser window is less wide than 600px, it will show a horizontal scrolling bar
-* if the browser window is wider than 600px, the blockquote will stay 600px wide and not take up the whole space
+* brauzer pəncərəsinin eni 600px-dən azdırsa, o, üfüqi sürüşmə çubuğunu göstərəcək
+* brauzer pəncərəsi 600px-dən daha genişdirsə, Blockquote 600px enində qalacaq və bütün yeri tutmayacaq
 
-Because we've only set the width, the blockquote remains fluid in **height**: the height becomes the variable dimension to fit the blockquote's content.
+Yalnız eni təyin etdiyimiz üçün Blockquote **hündürlükdə** axıcı olaraq qalır: hündürlükblockquote-nin məzmununa uyğun dəyişən ölçüyə çevrilir.
 
-### Setting both height and width
+### Hündürlüyü və eni təyin etmək
 
-By setting the dimensions of an element, it will remain fixed no matter the length of its content.
+Elementin ölçülərini təyin etməklə, məzmununun uzunluğundan asılı olmayaraq sabit qalacaq.
 
-What happens if the content is longer than the element can contain?
+Məzmun elementin ehtiva edə biləcəyindən uzun olarsa nə baş verəcək?
 {: .question}
 
-Because we prevent the element to dynamically alter its dimensions, there is a chance the content will be longer than the element accomodates for and will subsequently **overflow**.
+Çünki biz elementin ölçülərini dinamik şəkildə dəyişməsinin qarşısını alırıq, məzmunun elementin ölçülərindən daha uzun olma və sonradan **daşma** ehtimalı var.
 
-The default behavior can be surprising: the content will be displayed anyway!
+Standart davranış təəccüblü ola bilər: məzmun hər halda göstəriləcək!
 
 {% highlight css %}
 blockquote{ background: yellow; height: 50px; width: 100px;}
@@ -43,31 +43,31 @@ blockquote{ background: yellow; height: 50px; width: 100px;}
 
 ### CSS overflow
 
-The `overflow` CSS property allows us to manage the case of content being longer than its container.
+`overflow` CSS xassəsi məzmunun containerdən daha böyük olduğu halları idarə etməyə imkan verir.
 
-The default value is `visible`: the content will be displayed anyway, because _"Why would you want to prevent content from being read by the user if it's present in the code?"_. You can consider **HTML as prevalent to CSS**.
+default qiyməri `visible`dır: məzmun hər bir halda göstəriləcək, çünki _"Kodda olan məzmunun istifadəçi tərəfindən oxunmamasını niyə istiyə bilərsiniz ki?"_ Siz düşünə bilərsiniz **HTML CSS-dən üstündür**
 
-By applying `overflow: hidden;`, you simply _forbid_ any overflowing content to be seen.
+`overflow: hidden;` tətbiq etməklə, siz sadəcə olaraq hər hansı containerdən daşan məzmunun görünməsini qadağan edirsiniz.
 
 <div class="result">
   <blockquote style="background: yellow; height: 50px; overflow: hidden; width: 100px;">The content er... finds a way</blockquote>
 </div>
 
-If you want your content to overflow but still want to make it accessible, you can decide to display scrollbars by applying `overflow: scroll`.
+Məzmununuzun çoxalmasını istəyirsinizsə, lakin yenə də onu əlçatan etmək istəyirsinizsə, `overflow: scroll` verərək scrolbar əlavə etmək qərarına gələ bilərsiniz.
 
 <div class="result">
   <blockquote style="background: yellow; height: 50px; overflow: scroll; width: 100px;">The content er... finds a way</blockquote>
 </div>
 
-A better option is use `overflow: auto`, as the scrollbars will only appear _if_ the content is overflowing, but will remain hidden until then.
+Ən yaxşı seçim `overflow: auto` istifadə etməkdir, çünki sürüşdürmə çubuqları yalnız məzmun daşsa _görünəcək_, lakin o vaxta qədər gizli qalacaq.
 
 <div class="result">
   <blockquote style="background: yellow; height: 50px; overflow: auto; width: 100px;">The content er... finds a way</blockquote>
 </div>
 
-### Beware of fixed dimensions
+### Sabit ölçülərə diqqət yetirin
 
-Applying specific dimensions are often required for a design to look visually appealing but can have unintended consequences. In that regard:
+Vizual olaraq çəlbedici görünüş əldə etmək üçün spesifik ölçülər təyin etməyə tez tez ehtiyac duyulur lakin gözlənilməz nəticələrə səbəb ola bilər. Bu baxımdan:
 
-* make sure your content doesn't overflow
-* if it does, use `overflow: hidden` or `overflow: auto` to prevent your design from breaking
+* contentinizin daşmadığına əmin olun
+* yox əgər daşırsa, dizaynınızın pozulmasının qarşısını almaq üçün `overflow: hidden` və ya `overflow: auto` istifadə edin
