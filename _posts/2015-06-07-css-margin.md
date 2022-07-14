@@ -5,7 +5,7 @@ subtitle: "To <strong>push away</strong> your neighbours"
 section: css
 ---
 
-If padding adds space _inside_ an element (between its border and its content), margins adds space _outside_ between an element and _other elements_.
+Əgər padding elementin _içinə_ boşluq əlavə edirsə (borderi ilə contenti arasına), margin elementin _çöıünə_ yəni element ilə _başqa element_ arasına boşluq əlavə edir.
 
 {% highlight html %}
 <p>Hey, you know what sucks?</p>
@@ -40,7 +40,7 @@ p{ margin: 40px;}
 
 ### Merging vertical margins
 
-Let's have a title and a subtitle.
+Gəlin title və subtitle üzərində izah edək.
 
 {% highlight css %}
 .title{ margin-bottom: 30px;}
@@ -57,18 +57,18 @@ Let's have a title and a subtitle.
   <h2 style="margin: 15px 0 0;">A simple HTML/CSS tutorial</h2>
 </div>
 
-As the title of this section may have hinted at the answer, the margin between the two elements will be `30px`, and **not** `45px`. That is because margins that "touch" each other will **merge** with each other.
+Bu bölmənin başlığı cavaba işarə edə bilər, iki element arasındakı sərhəd `45px` deyil `30px` olacaq.Çünki bir-birinə "toxunan" kənarlar bir-biri ilə **birləşəcək**.
 
 #### "That's weird!"
 
-You can consider an element's margin as the **minimum space** it want to stay _away_ from other elements.
+Siz elementin marginini onun digər elementlərdən _uzaqda qalmaq istədiyi **minimum boşluq** kimi də hesab edə bilərsiniz.
 
-It's like the element saying: "Ok, I want the next element to be _at least_ 30px away from me. If it's more, why not. But at least 30px please!"
+Bu biraz elementin: "Ok, mən növbəti elementin məndən _ən azı_ 30px uzaqda olmasını istəyirəm. Əgər daha çoxdursa, niyə də olmasın. Amma ən azı 30px zəhmət olmasa!" deməsinə bənzəyir
 
-### Choosing between margin and padding
+### margin və padding arsında seçim
 
-Tricky question. This question comes up when no border nor background is applied. Indeed: if a border or a background is set on _either_ element, the visual rendering will be different. But if none is present, and considering margins and paddings are _transparent_, the result will look the same.
+Çətin sual. Bu sual nə border nə də background verilmədikdə ortaya çıxır. Doğrudan da: Əgər ya border yada background verilmiş olsa o zaman vizual render fərqli olacaq. Amma əgər heç biri yoxdursa, və nəzərə alsaq ki, margin və padding transparenrdir(şəffaf) nəticə eyni olcaq.
 
-Ask yourself _why_ you're spacing things. Is it to allow the inner content to breath more? Or is to allow the whole element to breath more? It's padding in the first case, margin in the second.
+Əvvəlcə dəqiqləşdirməlisiniz elementləri bir birindən nəyə görə ayırırsınız. Daxili məzmunun daha çox nəfəs almasına icazə verməkdir? Yoxsa bütün elementin daha çox nəfəs almasına icazə verməkdir? Bu, birinci halda padding, ikinci halda margindir.
 
-Also, considering how margins can **merge**.
+Həmçinin, kənarların necə **birləşə biləcəyini** nəzərə alaraq.
