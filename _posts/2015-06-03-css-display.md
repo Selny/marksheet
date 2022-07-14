@@ -5,33 +5,33 @@ subtitle: "Changing the <strong>type</strong> of an HTML element"
 section: css
 ---
 
-We've seen how there are mainly [2 types of HTML elements](/html-block-inline.html): **block-level** elements and **inline** ones. We've also mentioned a few alternatives, like **list-item** or **table-cell**.
+Əsasən [2 növ HTML elementinin](/html-block-inline.html) necə olduğunu gördük.: **block-level** elementlər və **inline** olanlar. **list-item** və ya **table-cell** kimi bir neçə alternativi vutğuladıq.
 
-The `display` property allows to change the _type_ of HTML element. By default, a paragraph `<p>` (a **block-level** element) will have a default `display` value of `block`, but can be rendered as an **inline** one:
+`Display` xassəsi HTML elementinin _tipini_ dəyişməyə imkan verir. Default olaraq, paragraphın `<p>` (**block-level** elementdir) default `display` dəyəri `block` olavaq, anvaq **inline** olaraq render oluna bilər:
 
 {% highlight css %}
 p{ display: inline;}
 {% endhighlight %}
 
-### Why not use an HTML inline element, like `<span>` then?
+### Niyə inline HTML elementindən istifadə etmirik, `<span>` kimi?
 
-Because you choose an HTML element for its **meaning**, not its rendering. If we've decided that a paragraph is what suited our content best, we must not change the tag _only for styling purposes_. CSS is here to take care of the styling.
+Çünki HTML elementini onun mənasına görə secirik, render olunmasına görə deyil. Əgər məzmunumuza ən uyğun olanın paragrapg olduğuna qərar vermişiksə, etiketi _yalnız styling məqsədləri üçün_ dəyişməməliyik. Styling üçün CSS var.
 
-In short, `display` allows to alter the **type** of an element _without_ changing its **meaning**.
+Qısacası, `display` bizə elementin **mənasını** dəyişmədən onun **tipini** dəyişməyə imkan verir.
 
-Each `display` options have specific rendering behaviors:
+Hər bir `display` seçməsinin spesifik rendering davranışı var:
 
-* `block` will take up the whole width available
-* `inline` will act as plain text
-* `inline-block` is, as its name suggests, a compound of block and inline behavior, a _"best of both worlds"_ option
-* `list-item` is similar to `block` as it takes up the whole width available, but shows an additional bullet point
-* `table`, `table-row` and `table-cell` all have very specific, albeit unexpected, behavior that allow more interesting layouts
+* `block` mövcud bütün genişliyi alacaq
+* `inline` düz mətn kimi çıxış edəcək
+* `inline-block`, adından da göründüyü kimi, blok və inlline davranışın birləşməsidir, _"hər iki xassənin ən yaxşısını"_ seçir
+* `list-item` `block` ilə oxşardır mövcud bütün genişliyi alır, lakin əlavə bir işarə nöqtəsi göstərir
+* `table`, `table-row` və `table-cell` gözlənilməsədə, daha maraqlı tərtibatlara imkan verən çox spesifik davranışlara malikdir.
 
 ### display: block
 
-This will turn any element into a **block** element.
+Bu hər hansı elementi **block** elementə çevirir.
 
-This technique is often used on **links** in order to increase their clickable zone, which can be easily evaluated by setting a background color.
+bu texnika tez-tez **links**-də onların kliklənən zonasını artırmaq üçün istifadə olunur, background color təyin etməklə asanlıqla qiymətləndirilə bilər.
 
 {% highlight css %}
 .menu a{ background: red; color: white;}
@@ -71,7 +71,7 @@ This technique is often used on **links** in order to increase their clickable z
   </ul>
 </div>
 
-If we turn these links into **blocks**, we increase their target area:
+Əgər biz bu linkləri **block**lara çevirsək, onların kliklənmə ərazisini artirmiş oluruq:
 
 {% highlight css %}
 .menu a{ background: red; color: white; display: block;}
@@ -97,9 +97,9 @@ If we turn these links into **blocks**, we increase their target area:
 
 ### display: inline
 
-This turns any element into **inline** elements, as if they were just simple **text**.
+Bu hər hansı elementi **inline** elementə çevirir, sanki sadə **mətn** kimi.
 
-It's often used to create **horizontal navigations**, where **list items** are semantically but not visually useful.
+Üfüqi naviqasiya panelləri düzəltmək üçün tez-tez istifadə olunur, burada **list items** semantikdir, lakin vizual olaraq faydalı deyil.
 
 {% highlight html %}
 <ul class="menu">
@@ -158,15 +158,15 @@ It's often used to create **horizontal navigations**, where **list items** are s
 
 ### display: list-item
 
-The only HTML elements displayed as `list-item` are the (unsurprisingly) **list items** `<li>` but also the **definition descriptions** `<dd>`.
+`list items` kimi göstərilən yeganə HTML elementləri (təəccüblü deyil) **list items**dır `<li>` həmçinin **definition descriptions** `<dd>`.
 
-A list item is rendered with a bullet point (if in an unordered list `<ul>`) or with a incremental number (if within an ordered list `<ol>`).
+list item işarə nöqtəsi ilə göstərilir (əgər unordered list `<ul>` dirsə) və ya artan sıra ilə (əgər ordered list `<ol>` dirsə).
 
-Because the rendering of these bullet points and numbers varies across browsers, and is also hard to style in CSS, the `display: list-item` rule is never used. Actually, it is common for `<li>`s to be rendered as `display: block` or `display: inline`, as they are more flexible to style.
+Çünki bu işarə nöqtələrinin və nömrələrin göstərilməsi brauzerə görə dəyişir, və həmçinin CSS də style etmək çəytindir, `display: list-item` qaydası heç vaxt istifadə olunmur. Əslində, `<li>`lərin `display: blok` və ya `display: inline` kimi göstərilməsi adi haldır, çünki onlar style etməyə daha çevikdirlər.
 
 ### display: none
 
-Applying `display: none;` to an HTML element removes it from your webpage, as if it never existed in your code.
+HTML elementinə `display: none;` versəniz onu səhifədən silmiş olacaqsınız, kodunuzda heç vaxt olmamış kimi olacaq.
 
 {% highlight css %}
 .gone-baby-gone{ display: none;}
@@ -184,11 +184,11 @@ Applying `display: none;` to an HTML element removes it from your webpage, as if
   <p>I must be dreaming...</p>
 </div>
 
-There are 3 paragraphs in the code, but only 2 appear, as if the 2nd one never existed.
+Gördüyünüz kimi kodda üç ədəd paraqraf var, ancaq ikisi görünür, ikincisi heç zaman var olmayıbmış kimi.
 
 ### visibility: hidden
 
-The CSS property `visibility` is slightly similar to `display`. Applying `visibility: hidden;` _hides_ an element from your page, but only turns it **invisible**: it still takes up the space it was supposed to.
+`visibility` CSS xassəsi  `display` xassəsinə azca oxşardır. Elementə `visibility: hidden;` tətbiq etdikdə elementi səhifədə _gizlədir_ , ancaq sadəcə **invisible**a çevrilir: lazım olan yeri yenədə tutur.
 
 {% highlight css %}
 .hollow-man{ visibility: hidden;}
@@ -210,4 +210,4 @@ The CSS property `visibility` is slightly similar to `display`. Applying `visibi
   <p>You're so far away...</p>
 </div>
 
-There are 5 paragraphs in the code, only 2 appear, but the space that the hidden paragraphs were _supposed_ to take is still _there_, but you can't see them.
+Gördüyünüz kimi kodda beş ədəd paraqraf var, ancaq ikisi görünür, lakin gizli paraqrafların tutmalı olduğu yer hələ də qalır, ancaq onları görə bilmirsiniz
