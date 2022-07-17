@@ -5,28 +5,28 @@ subtitle: "The <strong>default</strong> behavior of a webpage"
 section: css
 ---
 
-An HTML document is a **living** document
+HTML sənədi **canlı** sənəddir
 
-Even without any CSS applied, an HTML document already has its own rules:
+Heş bir CSS tərtib olunmasa belə, HTML sənədinin özünün qaydaları var:
 
-* **fluidity**: how the content adapts to browser dimensions
-* **ordering**: in which order elements appear
-* **stacking**: how elements appear on top of each other
+* **fluidity**: məzmunun brauzer olçülərinə necə uyğunlaşdırılmaası
+* **ordering**: elementlərin hansı ardıcıllıqla görünməsi
+* **stacking**: elementlərin bir birləri üzərində necə görünmələri
 
-This natural behavior is **logical**.
+Bu təbii davranışları isə **məntiqidir**.
 
 ### Fluidity
 
-In HTML, the **content** is King.
+HTML də, **məzmun** kraldır.
 
-All `block` elements are **fluid**. They will naturally adapt their layout to accommodate their inner content:
+Bütün `block` elementlər **fluid**-dir. Onlar təbii olaraq dizaynlarını daxili məzmunlarına uyğunlaşdıracaqlar:
 
 * **width: 100%**  
-a block will take up the whole width available
+blok bütün mövcud genişliyi tutacaq
 * **word wrap**  
-if a block's inline content doesn't fit on a single line, it will continue on a new line
+Əgər blokun inline elementi tək sətirdə olmasa, o zaman həmin element növbəti sətirdə davam edəcək
 * **height: auto**  
-a block's height varies automatically to match its content's size
+blokun hündürlüyü daxilindəki məzmunun ölçüsünə uyğun olaraq avtomatik dəyişir
 
 <div class="result" id="result-fluidity">
   <div>
@@ -48,15 +48,15 @@ a block's height varies automatically to match its content's size
 }
 </style>
 
-* A `block` is by default in **full width**
-* Its **height** is the height of its content
+* `block` default olaraq **tam genişlikdədir**
+* **Hündürlüyü** isə məzmunun hündürlüyü qədərdir
 
 ### Ordering
 
-HTML elements are displayed in the **order** in which they are written **in the code**.
-First in the code -> first in the browser.
+HTML elementləri **kodda** necə yazılıbsa həmin **ardıcıllıqla** göstərilir.
+Kodda birinci olan -> Brauzerdə də birincidir.
 
-Each <code>block</code> appears in the order in which they appear in the HTML code, from <strong>top</strong> to <strong>bottom</strong>.
+Hər bir <code>block</code> HTML kodunda hansı ardıcıllıqla görünürsə həmin ardıcıllıqla görünür, <strong>yuxarıdan</strong> <strong>aşağı</strong>.
 
 {% highlight html %}
 <p>First</p>
@@ -76,14 +76,14 @@ Each <code>block</code> appears in the order in which they appear in the HTML co
 
 ### Stacking
 
-A browser has **3 dimensions**.
+Brauzerin **3 ölçüsü** var.
 
-Each HTML element belongs to an imaginary **layer**.
+Hər bir HTML elementi xəyali **layer**-a aiddir..
 
-The **stack order** depends on how elements are **nested**: child elements appear **on top** of their respective parents.
+**stack order** elementlərin necə **yerləşdiyindən asılıdır**: child elementləri müvafiq parentlərin **üstlərində** görünür.
 
-* Each **nested** element appears _on top_ of its parent.
-* The **deeper** in the hierarchy, the _higher_ in the stack.
+* Hər bir **iç-içə ** element əsas elementin üstündə görünür.
+*İyerarxiyada **daha dərində olan**, stack daha yüksəkdədir.
 
 {% highlight html %}
 <div>
@@ -105,11 +105,11 @@ The **stack order** depends on how elements are **nested**: child elements appea
 
 ### Breaking the flow
 
-While the browser's default behavior is _efficient_, it may not be _sufficient_ for your design needs.
+Brauzerin defolt davranışı _effektiv_ olsa da, dizayn ehtiyaclarınız üçün _kafi_ olmaya bilər.
 
-Several CSS properties allow to **disrupt** the Flow:
+Bir çox CSS xassəsləri bu axını pozmağa imkan verir:
 
-* `height` and `width` can alter an element's **fluidity**
-* `float` **disrupts** an element's behavior as well as its surroundings
-* `position` `absolute` and `fixed` **remove** an element from the Flow
-* `z-index` can alter the order in which elements are **stacked**
+* `height` və `width` elementlərin **axıcılığını** dəyişə bilər
+* `float` elementin davranışını və ətrafını **pozur**
+* `position`, `absolute` və `fixed` Elementi Axından **çıxarın**
+* `z-index` elementlərin **yığılma sırasını dəyişə bilər**
