@@ -5,6 +5,6 @@ subtitle: "Breaking the <strong>flow</strong>"
 section: css
 ---
 
-Even without applying any CSS, an HTML document is already **styled**. Its content follows a natural **Flow**, directly dependent on the HTML structure.
+Heç bir CSS tərtib etməsək belə, HTML sənədi özü **styled**-dır. Onun məzmunu HTML strukturundan birbaşa asılı olaraq təbii bri **Axışı** izləyir.
 
-But webpages often want elements to be **positioned** in a certain way to accomodate for particular design needs, which requires **breaking** the Flow.
+Lakin veb-səhifələr çox vaxt elementlərin xüsusi dizayn ehtiyacları üçün müəyyən şəkildə **yerləşdirilməsini** istəyir ki, bu da axının **sındırılmasını** tələb edir.
