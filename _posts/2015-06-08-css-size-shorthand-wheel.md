@@ -7,9 +7,9 @@ section: css
 
 ### Setting 4 values
 
-When all 4 sides (top, bottom, left and right) are involved in a CSS property, that CSS property also acts as a **shorthand** property.
+Bütün tərəfləri (yuxarı, aşağı, sol və sağ) CSs propertyə daxil olduqda həmin CSS property **shorthand** property kimi çıxış edir.
 
-For example, the `padding` property can be used on its own to apply the _same_ value to all 4 sides, but also comes in 4 variations (`padding-top`, `padding-bottom`, `padding-left` and `padding-right`) to target a specific side.
+Məsələn, `padding`xassəsindən 4 tərəfin hamsına _eyni_ dəyəri vermək üçün istifadə oluna bilər, həm də müəyyən bir tərəfi  (`padding-top`, `padding-bottom`, `padding-left` and `padding-right`) hədəfləmək üçün 4 varyasyondan istifadə edilir.
 
 {% highlight css %}
 blockquote{ padding: 20px;}
@@ -17,7 +17,7 @@ blockquote{ padding: 20px;}
 blockquote{ padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;}
 {% endhighlight %}
 
-But where the `padding` property becomes interesting, is that it can get up to **4** values. You can thus set a _different_ value for _all_ sides at once:
+Ancaq 'padding' xüsusiyyətinin maraqlı olduğu yer, odur ki, o **4** dəyəri ala bilir. Beləliklə siz 4 fərqli dəyəri bir dəfəyə təyin edə  bilərsiniz:
 
 {% highlight css %}
 blockquote{ padding: 20px 0 10px 50px;}
@@ -25,9 +25,9 @@ blockquote{ padding: 20px 0 10px 50px;}
 
 The order is `top`, `right`, `bottom` and `left`.
 
-### Setting 2 or 3 values
+### 2 və ya 3 dəyər təyin etmək
 
-By putting 2 values, the first one will be applied for `top` and `bottom`, the second one for `right` and `left`:
+2 dəyər verdikdə, birincisi `top` və `bottom` üçün tətbiq olunacaq, ikincisi isə `right` və `left`:
 
 {% highlight css %}
 blockquote{ padding: 20px 0;}
@@ -41,39 +41,39 @@ left         right
 */
 {% endhighlight %}
 
-### How to remember the shorthand order
+### Stenoqrafiya qaydasını necə yadda saxlamaq olar
 
-There's an easy way to remember which value will be applied.
+Hansı dəyərin tətbiq edildiyini yadda saxlamağın asan bir yolu var.
 
-Instead of focusing on the values you've entered, think about the values you **havent'**.
+Daxil etdiyiniz dəyərlərə fokuslanmaq yerinə, **olmayan** dəyərlər barəsində düşünün.
 
-* if you enter 2 values (top/right), you omit setting `bottom` and `left`. Because `bottom` is the vertical counterpart of `top`, it will use `top`'s value. And because `left` is the horizontal counterpart of `right`, it will use `right`'s value.
-* if you enter 3 values (top/right/bottom), you omit setting `left`. As `right`'s counterpart, it will use its value.
+* Əgər iki dəyər daxil etmisinizsə (top/right), `bottom` və `left` dəyərlərini ötürmüsünüz. Çünki `bottom` `top`un şaquli qarşılığıdır,  `top`nın dəyəriniz istifadə edəcək. VƏ `left` isə `right`ın üfüqi qarşılığıdır `right`ın dəyərini istifadə edəcək.
+* Əgər 3 dəyər daxil etmizinizsə (top/right/bottom),  `left`i daxil etməmisiniz. `right`ın qarşılığında olduğu kimi, onun dəyərindən istifadə edəcək.
 
-### Other properties that can act as "wheel" shorthands
+### "Çarx" stenoqrafiyası kimi çıxış edə bilən digər xüsusiyyətlər
 
-Any property that applies to all 4 sides:
+4 tərəfə aid olan hər hansı bir xassələr:
 
 * `margin`
 * `padding`
 * `border-width`
 
-#### "So `border` is a shorthand property that includes `border-width` which is another shorthand property?"
+#### "Beləliklə, `border` stenoqrafiya xassəsidir `border-width` stenoqrafiya xassəsini ehtiva edən?"
 
-Indeed. `border` is (in that order) a shorthand for:
+Doğurdan da. `border` stenoqrafiyadır:
 
 * `border-width`
 * `border-style`
 * `border-color`
 
-However, you can **not** mix the two:
+Bununla belə, ikisini qarışdıra bilməzsiniz:
 
 {% highlight css %}
 blockquote{ border: 1px 0 solid green;}
 /* Won't work */
 {% endhighlight %}
 
-But you can omit the width in `border` and set it separately:
+Lakin siz `border`də eni pas keçib ayrıca təyin edə bilərsiniz:
 
 {% highlight css %}
 blockquote{ border: solid yellow; border-width: 1px 0;}
