@@ -5,6 +5,6 @@ subtitle: "From layout to life"
 section: css
 ---
 
-For a while, CSS has remained **one-sided**: one color, one state, one instant, one device.
+Bir müddət CSS **birtərəfli** qaldı: bir color, bir state, bir instant, bir device.
 
-Throughout the years, it has developed new features that alter interactions, intermediate states, and even time.
+İllər boyu o, qarşılıqlı əlaqələri, aralıq vəziyyəti və hətta zamanı dəyişən yeni xüsusiyyətlər inkişaf etdirdi.
