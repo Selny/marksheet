@@ -5,22 +5,22 @@ subtitle: "The most unpredictable property"
 section: css
 ---
 
-Behind the word `float`, an endless sea of possibilities (and misbehaviors).
+“Üzmək” sözünün arxasında sonsuz imkanlar dənizi var(və pis davranışlar).
 
-`float` is probably the most difficult CSS concept to grasp. Its behavior can be intriguing, unexpected, and magical. Probably because, of all _positioning_ properties there are, it is the one that most _influences_ its **surroundings**.
+Yəqin ki, `float` CSS-də ən cətin alyaşdır. Onun davranışları maraqlı, gözlənilməz və sehrli ola bilər. Yəqin ki, bütün _positioning_ xassələri içərisində onun **mühitinə** ən çox _təsir edən_ xassədir.
 
-In other words, applying a float not only modifies the element it's applied upon **but also alters its ancestors, siblings, descendants, and following elements**.
+Başqa bir sözdə desək, float tətbiqi təkcə onun tətbiq olunduğu elementi dəyişdirmir, həm də onun  ancestors, siblings, descendants və sonrakı elementlərini də dəyişir**.
 
-`float` can only have one of these 3 values:
+`float` aşağıdakı 3 dəyərə sahib ola bilər:
 
-* `left` and `right` turns an element into a **floating** one
-* `none` removes the floating aspect
+* `left` və `right` elementi **floating** elementə çevirir
+* `none` float aspektlərini silir
 
 ### When to use float
 
-The purpose of **floating** an element is to **push it to one side** and make the text **wrap around it**.
+Elementin **floating** edilməsinin məqsədi **onu bir tərəfə itələmək** **ətrafını** mətn ilə sarımaqdır.
 
-To explain the behaviour, let's use a common example: floating an image within a paragraph.
+Budavranışı izah etmək məqsədilə, adi bir nümunə göstərək: şəkli mətnin daxilində floating edək.
 
 {% highlight html %}
 <p>
@@ -36,9 +36,9 @@ To explain the behaviour, let's use a common example: floating an image within a
   </p>
 </div>
 
-The problem when inserting an image within a text is that **an image must fit on a single line of text**, and will therefore _extend_ the height of the line it's on. In our case, our image is 150px high.
+Mətnin içərisinə şəkli daxil edərkən olan problem odur ki, **bir şəkil mətnin bir sətrinə uyğun olmalıdır**, və buna görə də onun üzərində olduğu sətrin hündürlüyünü _artıracaq_. Bu halda bizim şəklimizin 150px hündürlüyü var.
 
-What we want is to wrap the text _around_ the image:
+Biz şəklin ətrafını mətn ilə sarımaq istəyirik:
 
 {% highlight css %}
 img{ float: left;}
@@ -51,12 +51,12 @@ img{ float: left;}
   </p>
 </div>
 
-As you can see, the image is **pushed to the left**, and the text that follows just wraps around the image:
+Gördüyünüz kimi şəkil **sola qoyulmuşdur**, və vətn şəklin ətrafından axır:
 
-* first, the text is pushed to the right, _next_ to the image
-* then, when there's space available _below_ the image, the text will fill that space
+* əvvəlcə mətn sağa, _şəklin yanında_ yerləşdirilir
+* sonra, şəklin _aşağıdasında_ boş yer olduqda, mətn həmin boşluğu dolduracaq
 
-#### What if the text isn't long enough?
+#### Əgər mətn yetərincə uzun deyildə nə olacaq?
 
 <div class="result">
   <p style="background: gold; padding: 10px; width: 600px;">
@@ -65,23 +65,23 @@ As you can see, the image is **pushed to the left**, and the text that follows j
   </p>
 </div>
 
-The floating image will **overflow** because it's higher than its yellow container. And as you can _actually_ see, it even visually breaks **this paragraph you're reading**.
+floating olunan şəkil **daşacaq** çünki sarı konteynerdən daha boyükdür. Və _əslində_ gördüyünüz kimi, o, hətta **oxuduğunuz bu paraqrafı** vizual olaraq pozur.
 
-I've intentionally left this layout error to showcase _why_ floats are unpredictable: they can even break their parent's siblings!
+_niyə_ float-ların gözlənilməz olduğunu göstərmək üçün qəsdən bu layout xətasını tərk etdim: hətta parentinin siblinglərini belə poza bilər!
 
-Because `float: left` takes the image _out of_ the flow, the yellow paragraph's height is only **the height of its text**. In other words, the height of the image _isn't taken into account_.
+Çünki `float: left` şəkli axından çıxarır, sarı abzasın hündürlüyü yalnız **mətnin hündürlüyünə** bərabərdir. Başqa bir deyişlə, şəklin hündürlüyü nəzərə alınmır.
 
 ### Float = block
 
-Floating elements will have a `display: block` applied to them automatically, and will mostly behave like blocks:
+Floating elementlərində avtomatik olaraq `display: block` təyin edilmiş olacaq, və əsasən blok-level kimi çıxış edəcəklər:
 
-* you can set a specific height and width
-* if no height is set, the element's height is that of the line-height
-* if a `width: 100%` is applied, it will look like a block-level element
+* spesifik height və width təyin edə bilərsiniz
+* əgər height təyin edilməyibsə, elementin heighti line-height qədər olacaq
+* Əgər `width: 100%` tətbiq edilibsə, blok-level elementə oxşar olacaq
 
-### Clearing the float
+### float-ı təmizləmək
 
-The `clear` property allows to **push elements _after_ the float**. It can only be applied on **block** elements.
+`clear` xassəsi **floatdan _sonraya_ element qoymağa imkan verir**. Bu ancaq **blok** elementlərə tətbiq oluna bilər.
 
 {% highlight html %}
 <p>
@@ -102,7 +102,7 @@ span{ clear: left; display: block;}
   </p>
 </div>
 
-Instead of having the text pushed _next_ to the image, the `clear: left` pushes the text **below** the image.
+Şəkildən _sonraya_ mətn qoymaq yerinə, `clear: left` mətni şəklin **aşağısına** qoyur.
 
-It's different from having no float or clear at all, as the image is on its own line and _not_ on the same line as the text.
+Bu, heç bir float və ya clear olmaması fərqlidir, çünki şəkil öz aıtrindədir və mətnlə eyni sətirdə _deyil.
 
