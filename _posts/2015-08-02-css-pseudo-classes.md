@@ -5,32 +5,32 @@ subtitle: "Enhancing the CSS <strong>selectors</strong>"
 section: css
 ---
 
-We've seen how there are mainly [3 types of CSS selectors](/css-selectors.html):
+Əsasən [3 növ CSS selektorunun](/css-selectors.html) necə olduğunu gördük:
 
-* **generic** where `p` in CSS targets `<p>` HTML elements
-* **classes** where `.intro` in CSS targets HTML elements with a `class="intro"` attribute
-* **ids** where `#logo` in CSS targets HTML elements with a `id="logo"` attribute
+* **generic** burada CSS-dəki `p` selektoru `<p>` HTML elementlərini hədəfləyir
+* **classes** burada CSS-də `.intro` selektoru `class="intro"` atributlu HTML elementlərini hədəfləyir
+* **ids** burada CSS-də `#loqo` selektoru `id="logo"` atributlu HTML elementlərini hədəfləyir
 
-All of these selectors can have **pseudo-classes** attached to them. A pseudo-class:
+Bu selectorlarına hamısına **pseudo-classes** əlavə oluna bilər. pseudo-classlar:
 
-* defines a particular **state** of the element
-* is a keyword that starts with a **colon** `:`
+* elementin xüsusi **vəziyyətini** müəyyən edir
+* **colon** `:` ilə başlayan açar sözdür
 
 ### Syntax
 
-A pseudo-class **can't exist on its own**. It must be **attached to a selector**. The pseudo-class will only define a particular _state_ of _that_ selector.
+pseudo-class **özlüyündə mövcud ola bilməz**. **selektora əlavə edilməlidir**. pseudo-class yalnız həmin selektorun xüsusi _statusunu_ təyin edəcək.
 
-The syntax looks like this:
+Sintaksisi aşağıdakına bənzəyir:
 
 {% highlight css %}
 .selector:pseudo-class{ }
 {% endhighlight %}
 
-There is **no space** between the selector and the pseudo-class, to signify that they are **linked together**.
+Onların **bir-birinə bağlı olduğunu göstərmək üçün**, selektor və pseudo-class arasında **boşluq** olmur.
 
 ### :hover
 
-For example, a common pseudo-class used is `:hover`, which will apply a CSS style when the targeted element is **hovered**. Let's test it on **links**.
+Məsələn, ümumi istifadə olunan pseudo-classlardan biri `:hover`-dir, hədəf elementə **hovered** CSS style-i əlavə etməyə imkan verir. Gəlin bunu **linklər**-də sınayaq.
 
 {% highlight css %}
 a{ color: blue;}
@@ -41,14 +41,14 @@ a:hover{ color: red;}
   <p>Hover <a>this link</a> and see how it turns red.</p>
 </div>
 
-The first line defines how all `<a>` HTML elements should look like (blue).
-The second line defines how `<a>` should look like **when hovered** (red).
+Birinci sətir bütün `<a>` HTML elementlərinin necə görünəcəyini müəyyən edir (mavi).
+İkinci sətir `<a>`-nin **hover edildikdə** necə görünəcəyini müəyyən edir (qırmızı).
 
-The second line targets the **same HTML elements** but _only_ when something specific happens (in this case, being hovered).
+İkinci sətir **eyni HTML elementlərini** hədəfləyir, lakin _yalnız_ konkret bir şey baş verdikdə (bu halda, hover edilir).
 
 ### :visited
 
-This pseudo-class targets **links that have been visited**. By default, links are **blue** and turn **purple** when you've visited them. Google results work like that.
+Bu pseudo-class **ziyarət edilmiş linkləri** hədəfləyir. Defolt olaraq, linklər **mavi** olur və onlara baş çəkdiyiniz zaman **bənövşəyi** olur. Google nəticələri belə işləyir.
 
 {% highlight css %}
 a{ color: dodgerblue;}
@@ -71,11 +71,11 @@ a:visited{ color: rebeccapurple;}
   <a href="/html/visited.html">MarkSheet</a>
 </div>
 
-Applying a different for visited links is often overlooked but comes in handy for users browsing a list of results. It easily helps them visualize where they have already been.
+Ziyarət edilən bağlantılar üçün fərqli dizayn tətbiq etmək çox vaxt diqqətdən kənarda qalır, lakin nəticələrin siyahısına baxan istifadəçilər üçün faydalı olur. Bu, onlara artıq olduqları yeri asanlıqla təsəvvür etməyə kömək edir.
 
 ### :focus
 
-This pseudo-class happens when an HTML element is **in focus**. This is particularly useful for HTML **inputs**.
+Bu pseudo-class HTML elementi **fokusda** olduqda baş verir. Bu xüsusilə HTML **inputlar** üçün faydalıdır.
 
 {% highlight css %}
 .form-input{ border: 2px solid grey; padding: 5px;}
@@ -86,12 +86,12 @@ This pseudo-class happens when an HTML element is **in focus**. This is particul
   <input class="form-input" placeholder="First name">
 </div>
 
-The `outline: none;` rule removes the glow from the input.
+`outline: none;` qaydası inputdan parıltını aradan qaldırır.
 {: .info}
 
-### :first-child and :last-child
+### :first-child və :last-child
 
-These pseudo-classes are related to the **[HTML hierarchy](/html-hierarchy.html)**. They target HTML elements depending on the **order** in which they appear in the code.
+Bu pseudo-classlar **[HTML iyerarxiyası](/html-hierarchy.html) ilə bağlıdır.** Onlar kodda göründükləri **sifarişdən** asılı olaraq HTML elementlərini hədəfləyirlər.
 
 {% highlight html %}
 <ul>
@@ -116,9 +116,9 @@ li:last-child{ background: lightsalmon;}
   </ul>
 </div>
 
-As you can see, **no CSS class** is applied to the first and last `<li>`. Their **position in the hierachy** defines whether the CSS rule is applied.
+Gördüyünüz kimi, birinci və sonuncu `<li>`-ə **heç bir CSS classı** tətbiq edilmir. Onların **iyeraxiyadakı mövqeyi** CSS qaydasının tətbiq edilib-edilmədiyini müəyyən edir.
 
-If we were to add a 5th list item, and using _the same CSS_, the styling would automatically change:
+Əgər biz 5-ci siyahı elementini əlavə etsəydik və eyni CSS-dən istifadə etsəydik, styl avtomatik olaraq dəyişəcəkdi:
 
 <div class="result" id="result-824">
   <ul>
@@ -132,9 +132,9 @@ If we were to add a 5th list item, and using _the same CSS_, the styling would a
 
 ### :nth-child
 
-This pseudo-class is a more **global** version of `:first-child` and `:last-child`. With `:nth-child`, you can **calculate** which child element you want to target.
+Bu pseudo-class `:first-child` və `:son-child`-in daha **qlobal** versiyasıdır. `:nth-child` ilə siz hansı child elementi hədəfləmək istədiyinizi **təyin edə bilərsiniz**.
 
-For example, if you want to target the **second** child, you would use `:nth-child(2)`:
+Məsələn, **ikinci** childı hədəfləmək istəyirsinizsə, `:nth-child(2)` istifadə edirsiniz:
 
 {% highlight css %}
 li:nth-child(2){ background: violet;}
@@ -151,10 +151,10 @@ li:nth-child(2){ background: violet;}
 
 #### odd and even
 
-While using a number is straightforward, the `:nth-child` comes with 2 keywords:
+Rəqəmdən istifadə sadə olsa da, `:nth-child` 2 açar sözlə gəlir:
 
-* `:nth-child(odd)` will target every odd element
-* `:nth-child(even)` will target every even element
+* `:nth-child(odd)` tək elementləri hədəfləyir
+* `:nth-child(even)` cüt elementləri hədəfləyir
 
 {% highlight css %}
 li:nth-child(odd){ background: gold;}
@@ -169,13 +169,13 @@ li:nth-child(odd){ background: gold;}
   </ul>
 </div>
 
-#### The n iterator
+#### The n iterator/(n iteratoru)
 
-The most powerful aspect of `:nth-child` is how it can target elements based upon **calculations** by using the `n` keyword.
+`:nth-child`-in ən güclü cəhəti `n` açar sözündən istifadə edərək **hesablamalara** əsaslanan elementləri hədəfə ala bilməsidir.
 
-The `n` value increments from **zero** `0` to the **number** of child elements present.
+'n' dəyəri **sıfır** '0'dan mövcud child elementlərin **sayına** qədər artır.
 
-What if you want to target every **third** element?
+Hər **üçüncü** elementi hədəfləmək istəsəniz nə olacaq?
 
 {% highlight css %}
 li:nth-child(3n){ background: hotpink;}
@@ -193,20 +193,20 @@ li:nth-child(3n){ background: hotpink;}
   </ul>
 </div>
 
-In our case, `n` starts at **zero** and ends at **six**.
+Bu vəziyyətdə `n` **sıfır**-dan başlayır və **altı**-da bitir.
 
-Computers start counting at **zero**. And because there are seven elements in our list, we will go up until six, because 0-1-2-3-4-5-6 represents **seven** items.
+Kompüterlər saymağa **sıfır**dan başlayır. Siyahımızda yeddi element olduğu üçün biz altıya qədər yüksələcəyik, çünki 0-1-2-3-4-5-6 **yeddi** elementi təmsil edir.
 {: .info}
 
-You can read `:nth-child(3n)` as _"Target each element whose position is dividable by 3"_. In our case, it targeted both the 3rd and 6th list items:
+Siz `:nth-child(3n)` _"Mövqeyi 3-ə bölünən hər bir elementi hədəf almaq"_ kimi nəzərə ala bilərsiniz. Bu vəziyyətdə, o, həm 3-cü, həm də 6-cı list itemları hədəf alır:
 
-* `3 times 0` is zero
-* `3 times 1` is the 3rd element
-* `3 times 2` is the 6th element
+* `3 x 0` sıfır
+* `3 x 1` üçüncü elementdir
+* `3 x 2` altıncı elementdir
 
 #### n + 1
 
-What if you want to target the 1st item and _every third item after that_?
+1-ci elementi və ondan sonra hər üç elementdən bir hədəfləmək istəsəniz nə olacaq?
 
 {% highlight css %}
 li:nth-child(3n+1){ background: limegreen;}
@@ -224,22 +224,22 @@ li:nth-child(3n+1){ background: limegreen;}
   </ul>
 </div>
 
-The `3n+1` has two parts:
+`3n+1`-in üç hissəsi var:
 
-* `3n` selects every **3rd** item
-* `+1` **offsets** the start by 1
+* `3n` hər **3-cü** elementi seçir
+* `+1` ** başlanğıcı 1 ilə əvəz edir**
 
-This is how the calculations were processed:
+Hesablamalar belə aparılır:
 
-* `3 times 0 plus 1` is **1**
-* `3 times 1 plus 1` is **4**
-* `3 times 2 plus 1` is **7**
+* `3 x 0 + 1` **1**
+* `3 x 1 + 1` **4**
+* `3 x 2 + 1` **7**
 
-The `n` iterator is very versatile. It's hard to find the right calculation, so just test it out to find the right selection.
+`n` iteratoru çox yönlüdür. Düzgün hesablama tapmaq çətindir, ona görə də düzgün seçimi tapmaq üçün sadəcə onu sınaqdan keçirin.
 
-### Other pseudo-classes
+### Başqa pseudo-classlar
 
-There are [dozens of pseudo-classes available](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes), some of them for very specific states. The most used ones are the ones we've covered.
+[onlarla pseudo-classes mövcuddur]https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes), bəziləri çox konkret hallar üçündür. Ən çox istifadə olunanları əhatə etdik.
 
 <style type="text/css">
 #result-821 a{ color: blue;}
