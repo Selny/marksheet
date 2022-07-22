@@ -5,41 +5,41 @@ subtitle: "A set sequence of CSS rules"
 section: css
 ---
 
-We've just seen how CSS **transitions** are just a way to **animate** CSS properties between a _starting_ state, and an _end_ state.
+Biz indicə gördük ki, CSS **transitionlar** _başlanğıc_ vəziyyətlə _son_ vəziyyət arasında CSS xassələrini **animasiya etmək üçün bir yoldur.
 
-So CSS transitions are _specific_ kind of animations, where:
+Beləliklə, CSS transitionlar _xüsusi_ növ animasiyalardır, burada:
 
-* there's only 2 states: start and end
-* the animation doesn't loop
-* the intermediate states are only controlled by the timing function
+* yalnız iki halı var: start və end
+* animasiya dönmür
+* aralıq vəziyyətlər yalnız timing funksiyası ilə idarə olunur
 
-Well what if you want:
+Yaxşı, əgər istəsən:
 
-* to have control over the **intermediate** states?
-* to make an animation **loop**?
-* different animations on the _same_ element?
-* to animate a specific property only **halfway** through the animation?
-* to simulate **different timing functions** for different properties?
+* **aralıq** vəziyyətlərə nəzarət etmək?
+* animasiya **loop** etmək?
+* _eyni_ elementdə müxtəlif animasiyalar?
+* spesifik xassəni animasiya etmək yalnız **halfway** animasiya vasitəsilə?
+* müxtəlif xassələr üçün **müxtəlif timing funksiyalarını** simulyasiya etmək?
 
-CSS animations allow all of this, and more.
+CSS animasiyaları bütün bunlara və daha çoxuna imkan verir.
 
-**CSS animations are like mini movies where you are the director giving out instructions (CSS rules) to your actors (HTML elements) for different scenes (keyframes).**
+**CSS animasiyaları rejissor olduğunuz mini filmlərə bənzəyir, burada müxtəlif səhnələr (keyframes) üçün aktyorlarınıza (HTML elementləri) təlimatlar (CSS qaydaları) verir.**
 
-### Animation properties
+### Animation xassələri
 
-Like the `transition` property, `animation` is a **shorthand** property for several others:
+`transition` xassəsi kimi, bəzi başqa xassələr üçün `animation`-da **shorthand** xassədir:
 
-* **name**: the animation's name
-* **duration**: how long the transition lasts
-* **timing-function**: how the intermediate states are calculated
-* **delay**: to start the animation after a certain amount of time
-* **iteration-count**: how many times the animation should be performed
-* **direction**: if the animation should be reversed or not
-* **fill-mode**: what styles are applied before the animation starts and after it ends
+* **name**: animasiyanın adı
+* **duration**: transition nə qədər davam edəcək
+* **timing-function**: aralıq vəziyyətlər necə hesablanır
+* **delay**: müəyyən vaxtdan sonra animasiyaya başlamaq üçün
+* **iteration-count**: animasiya neçə dəfə yerinə yetirilməlidir
+* **direction**: animasiya tərsinə çevrilməlidir, ya yox
+* **fill-mode**: animasiya başlamazdan əvvəl və bitdikdən sonra hansı üslublar tətbiq olunur
 
 ### Quick example
 
-To animate a loading button, you could write a **bouncing** animation:
+Yükləmə düyməsini canlandırmaq üçün siz **bouncing** animasiya yaza bilərsiniz:
 
 {% highlight css %}
 @keyframes bouncing{
@@ -54,34 +54,34 @@ To animate a loading button, you could write a **bouncing** animation:
   <a>Loading</a>
 </div>
 
-You first need to write the actual bouncing animation using **keyframes** and name it `bouncing`. _Then_ you can use that animation by applying it to `.loading-button`.
+Siz əvvəlcə **keyframesdan** istifadə edərək faktiki bouncing animasiyanı yazmalı və onu `bouncing` adlandırmalısınız._Sonra_ siz onu `.loading-button`-a tətbiq etməklə həmin animasiyadan istifadə edə bilərsiniz.
 
-I used the **shorthand** `animation` property, and included all options:
+**shorthand** `animation` xassəsindən istifadə etdim, və bütün variantları ehtiva edir:
 
-* **name**: bouncing _(matches the keyframes name)_
-* **duration**: 0.5s _(half a second)_
+* **name**: bouncing _(keyframe adı ilə uyğunlaşır)_
+* **duration**: 0.5s _(yarım saniyə)_
 * **timing-function**: [cubic-bezier(0.1,0.25,0.1,1)](https://cubic-bezier.com/#.1,.25,.1,1)
-* **delay**: 0s _(no delay)_
-* **iteration-count**: infinite _(plays indefinitely)_
-* **direction**: alternate _(goes back and forth)_
+* **delay**: 0s _(delay yoxdur)_
+* **iteration-count**: infinite _(sonduz davam edir)_
+* **direction**: alternate _(irəli-geri gedir)_
 * **fill-mode**: both
 
 ### @keyframes
 
-Before applying animations to HTML elements, you need to **write animations using keyframes**. Basically, keyframes are each **intermediate step** in an animation. They are defined using **percentages**:
+HTML elementlərinə animasiyalar tətbiq etməzdən əvvəl siz **keyframesdan istifadə edərək animasiyalar yazmalısınız**. Basically, keyframes are each **intermediate step** in an animation. They are defined using **percentages**:
 
-* `0%` is the first step of the animation
-* `50%` is the step halfway through the animation
-* `100%` is the last step
+* `0%` animasiyanın birinci addımıdır
+* `50%` animasiyanın yarısına qədər olan addımdır
+* `100%` son addımdır
 
-You can also use the keywords `from` and `to` instead of `0%` and `100%` respectively.
+müvafiq olaraq `0%` and `100%` yerinə `from` və `to` açar sözlərdən istifadə edə bilərsiniz.
 {: .info}
 
-You can define _as many keyframes as you want_, like `33%`, `4%` or even `29.86%`. In practice, you'll only write a few.
+İstədiyiniz qədər keyframes  təyin edə bilərsiniz, `33%`, `4%` həmçinin `29.86%` kimi. Praktikada yalnız bir neçəsini yazacaqsınız.
 
-Each keyframe is **CSS rule**, meaning that you can write CSS properties just like usual.
+Hər bir açar kadr **CSS qaydasıdır**, o deməkdir ki, siz həmişəki kimi CSS xassələrini yaza bilərsiniz.
 
-To define an animation, just write the keyword `@keyframes` followed by its **name**:
+Animasiyanı müəyyən etmək üçün sadəcə olaraq `@keyframes` açar sözünü və onun **adını** yazın.:
 
 {% highlight css %}
 @keyframes around {
@@ -98,14 +98,14 @@ p{ animation: around 4s linear infinite;}
   <p>Hello</p>
 </div>
 
-Notice how the start `0%` and the end `100%` have the **same CSS rules**. This ensures that the animation loops perfectly. Because the iteration count is set to `infinite`, the animation will go from `0%` to `100%`, and then _back to_ `0%` instantly and indefinitely.
+Başlanğıc `0%` və son `100%` **eyni CSS qaydalarına** malik olmağuna diqqət yetirin. Bu, animasiyanın mükəmməl şəkildə dönməsini təmin edir. Çünki iterasiya sayı “sonsuz” olaraq təyin edilmişdir, animasiya '0%'dən '100%'ə gedəcək, və daha sonraani və qeyri-müəyyən müddətə `0%`-ə qayıdın.
 
 ### animation-name
 
-The animation's **name** is used at least **twice**:
+Animasiyanın **name**-i ən azı **iki dəfə** istifadə olunur:
 
-* when **writing** the animation using `@keyframes`
-* when **using** the animation using the `animation-name` property (or with the `animation` shorthand)
+*`@keyframes` istifadə edərək animasiya **yazarkən**
+* 'animasiya-adı' xüsusiyyətindən istifadə edərək (və ya 'animasiya' stenoqramı ilə) animasiyadan **istifadə edildikdə**
 
 {% highlight css %}
 @keyframes whatever{
@@ -115,45 +115,45 @@ The animation's **name** is used at least **twice**:
 .selector{ animation-name: whatever;}
 {% endhighlight %}
 
-Like CSS class names, animation names can only include:
+CSS sinif adları kimi, animasiya adlarıda da yalnız daxil ola bilər:
 
-* letters (a-z)
-* numbers (0-9)
-* underscores (_)
-* dashes (-)
+* hərflər (a-z)
+* rəqəmlər (0-9)
+* altxətt (_)
+* trelər (-)
 
-It can not start with a number or two dashes.
+Bir və ya iki tire ilə başlaya bilməz.
 
 ### animation-duration
 
-Just like [transition durations](/css-transitions.html#transition-duration), animation durations can be set in **seconds** `1s` or **milliseconds** `200ms`.
+[transition durations](/css-transitions.html#transition-duration) kimi, animasiya müddətləri **saniyələr** `1s` və ya **millisaniyələr** `200ms` ilə təyin edilə bilər.
 
 {% highlight css %}
 .selector{ animation-duration: 0.5s;}
 {% endhighlight %}
 
-It defaults to `0s`, which means no animation at all.
+Defaul dəyərri `0s`-dir, hansı ki, heç bir animasiya yoxdur.
 
 ### animation-timing-function
 
-Just like [transition timing functions](/css-transitions.html#transition-timing-function), animation timing functions can use **keywords** like `linear`, `ease-out`, or be defined using custom **cubic bezier** functions.
+[transition timing functions](/css-transitions.html#transition-timing-function) kimi, animation timing funksiyaları `linear`, `ease-out` kimi **açar sözlərdən** istifadə edə bilər və ya xüsusi **cubic bezier** funksiyalarından istifadə etməklə müəyyən edilə bilər.
 
 {% highlight css %}
 .selector{ animation-timing-function: ease-in-out;}
 {% endhighlight %}
 
-It defaults to `ease`.
+Default olaraq `ease`-dir.
 
-Because CSS animations use keyframes, you can set a **linear** timing function and **simulate** a specific cubic bezier curve by defining a _lot_ of _very specific_ keyframes. Check out [Bounce.js](https://bouncejs.com/) to generate advanced animations.
+Çünki CSS animasiyaları keyframelərdən istifadə edir, siz **linear** timing funksiyasını təyin edə və çox _spesifik_ əsas keyframelərin _çoxunu_ müəyyən etməklə xüsusi cubic bezier əyrisini **imitasiya edə bilərsiniz**.Qabaqcıl animasiyalar yaratmaq üçün [Bounce.js](https://bouncejs.com/) saytına baxın.
 {: .info}
 
 ### animation-delay
 
-Just like [transition delays](/css-transitions.html#transition-delay), animation delays can be set in **seconds** `1s` or **milliseconds** `200ms`.
+Eynilə [transition delays] kimi(/css-transitions.html#transition-delay), animation delay **seconds** `1s` ilə və ya **milliseconds** `200ms ilə təyin edilə bilər`.
 
-It defaults to `0s`, which means no delay at all.
+Default dəyəri `0s`-dir, bu da heç bir delay-ın olmaması deməkdir.
 
-It's useful when triggering multiple animations **in sequence**.
+Çoxlu animasiyaları **ardıcıllıqla** işə saldıqda faydalıdır.
 
 {% highlight css %}
 .a,.b,.c{ animation: bouncing 1s;}
@@ -163,11 +163,11 @@ It's useful when triggering multiple animations **in sequence**.
 
 ### animation-iteration-count
 
-By default, animations are only played **once** (value of `1`). You can set 3 types of values:
+Default olaraq, animationlar yalnız **bir dəfə** oynayır. 3 növ dəyər təyin edə bilərsiniz:
 
-* **integers** like `2` or `3`
-* **non-integers** like `0.5` which will play only half the animation
-* the **keyword** `infinite` which will repeat the animation indefinitely
+* **integers** `2` və ya `3` kimi (tam ədədlər)
+* **non-integers** `0.5` kimi animasiyanın yalnız yarısını oynayacaq (qeyri-tam ədədlər)
+* **keyword** `infinite` animasiyanı sonsuz təkrarlayacaq (açar sözləri)
 
 {% highlight css %}
 .selector{ animation-iteration-count: infinite;}
@@ -175,14 +175,14 @@ By default, animations are only played **once** (value of `1`). You can set 3 ty
 
 ### animation-direction
 
-The animation's **direction** defines _in which order_ the keyframes are read.
+Animasiyanın **istiqaməti** əsas keyframelərin oxunmasını _hansı ardıcıllıqla_ müəyyən edir.
 
-* **normal**: starts at `0%`, ends at `100%`, starts at `0%` again
-* **reverse**: starts at `100%`, ends at `0%`, starts at `100%` again
-* **alternate**: starts at `0%`, goes to `100%`, goes to `0%`
-* **alternate-reverse**: starts at `100%`, goes to `0%`, goes to `100%`
+* **normal**: `0%`-dan başlayır, `100%`-də bitir, yenidən `0%`-da başlayır
+* **reverse**: `100%`-də başlayır, `0%`-də bitir, yenidən `100%`-də bitir
+* **alternate**: `0%`-da başlayır, `100%`-ə kimi gedir, `0%`-a gedir
+* **alternate-reverse**: `100%`-da başlayır, `0%`-a kimi gedir, `100%`-ə kimi gedir
 
-It's easier to visualise if the animation's iteration count is set to `infinite`.
+Animasiyanın iterasiya sayı “infinite” olaraq təyin edilərsə, bunu vizuallaşdırmaq daha asandır.
 
 <div class="result" id="result-3">
   <p><strong>Normal</strong>: 0% --> 100%</p>
@@ -197,17 +197,16 @@ It's easier to visualise if the animation's iteration count is set to `infinite`
 
 ### animation-fill-mode
 
-An animation's **fill mode** defines what happens _before_ the animation starts and _after_ it ends.
+Animasiyanın **fill mode**-u animasiya başlamazdan əvvəl və bitdikdən sonra baş verənləri müəyyən edir.
 
-When you define **keyframes** you define **CSS rules** to be applied at different steps of the animation. Now, these CSS rules can _clash_ with the ones _already applied_ on the elements being animated.
+**keyframeləri** təyin edərkən siz animasiyanın müxtəlif mərhələlərində tətbiq olunacaq **CSS qaydaları** müəyyən edirsiniz.. İndi bu CSS qaydaları animasiya edilən elementlərdə artıq tətbiq olunanlarla _toqquşa bilər_.
 
-The fill mode allows to tell the browser if the _animation's styles_ should **also** be applied **outside of the animation**.
 
-Let's imagine a **button** that is:
+Gəlin bir ədəd **button** təsəvvür edək:
 
-* **red** by default
-* turns **blue** at the start of the animation
-* ends up **green** when the animation is over
+* default **qırmızı**
+* animasiyanın əvvəlində **blue**-ə çevriləcək
+* animasiya bitdikdə **green** yaşıl olaraq bitəcək
 
 <div class="table">
   <table>
