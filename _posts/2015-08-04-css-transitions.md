@@ -5,22 +5,22 @@ subtitle: "From one rule to another"
 section: css
 ---
 
-CSS <strong>transitions</strong> allow to smoothly go from one element's state to another. How it works is that individual **properties** are animated from an **initial** to a **final** state.
+CSS <strong>transitions</strong> bir elementin vəziyyətindən digərinə rahat şəkildə keçməyə imkan verir.Necə işləyir ki, fərdi **xassələr** **ilkin** vəziyyətindən **son** vəziyyətinə qədər canlandırılır.
 
 You can define:
 
-* `transition-property`: which **properties** to animate
-* `transition-duration`: **how long** the animation lasts
-* `transition-timing-function`: how the **intermediate states** are calculated
-* `transition-delay`: to start the animation **after** a certain amount of time
+* `transition-property`: hansı **xassə** animasiya ediləcək
+* `transition-duration`: animasiya **nə qədər** davam edəcək
+* `transition-timing-function`: **aralıq vəziyyətlər** necə hesablanır
+* `transition-delay`: müəyyən vaxtdan **sonra** animasiyaya başlaması üçün
 
-You can set each CSS property individually, or use the shorthand version: `transition`. In that case, only the **duration is mandatory**.
+Siz hər bir CSS xassəsini ayrıca təyin edə və ya stenoqrafiya versiyasından istifadə edə bilərsiniz: `transition`. Bu halda, yalnız **müddət məcburidir**.
 
-Keep in mind that a **transition is a specific kind of _animation_, where there's only a start and an end state**.
+Unutmayın ki, **transition xüsusi bir _animasiya növüdür, burada yalnız başlanğıc və son vəziyyət var**.
 
 ### Quick example
 
-Transitions are often used on **hover states**.
+Transitionlar **hover hallarında** tez-tez istifadə olunur.
 
 {% highlight css %}
 a{ background: lightgrey; color: grey;}
@@ -33,13 +33,13 @@ a.with-transition{ transition: 1s;}
   <a class="with-transition">With transition</a>
 </div>
 
-Instead of the hover CSS rules being **instantaneous**, both the background _and_ the text colors are slowly animated.
+Hover CSS qaydalarının **ani** olması əvəzinə, həm background, həm də mətn rəngləri yavaş-yavaş canlandırılır.
 
 ### transition-duration
 
-A transition's duration is the only CSS property needed to create a transition. It can either be set in **seconds** `2s` or **milliseconds** `100ms`.
+Transition's duration keçid yaratmaq üçün lazım olan yeganə CSS xüsusiyyətidir. O, ya **saniyə** `2s` və ya **millisaniyə** `100ms` ilə təyin oluna bilər.
 
-If you want your transition to last **half a second**, you can either write `0.5s` or `500ms`. Depending on how fast you want your transitions to be, one unit might be easier and/or quicker to write.
+Transition **yarım saniyə** davam etməsini istəyirsinizsə, ya `0,5s` və ya `500ms` yaza bilərsiniz. Transitions nə qədər sürətli olmasını istədiyinizdən asılı olaraq, bir vahidin yazılması daha asan və/yaxud daha sürətli ola bilər.
 
 {% highlight css %}
 a{ background: lightgrey; color: grey;}
@@ -56,11 +56,11 @@ a.with-slow-transition{ transition: 3s;}
 
 ### transition-property
 
-Only **1/3** of CSS properties can be animated. Mozilla has a [complete list](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties).
+CSS xassələrinin yalnız **1/3**-i animasiya edilə bilər.Mozilla-da [tam siyahı](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) var.
 
-By default, the `transition-property` property has a value of `all`, which simply means it will animate all possible properties.
+Default olaraq, `transition-property` xassəsinin `all` dəyəri vardır, bu o deməkdir ki, o, bütün mümkün xassələri animasiya ediləcək.
 
-You can decide to only animate 1 or several properties.
+Siz yalnız 1 və ya bir neçə xassəni animasiya etmək qərarına gələ bilərsiniz.
 
 {% highlight css %}
 a{ background: lightgrey; color: grey;}
@@ -75,17 +75,17 @@ a.with-all-transition{ transition-duration: 2s;}
   <a class="with-all-transition">With all transitions</a>
 </div>
 
-The `border` property is fully animatable and allows to easily visualize the slow (2 seconds) transition.
+The `border` xassəsi tam olaraq animasiya ediləndir və keçidi asanlıqla yavaş (2 saniyə) görüntüləməyə imkan verir.
 
 ### transition-timing-function
 
-The timing function determines how each property's **value** is calculated **during the transition**.
+Timing funksiyası hər bir xassənin ** dəyərinin ** keçid zamanı** necə hesablandığını müəyyən edir.
 
-By default, the transition is **eased**: it accelerates at the start and slows down at the end.
+Default olaraq, transition **eased**-dir: başlanğıcda sürətlənir və sonunda yavaşlayır.
 
-You can ensure that the transition will happen at a **constant speed**. Timing functions can make the transition **accelerate** and/or **slow down**.
+Siz keçidin **sabit sürətlə** baş verəcəyinə əmin ola bilərsiniz. Zamanlama funksiyaları keçidi **sürətləndirə** və/və ya **yavaşlatdıra bilər**.
 
-The easiest way to visualize timing functions is by altering **position properties**, like `left`.
+Timing funksiyalarını vizuallaşdırmağın ən asan yolu, `left` kimi **position xüsusiyyətlərini** dəyişdirməkdir.
 
 {% highlight css %}
 div{ left: 0; position: relative; transition: 1s;}
@@ -125,21 +125,21 @@ main:hover div{ left: 200px;}
   <div class="ease-in-out"></div>
 </div>
 
-Keep in mind that all transitions take the **same amount of time** (1 second).
+Unutmayın ki, bütün keçidlər **eyni vaxt** alır (1 saniyə).
 
-If you want to visualize how other timing functions work, check out this [Easing Functions Cheat Sheet](https://easings.net/).
+Digər vaxt funksiyalarının necə işlədiyini vizuallaşdırmaq istəyirsinizsə, bunu yoxlayın [Easing Functions Cheat Sheet](https://easings.net/).
 
 #### cubic-bezier
 
-If all these **pre-defined** timing functions don't suit you, you can write your own using **cubic bezier** functions.
+Bütün bu **əvvəlcədən təyin edilmiş** vaxt funksiyaları sizə uyğun gəlmirsə, **cubic bezier** funksiyalarından istifadə edərək özünüz yaza bilərsiniz.
 
-The website [cubic-bezier.com](https://cubic-bezier.com/) is a simple tool to visually write your own curves.
+[cubic-bezier.com](https://cubic-bezier.com/) veb saytı öz əyrilərinizi vizual olaraq yazmaq üçün çox rahat tooldur.
 
 ### transition-delay
 
-A **delay** will define how long the transitions has to **wait** _before_ actually starting.
+**delay** keçidlərin faktiki olaraq başlamazdan əvvəl **gözləyərək** nə qədər müddətə ehtiyac olduğunu müəyyən edəcək.
 
-Like `transition-duration`, you can either use seconds `s` or milliseconds `ms`.
+`transition-duration` kimi, saniyə `s` və ya millisaniyə `ms` istifadə edə bilərsiniz.
 
 {% highlight css %}
 a{ background: blue; color: white; transition: all 1s;}
