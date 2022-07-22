@@ -5,24 +5,24 @@ subtitle: "From one color to another"
 section: css
 ---
 
-When we talk about gradients in CSS, we talk about **gradients of colors**.
+CSS gradientlər haqda danışarkən, **rənglərin gradientlərindən** bəhs edirik.
 
-There are 2 types of gradients in CSS:
+CSS-də iki növ gradient var:
 
-* **linear**: colors go from point to another, in a _straight_ line
-* **radials**: colors go from the center of a circle to its edges, in _all_ directions
+* **linear**: rənglər düz xətt üzrə bir nöqtədən başqa nöqtəyə gedir
+* **radials**: rənglər dairənin mərkəzindən onun kənarlarına, bütün istiqamətlərdə gedir
 
-A gradient is considered a **background image** and must be used with the according property.
+Qradient **background image** hesab olunur və müvafiq xüsusiyyətlə istifadə edilməlidir.
 
 ### linear-gradient
 
-The syntax for linear gradients is [quite complex](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient), but the basic idea is to define:
+Xətti gradientlər üçün sintaksis [olduqca mürəkkəbdir](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient), lakin əsas ideya müəyyən etməkdir:
 
-* which **colors** you want
-* where these colors must appear **along the axis** (at the start, middle, end, etc.)
-* in which **direction** the gradient must go
+* hansı **rəngləri** istəyirsiniz
+* bu rənglərin **ox boyunca** harada görünəcəyini (başda, ortada, sonda, və s.)
+* və **gradientin** hansı istiqamətdə gedəcəyi
 
-Let's start with a simple 2 color gradient:
+Gəlin indi sadə iki rəngli gradient ilə başlayaq:
 
 {% highlight css %}
 div{ background-image: linear-gradient(red, blue);}
@@ -36,20 +36,20 @@ div{ background-image: linear-gradient(red, blue);}
   <div style="background-image: linear-gradient(red, blue);">A simple vertical background gradient</div>
 </div>
 
-By default:
+Default olaraq:
 
-* the **direction** is **vertical**, from _top_ to _bottom_
-* the **first** color is at the **start** (top)
-* the **second** color is at the **end** (bottom)
+* **şaquli** **istiqamətdə**, _yuxarıdan_ _aşağıya_
+* **birinci** rəng **başlanğıcda** (yuxarıda)
+* **ikinci** rəng **sonda** (aşağıda)
 
-#### Changing the direction
+#### Istiqamətin dəyişdirilməsi
 
-If the top to bottom direction doesn't suit you, you can alter it by either:
+Əgər yuxarıdan aşağıya doğru olan istiqamət sizə uyğun gəlmədisə, dəyişdirə bilərsiniz:
 
-* defining the **destination of the gradient**, with keywords like `to left top`
-* defining a specific **angle** in degrees like `45 deg`
+* **qradientin təyinatının** müəyyən edilməsi `to left top` açar sözü ilə olur
+* `45 deg` kimi dərəcələrdə xüsusi **bucağı** müəyyən etmək
 
-This direction must be set _before_ the colors:
+İtiqamət rəngdən əvvəl təyin edilməlidir:
 
 {% highlight css %}
 div{ background-image: linear-gradient(to bottom right, yellow, purple); width: 200px;}
@@ -63,12 +63,12 @@ div{ background-image: linear-gradient(to bottom right, yellow, purple); width: 
   <div style="background-image: linear-gradient(to bottom right, yellow, purple); width: 200px;">A diagonal gradient from the top left corner to the bottom left one</div>
 </div>
 
-If you want a more **specific angle**, you can use a value in **degrees**:
+Daha çox **xüsusi bucaq** vermək istəsəniz, **dərəcə** dəyərindən istifadə edə bilərsiniz:
 
-* `0deg` is the default value, from top to bottom
-* `20deg` is slightly diagonal, going **clockwise**
-* `90deg` is like 3pm, from right to left
-* `180deg` is from bottom to top
+* `0deg` yuxarıdan aşağı default dəyərdir
+* `20deg` bir az diaqonaldır, və **saat əqrəbi istiqamətində** gedir
+* `90deg` saat 3 kimi, sağdan sola
+* `180deg` aşağıdan yuxarıya doğrudur
 
 {% highlight css %}
 div{ background-image: linear-gradient(20deg, green, blue); width: 150px;}
@@ -82,13 +82,13 @@ div{ background-image: linear-gradient(20deg, green, blue); width: 150px;}
   <div style="background-image: linear-gradient(20deg, green, blue); width: 150px;">A diagonal gradient with an angle of 20 degrees</div>
 </div>
 
-#### Adding more colors
+#### Daha çox rəng əlavə etmək
 
-You can insert as many colors as you want. They will be **equally distributed** along the axis:
+İstədiyiniz qədər rəng əlavə edə bilərsiniz. Onlar ox boyunca **bərabər paylanacaq**:
 
-* **2 colors**: 0% and 100%
-* **3 colors**: 0%, 50% and 100%
-* **4 colors**: 0%, 33%, 67% and 100%
+* **2 rəng**: 0% və 100%
+* **3 rəng**: 0%, 50% və 100%
+* **4 rəng**: 0%, 33%, 67% və 100%
 
 {% highlight css %}
 div{ background-image: linear-gradient(orange, grey, yellow); width: 150px;}
@@ -102,9 +102,9 @@ div{ background-image: linear-gradient(orange, grey, yellow); width: 150px;}
   <div style="background-image: linear-gradient(orange, grey, yellow); width: 150px;">A rather ugly gradient, but you get the idea</div>
 </div>
 
-#### Setting specific color stops
+#### Xüsusi rəngin təyin edilməsinin dayandırılması
 
-If you don't want colors to equally distributed, you can set specific **color stop positions**, using either percentages `%` or pixels `px`:
+Rənglərin bərabər paylanmasını istəmirsinizsə, faizlərdən `%` və ya piksel `px` istifadə edərək xüsusi **rəng dayandırma mövqelərini** təyin edə bilərsiniz:
 
 {% highlight css %}
 div{ background-image: linear-gradient(orange, grey 10%, yellow 50%); width: 150px;}
@@ -118,19 +118,19 @@ div{ background-image: linear-gradient(orange, grey 10%, yellow 50%); width: 150
   <div style="background-image: linear-gradient(orange, grey 10%, yellow 50%); width: 150px;">An even uglier gradient, but you get the idea</div>
 </div>
 
-In this setup:
+Bu quraşdırmada:
 
-* `orange` has no stop position, so it defaults to **zero** `0%`
-* `grey` is closer to the top, at `10%` instead of `50%`
-* `yellow` takes half of the gradient, from `50%` to the end `100%`
+* `orange`-ın dayanma mövqeyi yoxdur, ona görə defolt olaraq **sıfır** `0%`-dir
+* `grey` yuxarıya daha yaxındır, `50%` yerinə `10%`-dir
+* `yellow` `50%`-dən `100%`-ə kimi gradientin yarısını alır
 
 ### radial-gradient
 
-While linear gradients follow a single-line axis, **radial gradients** spread out in all directions. Their syntax is fairly similar to linear ones, as they both have **color stops**. But instead of specifying a _direction_ you need to specify:
+Xətti qradiyentlər bir xətti izləyərkən, **radial qradientlər** bütün istiqamətlərə yayılır. Onların sintaksisi xətti olanlara kifayət qədər bənzəyir, çünki hər ikisində **rəng dayanacaqları** var. Ancaq bir _istiqaməti_ təyin etmək əvəzinə, müəyyən etməlisiniz:
 
-* a **shape**: either a circle or an ellipse
-* a **starting point**: which will be the center of the circle/ellipse
-* an **end point**: where the edge of the circle/ellipse will be
+* **forma**: ya dairə yada ellips
+* **başlanğıc nöqtəsi**: dairənin/ellipsin mərkəzi olacaq
+* **bitmə nöqtəsi**: dairənin/ellipsin kənarının olacağı yer
 
 {% highlight css %}
 div{ background-image: radial-gradient(red, yellow); padding: 1rem; width: 300px;}
@@ -144,15 +144,15 @@ div{ background-image: radial-gradient(red, yellow); padding: 1rem; width: 300px
   <div style="background-image: radial-gradient(red, yellow); padding: 1rem; width: 300px;">This looks like the sun, doesn't it?</div>
 </div>
 
-By default:
+Default olaraq:
 
-* the gradient is an **ellipse**
-* the first color starts at the **center**
-* the last color ends at the **farthest corner**
+* qradient **ellipse** formasındadır
+* birinci rəng **mərkəzdən** başlayır
+* sonuncu rəng **ən uzaq künc**-də bitir
 
-#### start position
+#### Start position/(Başlanğıc vəziyyəti)
 
-The **start position** works like **[background positions](/css-background.html#background-position)**. You set it with the `at` keyword.
+**start position** **[background positions](/css-background.html#background-position)** kimi işləyir. `at` açar sözü ilə təyin edilir.
 
 {% highlight css %}
 div{ background-image: radial-gradient(at top right, black, lightgrey); padding: 1rem; width: 300px;}
@@ -166,16 +166,16 @@ div{ background-image: radial-gradient(at top right, black, lightgrey); padding:
   <div style="background-image: radial-gradient(at top right, black, lightgrey); padding: 1rem; width: 300px;">A gloomy day.</div>
 </div>
 
-#### end position
+#### end position/(bitiş vəziyyəti)
 
-By default, the shape will end at the **farthest corner**. You can either choose:
+Default olaraq, forma **ən uzaq küncdə** bitəcək. Siz seçə bilərsiniz:
 
 * `closest-side`
 * `closest-corner`
 * `farthest-side`
 * `farthest-corner`
 
-The difference is both hard to grasp and to visualize, so I won't go into details. Mozilla has a [good description of the different values](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient#Values).
+Fərqi həm başa düşmək, həm də vizuallaşdırmaq çətindir, ona görə də təfərrüatlara girməyəcəyik. Mozilla [müxtəlif dəyərlərin yaxşı təsvirinə malikdir](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient#Values).
 
 {% highlight css %}
 div{ background-image: radial-gradient(closest-corner at 20px 20px, green, blue); padding: 1rem; width: 300px;}
@@ -192,7 +192,7 @@ div:hover{ background-image: radial-gradient(farthest-side at 20px 20px, green, 
 
 #### fixed size
 
-Instead of setting both start _and_ end positions, you can just set **specific dimensions**:
+start _və_ end positionlarını təyin etmək yerinə, sadəcə **xüsusi ölçüləri** təyin edə bilərsiniz:
 
 {% highlight css %}
 div{ background-image: radial-gradient(20px 10px at 75% 50%, darkviolet, pink); padding: 1rem; width: 300px;}
@@ -206,11 +206,9 @@ div{ background-image: radial-gradient(20px 10px at 75% 50%, darkviolet, pink); 
   <div style="background-image: radial-gradient(20px 10px at 75% 50%, darkviolet, pink); padding: 1rem; width: 300px;">A small violet disc in a sea of pink.</div>
 </div>
 
-CSS gradients are powerful, considering how endless the options are.
+Seçimlərin nə qədər sonsuz olduğunu nəzərə alsaq, CSS gradientləri çox güclüdür.
 
-The examples of this page are voluntarily "ugly", with pronounced color differences, to better explain what how each property works.
-
-But it's quite easy to write more **subtle** gradients, especially for buttons:
+Lakin xüsusilə düymələr üçün daha çox **incə** gradient yazmaq olduqca asandır:
 
 {% highlight css %}
 .button-grey  { background-image: linear-gradient(#f2f2f2, #f2f2f2);}
