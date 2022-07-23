@@ -5,41 +5,41 @@ subtitle: "Fashioning unique shapes"
 section: css
 ---
 
-We've seen so far how CSS allows us to apply colors, set fonts, tweak the text settings, position elements, space them, decorate them, move them around.
+Biz indiyə qədər CSS-in bizə rəng tətbiq etməyə necə imkanlar verdiyini görmüşük, şriftləri təyin edin, mətn parametrlərini düzəldin, elementləri yerləşdirin, boşluq qoyun, bəzəyin, hərəkət etdirin.
 
-CSS **transforms** are a collection of _functions_ that allow to **shape elements** in particular ways:
+CSS **transformlar** xüsusi üsullarla elementləri **formalaşdırmağa** imkan verən _funksiyalar_ toplusudur:
 
-* **translate**: moves the element along up to 3 axis (x,y and z)
-* **rotate**: moves the element around a central point
-* **scale**: resizes the element
-* **skew**: distorts the element
+* **translate**: elementi 3 ox üzrə hərəkət etdirir (x,y və z)
+* **rotate**: elementi mərkəzi nöqtə ətrafında hərəkət etdirir
+* **scale**: elementin ölçüsünü dəyişir
+* **skew**: elementi təhrif edir
 
-### transform properties
+### transform xassələri
 
-There are 3 CSS transform properties available:
+3 ədəd transform xassəsi mövcuddur:
 
-* `transform` defines which transform _function_ to use (translate, rotate, scale...)
-* `transform-origin` allows to modify the origin point of a transformation (works like [background positions](/css-background.html#background-position))
-* `transform-style` is for 3d settings
+* `transform` _funksiyanın hansı transformasiyasından istifadə ediləcəyini müəyyən edir (translate, rotate, scale...)
+* `transform-origin` transformasiyanın başlanğıc nöqtəsini dəyişdirməyə imkan verir ([background positions](/css-background.html#background-position) kimi işləyir)
+* `transform-style` 3D parametrləri üçündür
 
-Note that unlike `background` and `border`, `transform` is **not a shorthand property**.
+Qeyd edək ki, `background` və `border`-dən fərqli olaraq, `transform` **shorthand property** deyil.
 
-We'll only use `transform` here.
+Transformdan yalnız burada istifadə edəcəyik.
 
-#### Doesn't break the Flow
+#### Axını pozmur
 
-To prevent unexpected behavior, transformed elements **do not affect the Flow**. Whether rotated, scaled or translated, they won't affect other elements.
+Gözlənilməz davranışın qarşısını almaq üçün, transformed elementlər **axına təsir etmirlər**. Rotated, scaled və ya translated olsun, onlar digər elementlərə təsir etməyəcək.
 
 ### translate
 
-The `translate()` function allows to move an element **across the plane** (on the x and y axis). It accepts either:
+`translate()` funksiyası elementi **müstəvi boyunca** köçürməyə imkan verir. (x və y oxunda).
 
-* **1 parameter**: moves the element along the `x` axis
-* **2 parameters**: first value is for the `x` axis, second for the `y` one
+* **1 parametr**: elementi `x` oxu boyunca hərəkət etdirir
+* **2 parametr**: birinci dəyər `x` oxu üçündür, ikinci `y` oxu üçün
 
-It's like using [relative positioning](/css-position.html#relative) with `left` and `top` values.
+Bu, [relative positioning](/css-position.html#relative) funksiyasını `left` və `top` dəyərləri ilə istifadə etmək kimidir.
 
-Let's redo our [circuit animation](/css-animations.html#result-2) using translation instead of left/top positioning:
+Sol/yuxarı positioning əvəzinə translation istifadə edərək [circuit animation](/css-animations.html#result-2)-ı yenidən edək:
 
 {% highlight css %}
 @keyframes translating {
@@ -69,16 +69,16 @@ p{ animation: translating 4s linear infinite;}
 }
 </style>
 
-Remember: `transform` is the CSS **property**, `translate()` is the CSS **value** _attached to_ that property (and also happens to be a function).
+Unutmayın `transform` CSS xassəsidir `translate()` CSS **dəyəridir** həmin xassəyə bağlıdır (həm də funksiya olur).
 {: .focus}
 
-You can use `translateX()` and `translateY()` to only move your element along the **x** and **y** axis respectively.
+Müvafiq olaraq yalnız `x` və `y` oxu üzrə hərəkət etdirmək üçün `translateX()` və `translateY()` istifadə edə bilərsiniz.
 
 ### rotate
 
-The `rotate()` function allows to make an element **revolve around a fixed point**. By default, it revolves around the element's center. Think of it as vinyl being played on a turntable.
+`rotate()` funksiyası elementi **sabit nöqtə ətrafında fırlamağa imkan verir**. Default olaraq, elementin mərkəzi ətradında fırlanır. Bunu dönər masada oynanan vinil kimi düşünün.
 
-`rotate()` accepts only **1** parameter, which is an **angle** value defined in degrees `deg`, gradians `grad`, radians `rad` or turns `turn` (with 1 turn being equivalent to a full circle).
+`rotate()` yalnız **1** parametr alır, `deg` dərəcə ilə müəyyən edilmiş **bucaq** dəyəridir, gradian `grad`, radian `rad` və ya turn `turn` (1 dönüş tam dairəyə bərabərdir).
 
 {% highlight css %}
 @keyframes rotating {
@@ -104,18 +104,18 @@ p{ animation: rotating 4s linear infinite;}
 
 ### scale
 
-The `scale()` function allows to **resize an element**. It can either expand or shrink it. The function accepts either:
+`scale()` funksiyası **elementin ölçüsünü dəyişməyə** imkan verir. Onu genişləndirə və ya daralda bilər. The function accepts either:
 
-* **1 parameter**: the element is resized uniformily in height and width
-* **2 parameters**: the first value resizes the element _horizontally_, the second one _vertically_
+* **1 parametr**: element hündürlüyü və eni ilə bərabər ölçüsünü dəyişdirir
+* **2 parametr**: birinci dəyər elementin ölçüsünü _üfüqi, ikincisi isə _şaquli olaraq dəyişir
 
-The **range** of possible value is:
+Mümkün dəyərin **aralığı**-dır:
 
-* `1`: the element retains its original size
-* `2`: the element doubles in size
-* `0.5`: the element is half of its size
-* `0`: the element basically disappears (as its height and width are equal to zero)
-* `-1`: the element is mirrored
+* `1`: element orijinal ölçüsünü saxlayır
+* `2`: elementin ölçüsü ikiqat artır
+* `0.5`: element ölçüsünün yarısıdır
+* `0`: element əsasən yox olur (çünki onun hündürlüyü və eni sıfıra bərabərdir)
+* `-1`: element əks olunur
 
 {% highlight css %}
 @keyframes scaling {
@@ -170,20 +170,20 @@ p{ animation: scaling 10s steps(1) 0s infinite;}
 }
 </style>
 
-Like `translate()`, the `scale()` function has x and y versions: `scaleX()` and `scaleY()` to resize horizontally and vertically respectively.
+`translate()` kimi, `scale()` funksiyasinin x və y versiyaları var: `scaleX()` və `scaleY()` müvafiq olaraq şaquli və üfüqi ölçülərinin dəyişir.
 
 ### skew
 
-The `skew()` function allows to **distort an element**, by dragging its sides along a line basically.
+`skew()` funksiyası **elementi təhrif etməyə** imkan verir, tərəflərini əsasən bir xətt boyunca sürükləməklə.
 
-This transform function is rarely used, as its effects are quite unpredictable, and its results not necessarily appealing. Nevertheless, let's see how it works.
+Bu transform funksiyası nadir hallarda istifadə olunur, çünki onun olduqca gözlənilməz təsirləri var, və onun nəticələri cəlbedici deyil. Buna baxmayaraq, bunun necə işlədiyini görək.
 
-Like `scale()`, the `skew()` functions accepts either:
+`scale()` kimi, `skew()` funksiyasıda dəstəkləyir:
 
-* **1 parameter**: the element is distorted horizontally
-* **2 parameters**: the first value distorts the element _horizontally_, the second one _vertically_
+* **1 parameter**: element üfüqi şəkildə təhrif olunur
+* **2 parameters**: birinci dəyər elementi _üfüqi_, ikincisi isə _şaquli_ olaraq təhrif edir
 
-And like `rotate()`, `skew()` only accepts **angle** values like degrees `deg`.
+Və `rotate()` kimi, `skew()` yalnız dərəcə `deg` kimi **bucaq** dəyərlərini qəbul edir.
 
 {% highlight css %}
 @keyframes skewing {
@@ -239,9 +239,9 @@ p{ animation: skewing 10s steps(1) 0s infinite;}
 
 ### 3d functions
 
-We've seen how transform functions operate on a **plane**, along the x and y axis.
+Transformasiya funksiyalarının x və y oxu boyunca **müstəvidə** necə işlədiyini gördük.
 
-For example:
+Nümunə:
 
 * `translate()` with up to 2 parameters:
   * `translate(x)`
@@ -249,11 +249,11 @@ For example:
 * `translateX()` as x only
 * `translateY()` as y only
 
-But all these functions also have a **3d version**.
+Lakin bütün bu funksiyaların **3D versiyası** da var.
 
-For example, `translate()` has a `translate3d()` version that performs transformation along **3 dimensions**, which means it includes the **z axis** as well (and as such, a standalone `translateZ()` function exists as well).
+Məsələn, `translate()` **3 ölçü** boyunca transformasiyanı həyata keçirən `translate3d()` versiyasına malikdir, bu o deməkdir ki, o, həmçinin **z oxunu** ehtiva edir (və beləliklə, müstəqil `translateZ()` funksiyası da mövcuddur).
 
-The **z** parameter basically make the element move closer and further, whether we increase or decrease its value. It's like zooming in and out.
+**z** parametri əsasən elementi daha da yaxınlaşdırır, onun dəyərini artırsaq da, azaltsaq da. Bu, böyütmək və kiçiltmək kimidir.
 
 {% highlight css %}
 @keyframes zooming {
@@ -280,7 +280,7 @@ p{ animation: zooming 5s alternate;}
 }
 </style>
 
-The green block rise `200px` _"upwards"_, as if coming closer to us, along the z axis.
+Yaşıl blok z oxu boyunca `200px` _"yuxarıya"_ yüksəlir, sanki bizə yaxınlaşır.
 
-`perspective: 500;` needs to be applied to the parent element in order for the 3d space to become active. Alternatively, `transform: perspective(500px);` can be used as well.
+`perspective: 500;` 3D məkanının aktiv olması üçün ana elementə tətbiq edilməlidir. Alternativ olaraq, `transform: perspective(500px);` də istifadə etmək olar.
 {: .info}
