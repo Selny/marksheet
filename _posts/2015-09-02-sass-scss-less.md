@@ -5,64 +5,63 @@ subtitle: "The Sass way"
 section: sass
 ---
 
-There are 2 CSS preprocessors to choose from:
+Seçmək üçün 2 CSS preprosessoru var:
 
 * **Less** [https://lesscss.org/](https://lesscss.org)
 * **Sass** [https://sass-lang.com/](https://sass-lang.com)
 
-They both have been around for several years. We're going to use **Sass**.
+Onların hər ikisi bir neçə ildir ki, ortalıqdadır. Bix **Sass** istifadə edəcəyik.
 
 ### Sass vs SCSS
 
-Sass has 2 **syntaxes** available:
+Sass-da 2 **sintaksis** mövcuddur:
 
-* **Sass** itself (Syntactically Awesome StyleSheets) in `.sass` files
-* **SCSS** (Sassy CSS) in `.scss` files, which is something halfway between regular CSS and Sass
+* **Sass** özü (Sintaktik Awesome StyleSheets) `.sass` fayllarında
+* **SCSS** (Sassy CSS) `.scss` fayllarında, bu adi CSS və Sass arasında bir şeydir
 
-The difference between Sass and SCSS is [quite subtle](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#syntax).
+Sass və SCSS arasındakı fərq [olduqca incədir](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#syntax).
 
 Remember that:
 
-* Sass is the name of the preprocessor
-* SCSS is easier to learn
-* all resources on the internet (like [The Sass Way](https://github.com/thesassway/thesassway.com)) mention Sass, not SCSS
-* all features are available for both syntaxes
-* everything in SCSS is available in Sass
+* Sass preprosessorun adıdır
+* SCSS öyrənməyə daha asandır
+* internetdəki bütün resurslarda ([The Sass Way](https://github.com/thesassway/thesassway.com) kimi) SCSS deyil, Sass qeyd olunur
+* bütün xüsusiyyətlər hər iki sintaksis üçün mövcuddur
+* SCSS-dəki hər şey Sass-da mövcuddur
 
-We're actually going to write **SCSS** but still call it **Sass**.
+Biz əslində **SCSS** yazacağıq, lakin buna **Sass** deyirik.
 
-### Why SCSS first
+### Niyə ilk SCSS
 
-We're gonna use **SCSS** for a few reasons:
+Biz bir neçə səbəbə görə **SCSS** istifadə edəcəyik:
 
-* **readibility**: the syntax is very similar to CSS
-* **learning curve**: it only adds a few additional features on top of CSS
-* **compatibility**; a CSS file is a valid SCSS file
-* **resources**: lots of online articles to read and open source libraries to use
-* **expandibility**: it's easy to go from SCSS to Sass
+* **readibility**: sintaksis CSS ilə çox oxşardır
+* **learning curve**: CSS-in üstünə yalnız bir neçə əlavə xüsusiyyət əlavə edir
+* **compatibility**; CSS faylı etibarlı SCSS faylıdır
+* **resources**: oxumaq üçün çoxlu onlayn məqalələr və istifadə etmək üçün açıq mənbə kitabxanaları
+* **expandibility**: SCSS-dən Sass-a getmək asandır
 
 ### Features
 
-What Sass provides[^1] is:
+Sass-ın təmin etdiyi[^1] budur:
 
-* **variables**: instead of repeating `#fce473` throughout your CSS file, just set `$yellow: #fce473` once
-* **nesting**: CSS rules can be nested within each other
-* **mixins**: custom functions that can accept parameters and will prevent useless repetitions
-* **extensions**: an easy way to inherit the same properties of another selector
-* **operators**: adding/substracting/multiplying/dividing values, like `960px / 4` or `$space * 2`
+* **variables**: CSS faylınız boyunca `#fce473` təkrarlamaq əvəzinə, sadəcə olaraq bir dəfə `$yellow: #fce473` təyin edin
+* **nesting**: CSS qaydaları bir-birinə daxil edilə bilər
+* **mixins**: parametrləri qəbul edə bilən və faydasız təkrarların qarşısını alacaq xüsusi funksiyalar
+* **extensions**: başqa bir selektorun eyni xassələrini miras almağın asan yolu
+* **operators**: `960px / 4` və ya `$space * 2` kimi dəyərləri əlavə etmək/çıxmaq/çoxalmaq/bölmək
 
 ### DRY code
 
-Everything about Sass is to provide tools to **prevent repeating yourself** in your code: it's the [DRY principle](https://en.wikipedia.org/wiki/Don't_repeat_yourself), which stands for _Don't repeat yourself_.
+Sass haqqında hər şey kodunuzda **özünüzü təkrar etməyin** qarşısını almaq üçün alətlər təmin etməkdir: it's the [DRY principle](https://en.wikipedia.org/wiki/Don't_repeat_yourself), _Özünüzü təkrarlama_ deməkdir.
 
-* **variables** prevents repeating _values_
-* **nesting** prevents repeating _selectors_
-* **mixins** and **extensions** prevent repeating _properties_
+* **variables** _dəyərlərin_ təkrarlanmasının qarşısını alır
+* **nesting** _selektorların_ təkrarlanmasının qarşısını alır
+* **mixins** and **extensions** xassələrin təkrarlanmasının qarşısını alır
 
 ### Installing Sass
 
-Head towards [https://sass-lang.com/install](https://sass-lang.com/install) to install Sass on your computer.
+Sass-ı kompüterinizdə quraşdırmaq üçün [https://sass-lang.com/install](https://sass-lang.com/install) linkinə keçid edin.
 
-[^1]: and any CSS preprocessor for that matter, but I'll refer to Sass only from now on.
 
 
