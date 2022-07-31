@@ -134,7 +134,7 @@ Gəlin [overlay mixin](/sass-mixins.html#syntax) -zi yenidən istifadə edək, v
 
 .product-link{
   @include small-uppercase();
-}
+} 
 
 .image-pattern{
   @include small-uppercase();
