@@ -5,49 +5,49 @@ subtitle: "Designing for every screen"
 section: css
 ---
 
-The Web is meant to provide a platform to share information easily across the Internet, no matter which **device** the information is viewed on. While the only disparaties between computers accessing the Web consisted mostly upon different screen resolutions, the rapid growth of **mobile devices** has changed the requirements: a website needs to be accessible on mobile in order to be relevant.
+Veb, məlumatın hansı **cihazda** baxılmasından asılı olmayaraq, İnternetdə asanlıqla məlumat mübadiləsi üçün platforma təmin etmək üçün nəzərdə tutulub. İnternetə daxil olan kompüterlər arasındakı yeganə fərqlər əsasən fərqli ekran qətnamələrindən ibarət olsa da, **mobil cihazların** sürətli inkişafı tələbləri dəyişdi: bir veb saytın müvafiq olması üçün mobil cihazlarda əlçatan olmalıdır.
 
-What options are available to handle mobile devices?
+Mobil cihazları idarə etmək üçün hansı seçimlər mövcuddur?
 
-1. **Not doing anything** and let mobile users zoom in to read your website
-1. Create a **second** website, like [m.facebook.com](https://m.facebook.com/), and redirect mobile devices to that website
-1. Use **responsive web design**
+1. **Heç bir şey etməyin** və mobil istifadəçilər saytınızdakı məlumatı oxumaq üçün böyütsün.
+1. **ikinci** vebsayt yaradın, [m.facebook.com](https://m.facebook.com/) kimi, və mobil cihazları həmin vebsayta yönləndirin
+1. **responsive web design**-dan istifadə edin
 
 ### Device, browser, viewport
 
-Before going further, we need to define some terms:
+Daha irəli getməzdən əvvəl bəzi terminləri müəyyənləşdirməliyik:
 
 device
-: the hardware used: smartphone, tablet, pc or laptop
+: istifadə olunan aparat: smartphone, tablet, pc or laptop
 
 browser
-: the software running: Firefox, Google Chrome, Safari, Internet Explorer
+: istifadə olunan proqram: Firefox, Google Chrome, Safari, Internet Explorer
 
 viewport
-: the region within the browser that actually displays the webpage
+: brauzer daxilində veb səhifəni həqiqətən göstərən bölgə
 
-![Difference between a device, a browser, and a viewport](/images/device-browser-viewport.png)
+![device, browser, və viewport arasındakı fərq](/images/device-browser-viewport.png)
 
 ### Responsive web design
 
-The idea behind **responsive web design** is to make your website **adapt to fit to any device**. It does so by **targetting** devices with your CSS and applying certain styles on these devices _only_.
+**responsive web design**-ın ideyası veb saytınızı **istənilən cihaza uyğunlaşdırmaqdır**. Bunu CSS-nizlə cihazları **hədəfləmək** və bu cihazlarda _yalnız_ müəyyən üslubları tətbiq etməklə edir.
 
-Responsiveness relies upon the properties of either the **device** or the **viewport**. For example:
+Responsiveness **cihazın** və ya **görüntü pəncərəsinin** xüsusiyyətlərindən asılıdır. Məsələn:
 
-* how **wide** is the viewport?
-* how **high** is the viewport?
+* viewport nə qədər **enlidir**?
+* viewport nə qədər **yüksəkdir**?
 * how is the viewport **oriented**?
 * what is the device's **resolution**?
 
-Depending on the answer to these questions, a responsive CSS will apply different or additional CSS rules.
+Bu sualların cavabından asılı olaraq, cavab verən CSS fərqli və ya əlavə CSS qaydaları tətbiq edəcək.
 
-Up until now, every part of our CSS was used by _every_ device that accessed our webpage. Responsive web design allows us to apply _certain_ styles in _certain_ cases.
+İndiyə qədər, CSS-nin hər bir hissəsi veb səhifəmizə daxil olan hər bir cihaz tərəfindən istifadə edilmişdir. Cavab verən veb dizayn _müəyyən_ hallarda _müəyyən_ üslubları tətbiq etməyə imkan verir.
 
 ### media queries
 
-We need to write **blocks** in our CSS that will only be used by devices that match that block's criterias. These blocks are called **media queries**.
+Biz CSS-də yalnız həmin blokun meyarlarına uyğun gələn cihazlar tərəfindən istifadə olunacaq **bloklar** yazmalıyıq. Bu bloklar **media querielər** adlanır.
 
-The media query syntax is reminiscent of the [animation keyframes syntax](/css-animations.html#keyframes), as it defines **a block within the CSS**, in which you write additional CSS rules _that are only applied in certain cases_.
+Media querylərin sintaksisi [animasiya keyframelərin sintaksisini] xatırladır.(/css-animations.html#keyframes), o, **CSS daxilindəki bloku** müəyyən etdiyinə görə, yazdığınız əlavə CSS qaydaları _yalnız müəyyən hallarda tətbiq olunur_.
 
 {% highlight css %}
 /* This part is read by every device/viewport */
@@ -59,15 +59,15 @@ body{ font-size: 14px;}
 }
 {% endhighlight %}
 
-Here, the default text size is `14px`. But to accomodate for larger viewports, the text size is set to `16px` if the viewport is _wider_ than **1200 pixels**.
+Burada standart mətn ölçüsü `14px`-dir. Lakin daha böyük görünüş portlarını yerləşdirmək üçün, görünüş pəncərəsi **1200 piksel**-dən _daha genişdirsə, mətn ölçüsü `16px` olaraq təyin edilir.
 
-Keep in mind that we're talking about the **viewport**, not the device's.
+Unutmayın ki, söhbət cihazın yox, **görüntü portundan** gedir.
 
-On mobile, considering browsers are running in fullscreen, the two widths are interchangeable. If you're on desktop, resize your browser window to see media queries being activated/desactivated.
+Mobil cihazlarda brauzerlərin tam ekran rejimində işlədiyini nəzərə alsaq, iki genişlik bir-birini əvəz edə bilər. Əgər masaüstünüzdəsinizsə, media sorğularının aktivləşdirildiyini/deaktiv edildiyini görmək üçün brauzerinizin pəncərəsinin ölçüsünü dəyişdirin.
 
 #### Several parameters
 
-You can require **2 conditions** for a media query to be activated.
+Media sorğusunun aktivləşdirilməsi üçün **2 şərt** tələb edə bilərsiniz.
 
 {% highlight css %}
 body{ font-size: 18px;}
@@ -77,14 +77,14 @@ body{ font-size: 18px;}
 }
 {% endhighlight %}
 
-The font size will only be set to `20px` if the viewport is at least _1000px wide_ **and** in _landscape_ mode (as opposed to portrait mode).
+Şrift ölçüsü yalnız görünüş pəncərəsi ən azı _1000px enində_ **və** _landşaft_ rejimində olduqda (portret rejimindən fərqli olaraq) '20px' olaraq təyin ediləcək.
 
-You can also use `not` and `only`. These are called [logical operators](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#Logical_operators).
+Həmçinin `not` və `only` istifadə edə bilərsiniz. Bunlara [məntiqi operatorlar](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#Logical_operators) deyilir.
 {: .info}
 
 #### Several CSS rules
 
-You can include as many **CSS rules** as you want in the media query.
+Media sorğusuna istədiyiniz qədər **CSS qaydaları** daxil edə bilərsiniz. 
 
 {% highlight css %}
 body{ font-size: 14px;}
@@ -101,39 +101,39 @@ body{ font-size: 14px;}
 
 ### Parameters
 
-Media queries require **parameters** which act like **conditions** that need to be filled in order for the media query to be **activated**.
+Media sorğuları **conditions** kimi fəaliyyət göstərən **parametrlər** tələb edir ki, onlar media sorğusunun **aktivləşdirilməsi** üçün doldurulmalıdır.
 
-By writing `@media (min-width: 1200px)`, we tell the browser to read this block _only if_ the viewport is wider than 1200px.
+`@media (min-width: 1200px)` yazaraq, biz brauzerə deyirik ki, bu bloku _yalnız baxış pəncərəsi 1200px-dən daha geniş olarsa oxusun.
 
 #### width
 
-The **width** parameter is the most used one in responsive web design. This comes from the fact that **webpages are read vertically**: we scroll to read the hidden content. As a result, the width is fixed and constrained, while the height of the website is variable.
+**width** parametri responsive veb dizaynda ən çox istifadə edilən parametrdir. Bu, **veb-səhifələrin şaquli oxunmağından irəli gəlir**: gizli məzmunu oxumaq üçün sürüşdürürük. Nəticədə veb-saytın hündürlüyü dəyişkən olsa da, eni sabit və məhduddur.
 
-Because we don't (usually) scroll horizontally, we need to fit our design within the **available viewport width**. Media queries allow to perform **checks** on this width, and apply certain styles if the viewport is _wider than_ (`min-width`) or _narrower than_ (`max-width`) a specific amount of pixels.
+Çünki biz (adətən) üfüqi olaraq sürüşmürük, dizaynımızı **mövcud baxış pəncərəsi eni** daxilində uyğunlaşdırmalıyıq. Media sorğuları bu genişlikdə **yoxlamalar** həyata keçirməyə imkan verir, və əgər görüntü pəncərəsi müəyyən piksel miqdarından _geniş (`min-en`) və ya _dar_(`maksimum-en`) olarsa, müəyyən üslubları tətbiq edin.
 
 You can use either:
 
-* `min-width(960px)`: styles will be applied only if the viewport is _wider_ than 960px
-* `max-width(768px)`: styles will be applied only if the viewport is _narrower_ than 768px
+* `min-width(960px)`: üslublar yalnız görünüş pəncərəsi 960px-dən _daha geniş olduqda tətbiq olunacaq
+* `max-width(768px)`: üslublar yalnız görünüş pəncərəsi 768px-dən daha dar olduqda tətbiq olunacaq
 
-These parameters accept **pixels**, **ems** and **rems**.
+Bu parametirlər **pixels**, **ems** və **rems** qəbul edirlər.
 
-Every time you resize your viewport, the browser checks the CSS for media queries that include width parameters, and applies its styles accordingly.
+Baxış pəncərənizin ölçüsünü hər dəfə dəyişdirdiyiniz zaman brauzer CSS-də genişlik parametrlərini ehtiva edən media sorğuları üçün yoxlayır və buna uyğun olaraq üslublarını tətbiq edir.
 
 #### height
 
-The **height** parameter works like the width one, expect it performs its checks on the viewport's height.
+**height** parametri width kimi işləyir, o baxış pəncərəsinin hündürlüyündə yoxlama aparacaq.
 
-You can use `min-height` and `max-height`.
+`min-height` və `max-height` istifadə edə bilərsiniz.
 
-It's rarely used, as websites are mainly scrollable **vertically**, and rarely need to adapt their design for shorter viewports.
+O, nadir hallarda istifadə olunur, çünki veb-saytlar əsasən **şaquli yöndə** sürüşdürülür və nadir hallarda onların dizaynını daha qısa baxış pəncərələri üçün uyğunlaşdırmaq lazımdır.
 
 #### orientation
 
-The **orientation** parameter can detect if the viewport is in either of the following modes:
+**orientation** parametri baxış pəncərəsinin aşağıdakı rejimlərdən birində olub-olmadığını aşkar edir:
 
-* **landscape**: the viewport is **wider** than it is tall
-* **portrait**: the viewport is **taller** than it is wide
+* **landscape**: baxış pəncərəsi hündürlüyündən **daha genişdir**
+* **portrait**: baxış pəncərəsi genişliyindən **daha uzundur**
 
 {% highlight css %}
 @media (orientation: portrait) {
@@ -145,21 +145,21 @@ The **orientation** parameter can detect if the viewport is in either of the fol
 }
 {% endhighlight %}
 
-Although it's mostly used for tablets and smartphones, be aware that even on a widescreen monitor, the viewport can be in portrait if its width is smaller than its height.
+Daha çox planşet və smartfonlar üçün istifadə olunmasına baxmayaraq, Nəzərə alın ki, hətta geniş ekranlı monitorda, eni hündürlüyündən kiçik olarsa, görüntü pəncərəsi portretdə ola bilər.
 
-On mobile, even if you're holding your device in portrait mode, if the keyboard shows up, the viewport can be considered as landscape, considering how its height becomes smaller than its width.
+Mobil telefonda, hətta cihazınızı portret rejimində saxlasanız belə, klaviatura görünsə, hündürlüyünün enindən necə kiçildiyini nəzərə alaraq görüntü pəncərəsi landşaft kimi qəbul edilə bilər.
 {: .info}
 
 #### resolution
 
-The **resolution** parameter is relevant to the **device's pixel density**, and can be expressed in either dots per inch `dpi` or dots per centimeter `dpcm`.
+**resolution** parametri **cihazın piksel sıxlığına** uyğundur, və ya hər düym üçün nöqtə `dpi` və ya hər santimetr üçün nöqtə `dpcm` ilə ifadə oluna bilər.
 
 It depends on:
 
-* what your **resolution** is (like 1440x900, 1280x800, 1024x768 etc.)
-* what your screen's **diagonal** is (like 11,6'', 14'', 21'' etc.)
+* **resokution**-iz nədir (məsələn, 1440x900, 1280x800, 1024x768 və s.)
+*ekranınızın **diaqonalı** nədir ( 11,6'', 14'', 21'' və s. kimi)
 
-The pixel density basically tells how **crisp** your display is (the higher the dpi, the crisper the display).
+Piksel sıxlığı əsasən ekranınızın necə **kırtıl** olduğunu bildirir (dpi nə qədər yüksəkdirsə, ekran daha kəskin olur).
 
 {% highlight css %}
 @media (min-resolution: 300dpi) {
@@ -167,7 +167,7 @@ The pixel density basically tells how **crisp** your display is (the higher the 
 }
 {% endhighlight %}
 
-Desktop screens usually have a pixel density around **100** dpi. Smartphones on the other hand have an [incredible range of dpi](https://dpi.lv/). For example:
+İş masası ekranları adətən **100** dpi ətrafında piksel sıxlığına malikdir. Digər tərəfdən smartfonların [inanılmaz dpi diapazonu](https://dpi.lv/) var. Məsələn:
 
 * **Nokia Lumia 640**: 332dpi
 * **Apple iPhone 6+**: 401dpi
@@ -175,9 +175,9 @@ Desktop screens usually have a pixel density around **100** dpi. Smartphones on 
 * **HTC One**: 469dpi
 * **Samsung Galaxy S6**: 577dpi
 
-What role does CSS play here? Well, higher resolution screens will render text very clearly: individual pixels become hardly noticable, and letters look absolutely smooth.
+CSS burada hansı rol oynayır? yüksək resolutionlu ekranlar mətni daha aydın render edəcək: individual piksellər çətin nəzərə çarpır və hərflər tamamilə hamar görünür.
 
-The problem is with **images** on Retina displays for example. It's a long topic, so read this ["CSS Techniques for Retina Displays" article on sitepoint](https://www.sitepoint.com/css-techniques-for-retina-displays/).
+Problem, məsələn, Retina displeylərindəki **şəkillərlə**dir.Bu uzun bir mövzudur, buna görə də bunu oxuyun [sitepoint-də "Retina Ekranları üçün CSS Texnikaları" məqaləsi](https://www.sitepoint.com/css-techniques-for-retina-displays/).
 
 <figure markdown="1">
 ![Image density in CSS](/images/image-density-in-css.png)
@@ -186,7 +186,7 @@ Source: [sitepoint.com](https://www.sitepoint.com/css-techniques-for-retina-disp
 </figcaption>
 </figure>
 
-A use case would be to provide a default background image for every device, and apply **high resolution background images** on Retina displays.
+İstifadə nümunəsi hər bir cihaz üçün defolt fon təsviri təqdim etmək və Retina displeylərində **yüksək resolutiona malik fon şəkillərini** tətbiq etmək olar.
 
 {% highlight css %}
 /* 40x40 logo */
@@ -198,20 +198,20 @@ A use case would be to provide a default background image for every device, and 
 }
 {% endhighlight %}
 
-Keep in mind that the **background size must be set**. Otherwise, the `@2x` Retina image would take twice the space.
+Unutmayın ki, **fon ölçüsü təyin edilməlidir**. Əks halda, `@2x` Retina şəkli iki dəfə yer tutacaq.
 
-The `@2x` suffix is just Apple's notation for Retina images, and has been adopted as the _de facto_ default notation in CSS.
+`@2x` şəkilçisi yalnız Apple-ın Retina şəkilləri üçün qeydidir və CSS-də _de facto_ default notation kimi qəbul edilmişdir.
 {: .info}
 
 ### Mobile-first or desktop-first
 
-Usually, you want to focus on the full width **desktop** version first, as it features a more complex design that includes columns, hover states, absolute positioning, floats etc.
+Adətən, siz əvvəlcə tam eni **desktop** versiyasına diqqət yetirmək istəyirsiniz, çünki o, columns, hover states, absolute positioning, floats və s. daxil olan daha mürəkkəb dizayna malikdir.
 
-But designing the **mobile** version first is actually _easier_ considering a **["HTML is almost 100% responsive out of the box"](https://fluidity.sexy/)**. Most web designs on mobile are only focusing on vertical layouts, with no or very few columns, because scrolling is **natural** on mobile devices.
+Lakin əvvəlcə **mobil** versiyasını tərtib etmək **["HTML qutudan demək olar ki, 100% cavab verir"](https://fluidity.sexy/) nəzərə alınmaqla əslində daha asandır **. Mobil cihazlarda əksər veb dizaynlar yalnız şaquli planlara diqqət yetirir, sütunlar yoxdur və ya çox azdır, çünki sürüşmə mobil cihazlarda **təbii**dir.
 
-Using [the Flow](/css-the-flow.html) is straightforward to design a mobile site: just order your HTML elements in the way you want them to be displayed. Simply by writing your HTML code, you're _already designing your mobile website_. Header first, menu afterwards, then your content, and a footer at the end. _Voilà_!
+[The Flow](/css-the-flow.html) istifadə etmək mobil saytın dizaynını sadələşdirir: sadəcə HTML elementlərinizi onların göstərilməsini istədiyiniz şəkildə sifariş edin. Sadəcə olaraq HTML kodunuzu yazmaqla siz _artıq mobil vebsaytınızı dizayn edirsiniz_. Əvvəlcə başlıq, sonra menyu, sonra məzmununuz və sonunda altbilgi. _Voilà_!
 
-A mobile-first CSS would use `min-width` media queries in order to apply specific rules for larger viewports:
+Mobil ilk CSS, daha böyük baxış pəncərələri üçün xüsusi qaydaları tətbiq etmək üçün "min-width" media sorğularından istifadə edərdi:
 
 {% highlight css %}
 /* General CSS rules for every viewport, including smartphones */
