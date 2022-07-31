@@ -5,13 +5,13 @@ subtitle: "CSS programming"
 section: sass
 ---
 
-When you find yourself writing the same code over and over again, it feels like Sass mixins might help you out.
+Özünüzü təkrar-təkrar eyni kodu yazarkən tapdığınız zaman Sass mixinləri sizə kömək edə bilər.
 
-Sass mixins are **CSS functions** that you can **include** whenever you want.
+Sass mixinləri istədiyiniz zaman **daxil edə biləcəyiniz **CSS funksiyalarıdır**.
 
 ### Syntax
 
-Remember how we wrote `@keyframes` when creating **[CSS animations](/css-animations.html)**? The Sass mixin syntax is fairly similar:
+**[CSS animasiyaları](/css-animations.html)** yaratarkən `@keyframes`-i necə yazdığımızı xatırlayırsınız? Sass mixin sintaksisi olduqca oxşardır:
 
 {% highlight scss %}
 @mixin overlay() {
@@ -23,7 +23,7 @@ Remember how we wrote `@keyframes` when creating **[CSS animations](/css-animati
 }
 {% endhighlight %}
 
-The **name** of this mixin is `overlay`. You can reference this mixin in any CSS rule by using `@include`:
+Bu miksinin **adı** `overlay`-dir. Siz `@include` istifadə edərək istənilən CSS qaydasında bu mixin istinad edə bilərsiniz:
 
 {% highlight scss %}
 .modal-background{
@@ -33,7 +33,7 @@ The **name** of this mixin is `overlay`. You can reference this mixin in any CSS
 }
 {% endhighlight %}
 
-As usual, this `.scss` will be compiled into `.css`:
+Həmişə olduğu kimi, bu `.scss` `.css`-də tərtib ediləcək:
 
 {% highlight css %}
 .modal-background{
@@ -49,11 +49,11 @@ As usual, this `.scss` will be compiled into `.css`:
 
 ### Reusability
 
-The main purpose of a mixin is to make a **set of properties reusable**.
+Miksinlərin əsas məqsədi **xassələr toplusunu təkrar istifadə edilə bilən etməkdir.
 
-Like Sass variables (where you define your **values** on a single location), Sass mixins allow you to define **properties** on a single location.
+Sass dəyişənləri kimi (bir yerdə **dəyərlərinizi** təyin etdiyiniz yerdə), Sass miksinləri sizə bir yerdə **propertylər** müəyyən etməyə imkan verir.
 
-The previous mixin can be reused in other rules:
+Əvvəlki miksin digər qaydalarda təkrar istifadə edilə bilər:
 
 {% highlight scss %}
 .modal-background{
@@ -97,9 +97,9 @@ The previous mixin can be reused in other rules:
 
 ### Parameters
 
-Because mixins are **functions** and because you might want to **alter** the _output_, mixins can accept **parameters**.
+Miksinlər **funksiyalar** olduğundan və _output_-da **dəyişiklik etmək istəyə biləcəyiniz üçün miksinlər **parametrləri** qəbul edə bilər.
 
-For example, this [border-radius mixin](https://sass-lang.com/guide#topic-6-SCSS) prevents rewriting **vendor prefixes** and takes the actual _radius_ value as a parameter:
+Məsələn, bu [border-radius mixin](https://sass-lang.com/guide#topic-6-SCSS) **satıcı prefikslərinin** yenidən yazılmasının qarşısını alır və faktiki _radius_ dəyərini parametr kimi qəbul edir:
 
 {% highlight scss %}
 @mixin border-radius($radius) {
@@ -123,11 +123,11 @@ For example, this [border-radius mixin](https://sass-lang.com/guide#topic-6-SCSS
 }
 {% endhighlight %}
 
-The mixin circumvents the hassle of having to write all vendor prefixes, and uses the `$radius` to allow defining the same radius value for every vendor property.
+Mixin bütün satıcı prefikslərini yazmaq çətinliyindən yayınır və hər bir satıcı xassəsi üçün eyni radius dəyərini müəyyən etməyə imkan vermək üçün `$radius` istifadə edir.
 
 ### Optional parameters
 
-If you want a parameter to have a **default** value while providing the possibility to _set_ one occasionally, you can create **optional paramaters**:
+Əgər siz bir parametrin **defolt** dəyərə malik olmasını istəyirsinizsə, hərdən bir parametri təyin etmək imkanı verirsinizsə, siz **istəyə bağlı parametrlər** yarada bilərsiniz:
 
 {% highlight scss %}
 @mixin label($text: "Code", $background: $yellow, $color: rgba(black, 0.5)) {
@@ -151,9 +151,9 @@ If you want a parameter to have a **default** value while providing the possibil
 }
 {% endhighlight %}
 
-This mixin is the one used by this website to add **labels** in the top left corner of code snippets. It has 3 optional parameters, each of them with their own default value set with a colon `:`.
+Bu miksin bu vebsayt tərəfindən kod parçalarının yuxarı sol küncünə **etiketlər** əlavə etmək üçün istifadə edilən mixindir. Onun 3 isteğe bağlı parametri var, onların hər biri iki nöqtə `:` ilə təyin edilmiş öz standart dəyərinə malikdir.
 
-This mixin is used several times throughout the code:
+Bu mixin kod boyunca bir neçə dəfə istifadə olunur:
 
 {% highlight scss %}
 div.highlighter-rouge{
@@ -167,17 +167,17 @@ div.highlighter-rouge{
 }
 {% endhighlight %}
 
-The `div.highlighter-rouge` will use the mixin's default values:
+`div.highlighter-rouge` miksinin standart dəyərlərindən istifadə edəcək:
 
 * text `"Code"`
 * background: `$yellow`
 * color: `rgba(black, 0.5)`
 
-The `.css` and `.scss` versions, because their parameters are _set_, will use different labels and colors.
+`.css` və `.scss` versiyaları, onların parametrləri _set_ olduğundan, müxtəlif etiket və rənglərdən istifadə edəcək.
 
 ### Mixin libraries
 
-If you don't want to spend time writing your own Sass mixins, you can use any of the following **mixin libraries**:
+Öz Sass mixinlərinizi yazmağa vaxt sərf etmək istəmirsinizsə, aşağıdakı **mixin kitabxanalarından** istifadə edə bilərsiniz:
 
 * **Bourbon**: [bourbon.io](https://bourbon.io/)
 * **Compass**: [compass-style.org](https://compass-style.org/)
