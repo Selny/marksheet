@@ -7,7 +7,7 @@ section: sass
 
 ### Syntax
 
-In Sass, **nesting CSS rules** allows to define **hierarchy selectors**:
+Sass-da, **iç içə CSS qaydaları** **iyerarxik selektorlarını** müəyyən etməyə imkan verir:
 
 {% highlight scss %}
 .title{
@@ -24,11 +24,11 @@ This will be compiled into:
 .title em{}
 {% endhighlight %}
 
-Because `strong` and `em` appear _within_ the `.title` rule (between the 2 curly braces `{` `}`), both will be **prepended** with the parent selector `.title`.
+`strong` və `em` `.title` qaydası daxilində (2 əyri mötərizə `{` `}` arasında) göründüyü üçün hər ikisi `.title` əsas seçicisi ilə **öncəyə yazılacaq**.
 
-### Nesting purpose
+### Yuvalama məqsədi
 
-Because [CSS priority](/css-priority.html) can be tricky, it's common to use be **specific** when writing selectors, by combining multiple classes/tags to prevent CSS rules to cancel each other out.
+[CSS prioriteti](/css-priority.html) çətin ola bildiyindən, CSS qaydalarının bir-birini ləğv etməməsi üçün çoxsaylı sinifləri/teqləri birləşdirərək seçiciləri yazarkən **xüsusi** istifadə etmək adi haldır.
 
 {% highlight css %}
 .description{}
@@ -46,7 +46,7 @@ Because [CSS priority](/css-priority.html) can be tricky, it's common to use be 
 .description table th{}
 {% endhighlight %}
 
-To prevent rewriting `.description`, let's use the ampersand `&`:
+`.description`-in yenidən yazılmasının qarşısını almaq üçün `&` işarəsindən istifadə edək:
 
 {% highlight scss %}
 .description{
@@ -65,7 +65,7 @@ To prevent rewriting `.description`, let's use the ampersand `&`:
 }
 {% endhighlight %}
 
-You can go even further by replacing `& p` and `& table` with `&` to create **nested** selectors:
+Siz **iç-içə** seçicilər yaratmaq üçün `& p` və `& table` `& `ilə əvəz etməklə daha da irəli gedə bilərsiniz:
 
 {% highlight scss %}
 .description{
@@ -88,11 +88,11 @@ You can go even further by replacing `& p` and `& table` with `&` to create **ne
 }
 {% endhighlight %}
 
-Remember **[HTML nesting](/html-hierarchy.html)**? The indentation in Sass allows to _replicate_ how HTML elements are nested.
+**[HTML nesting](/html-hierarchy.html)** xatırlayırsınızmı? Sass-dakı girinti HTML elementlərinin necə iç-içə yerləşdirildiyini _təkrarlamağa_ imkan verir.
 
-Notice how we only wrote `table` and `.empty` **once** for example.
+Diqqət yetirin, məsələn, `table` and `.empty`  **bir dəfə** necə yazmışdıq.
 
-It will generate exactly the CSS we started with:
+O, tam olaraq başladığımız CSS-i yaradacaq:
 
 {% highlight css %}
 .description{}
@@ -112,7 +112,7 @@ It will generate exactly the CSS we started with:
 
 ### The ampersand parent selector
 
-When you nest selectors in Sass, it basically adds a **space** between the _parent_ selector and the _child_ one. So:
+Seçiciləri Sass-da yerləşdirdiyiniz zaman o, əsasən _valideyn_selektoru ilə _uşaq_ arasında **boşluq** əlavə edir. Belə ki:
 
 {% highlight scss %}
 //scss
@@ -124,7 +124,9 @@ When you nest selectors in Sass, it basically adds a **space** between the _pare
 .parent .child{}
 {% endhighlight %}
 
-The **space** between `.parent` and `.child` defines a **hierarchy**: this selector targets HTML elements with `class="child"` nested _within_ `class="parent"`.
+`.parent` və `.child` arasındakı **boşluq** **iyerarxiyanı** müəyyən edir: bu seçici `class="child"` _within_ `class="valideyn"` içərisində iç-içə daxil edilmiş HTML elementlərini hədəfləyir.
+
+İndi `:hover` kimi **psevdoselektorlardan** istifadə etmək istəsəniz nə olacaq? Yoxsa siz **joined class**lar olan selektora sahib olmaq istəyirsiniz? Siz parent  seçicisi üçün qısa yol olan **ampersand** istifadə edə bilərsiniz:
 
 Now, what if you want to use **pseudo-selectors** like `:hover`? Or you want to have a selector with **joined classes**? You can use the **ampersand** which is shortcut for the parent selector:
 
@@ -140,9 +142,9 @@ Now, what if you want to use **pseudo-selectors** like `:hover`? Or you want to 
 .parent.other-class{}
 {% endhighlight %}
 
-Notice how there is **no space** between `.parent` and either `:hover` or `.other-class`.
+`.valideyn` və `:hover` və ya `.digər sinif` arasında necə **boşluğun** olmadığına diqqət yetirin.
 
-The `.parent.other-class` will target HTML elements that have `class="parent other-class"`.
+`.parent.other-class`, `class="parent other-class"` olan HTML elementlərini hədəf alacaq.
 
 ### Full example
 
