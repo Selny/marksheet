@@ -5,41 +5,41 @@ subtitle: "Change once, update everywhere"
 section: sass
 ---
 
-One of the first reasons people turn to Sass is the existence of **CSS variables**.
+İnsanların Sass-a müraciət etmələrinin ilk səbəblərindən biri **CSS dəyişənlərinin** olmasıdır.
 
-Have you ever had to search and replace many occurrences of the same CSS _value_? If so, variables will help you out.
+Heç eyni CSS _value_-un bir çox hadisəsini axtarıb əvəz etməli olmusunuzmu? Əgər belədirsə, dəyişənlər sizə kömək edəcək.
 
 ### Syntax
 
-You need to prepend a variable with a `$` dollar sign:
+Siz `$` dollar işarəsini dəyişənin əvvəlinə yazmalısınız:
 
 {% highlight scss %}
 $yellow: #fce473;
 {% endhighlight %}
 
-This line doesn't do anything apart from **defining** a variable, in our case a shade of yellow:
+Bu xətt dəyişəni **müəyyən etməkdən** başqa heç nə etmir, bizim vəziyyətimizdə sarı rəng:
 
 <div style="background: #fce473; display: inline-block; padding: 10px; vertical-align: top;">#fce473</div>
 
-We can then use it throughout our CSS, whenever a [color unit](/css-color-units.html) is required:
+Bundan sonra [rəng vahidi](/css-color-units.html) tələb olunduqda: biz onu CSS-də istifadə edə bilərik:
 
 {% highlight scss %}
 .quote{ border-left: 5px solid $yellow;}
 {% endhighlight %}
 
-This `.scss` file will be **compiled** into a `.css` file, where all variables will be _replaced_ with their actual _value_:
+Bu `.scss` faylı `.css` faylına **tərtib ediləcək**, burada bütün dəyişənlər öz həqiqi _dəyəri ilə _əvəz ediləcək:
 
 {% highlight css %}
 .quote{ border-left: 5px solid #fce473;}
 {% endhighlight %}
 
 _Why is it called a variable?_{:.question}
-Well here, the **value** `#fce473` is variable. Meaning the name `$yellow` remains _fixed_ but the value can _change_.
+Burada **dəyər** `#fce473` dəyişəndir. `$yellow` adının mənası _sabit_ qalır, lakin dəyər _dəyişə bilər.
 {: .answer}
 
-### Set your variable only once
+### Dəyişəninizi yalnız bir dəfə təyin edin
 
-To illustrate the purpose of using variables, you need to use it more than once, like this **pink** shade:
+Dəyişənlərin istifadə məqsədini göstərmək üçün siz onu bir dəfədən çox istifadə etməlisiniz, məsələn, bu **çəhrayı** kölgə:
 
 <div style="background: #ff1493; color: white; display: inline-block; padding: 10px; vertical-align: top;">#ff1493</div>
 
@@ -51,7 +51,7 @@ $pink: #ff1493;
 .footer a{ color: $pink;}
 {% endhighlight %}
 
-This will be compiled into:
+Bu tərtib ediləcək:
 
 {% highlight css %}
 .quote{ border-left: 5px solid #ff1493;}
@@ -60,18 +60,18 @@ This will be compiled into:
 .footer a{ color: #ff1493;}
 {% endhighlight %}
 
-If you decided to go for a _different_ shade of pink:
+Fərqli çəhrayı çalarları seçməyə qərar verdinizsə:
 
 <div style="background: #ff1493; color: white; display: inline-block; padding: 10px; vertical-align: top;">Old pink</div>
 <div style="background: #c71585; color: white; display: inline-block; padding: 10px; vertical-align: top;">New pink</div>
 
-You'd only have to change the color value **once**:
+Rəng dəyərini **bir dəfə** dəyişməli olacaqsınız:
 
 {% highlight scss %}
 $pink: #c71585;
 {% endhighlight %}
 
-And the resulting CSS would be **automatically** updated:
+Və nəticədə CSS **avtomatik** yenilənəcək:
 
 {% highlight css %}
 .quote{ border-left: 5px solid #c71585;}
@@ -80,15 +80,14 @@ And the resulting CSS would be **automatically** updated:
 .footer a{ color: #c71585;}
 {% endhighlight %}
 
-### Even more abstraction
 
-Now let's say you actually don't want to use pink as your **primary** color, but **green**!
+İndi deyək ki, siz əslində **əsas** rənginiz kimi çəhrayıdan istifadə etmək istəmirsiniz, amma **yaşıl**!
 
 <div style="background: #32cd32; color: white; display: inline-block; padding: 10px; vertical-align: top;">#32cd32</div>
 
-You'd have to define a `$green: #32cd32;` variable **and** replace all the instances of `$pink` with `$green` in your SCSS.
+Siz `$green: #32cd32;` dəyişənini təyin etməli **və** SCSS-də `$pink`-in bütün nümunələrini `$green` ilə əvəz etməli olacaqsınız.
 
-There is a better way:
+Daha yaxşı bir yol var:
 
 {% highlight scss %}
 // Defining color values
@@ -106,15 +105,15 @@ $primary-color: $green;
 .footer a{ color: $primary-color;}
 {% endhighlight %}
 
-Instead of _directly_ referencing the variable `$green`, you define a **primary color** variable that is _set_ to `$green`.
+'$yaşıl' dəyişəninə _birbaşa_ istinad etmək əvəzinə, siz '$yaşıl' olaraq təyin edilmiş **əsas rəng** dəyişənini təyin edirsiniz.
 
-When you think about it, you don't _really_ want to use `$green` throughout your CSS. What you _actually_ want is use your **primary color**, which happens to be green.
+Bu barədə düşünəndə, CSS-də `$yaşıl` istifadə etmək istəmirsiniz. _Əslində_ istədiyiniz yaşıl rəngə çevrilən **əsas rənginizdən** istifadə etməkdir.
 
-If you decided to use `$blue` as your primary color, you'd only have to modify a **single line**.
+Əsas rəng kimi `$mavi` istifadə etmək qərarına gəlsəniz, yalnız **tək sətri** dəyişməli olacaqsınız.
 
-### For any type of value
+### İstənilən növ dəyər üçün
 
-We've used variables to define colors, but you can set **any type of content**:
+Rəngləri müəyyən etmək üçün dəyişənlərdən istifadə etdik, lakin siz **istənilən məzmun növü** təyin edə bilərsiniz:
 
 {% highlight scss %}
 // Colors
