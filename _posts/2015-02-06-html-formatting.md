@@ -49,9 +49,9 @@ Sətri qırılmağa məcbur etmlək üçün, `<br>` HTML elementindən istifadə
   <p>At its best, life is completely<br>unpredictable.</p>
 </div>
 
-### Cədvələşdirmə
+### Tabulations
 
-**Cədvəlləşdirmə** _Tab_ düyməsini basmaqla əldə edilmiş xüsusi xarakterdir. Adətən kursoru növbəti taba hərəkət etdirir, ancaq bəzən iki bosluğa çevirilir.
+**Tabulation** _Tab_ düyməsini basmaqla əldə edilmiş xüsusi xarakterdir. Adətən kursoru növbəti taba hərəkət etdirir, ancaq bəzən iki bosluğa çevirilir.
 
 Hər halda, Adi bosluq kimi, Cədvəlləşdirmə **Görünməzdir**. Həmçinin brauzer tərəfindən nəzərə alınmır:
 
