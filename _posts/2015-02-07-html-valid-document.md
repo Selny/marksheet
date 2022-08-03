@@ -32,7 +32,7 @@ Budur. Sadəcə yazın və artıq unudun.
 Bu HTML 5 sənədinin niyə 5 reqemi ile ni qey olunamamğı sizi narahat edə bilər. W3C əvvəlki doktip təriflərinin çox qarışıq olduğunu düşündü və HTML versiyası haqqında hər hansı qeydi silməklə onu sadələşdirmək fürsətindən istifadə etdi.
 {: .info}
 
-### <html> elementi
+### `<html>` elementi
 
 doctype sətrində ayrı olaraq, **bütün** HTML sənədləri `<html>` elementi ilə əhatə olunmalıdır
 
