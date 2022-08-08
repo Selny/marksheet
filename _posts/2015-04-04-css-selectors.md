@@ -171,7 +171,7 @@ The `em.date` combines:
 
 Bu ancaq `<em class="date"></em>` HTML elementlərinə tətbiq olunacaq. Bu başqa `.date` və ya `em` elementlərinə təsir etməyəcək.
 
-### İyerarxiya selectorları
+### Selectorların iyerarxiyası 
 
 Selektordakı **boşluq** əcdad/nəsil əlaqəsini müəyyən edir. Tutaq ki, başlığımızda olan keçidlərin qırmızı rəngdə olmasını istəyirik:
 
